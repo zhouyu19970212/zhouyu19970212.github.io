@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-03-25T11:13:37.432Z</updated>
+  <updated>2022-03-26T02:32:23.459Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,18 +17,18 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2022/03/25/hello-world/"/>
-    <id>http://example.com/2022/03/25/hello-world/</id>
-    <published>2022-03-25T11:15:55.676Z</published>
-    <updated>2022-03-25T11:13:37.432Z</updated>
+    <title>Python学习1-变量</title>
+    <link href="http://example.com/2022/03/26/py_day1/"/>
+    <id>http://example.com/2022/03/26/py_day1/</id>
+    <published>2022-03-26T02:32:23.308Z</published>
+    <updated>2022-03-26T02:32:23.459Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h4 id="对比1：py变量不用声明"><a href="#对比1：py变量不用声明" class="headerlink" title="对比1：py变量不用声明"></a>对比1：py变量不用声明</h4><blockquote><p><strong>java ：</strong><br>1、变量就是申请内存来存储值。也就是说，当创建变量的时候，需要在内存中申请空间。<br>2、内存管理系统根据变量的类型为变量分配存储空间，分配的空间只能用来储存该类型数据。因此，通过定义不同类型的变量，可以在内存中储存整数、小数或者字符。<br><img src="./images/1648259450209.png" alt="enter description here"></p></blockquote><p><strong>与java不同，py的变量不需要预先定义类型。</strong></p><blockquote><p><strong>py：</strong><br>Python 中的变量不需要声明。每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。</p></blockquote><p><strong>py的变量没有自动初始化，因此在使用之前必须先赋好值。</strong></p><h4 id="对比2：py变量没有变量（对象）类型"><a href="#对比2：py变量没有变量（对象）类型" class="headerlink" title="对比2：py变量没有变量（对象）类型"></a>对比2：py变量没有变量（对象）类型</h4><blockquote><p><strong>java ：</strong><br>支持的变量类型有：类变量、实例变量、局部变量</p></blockquote><blockquote><p><strong>py：</strong><br>变量就是变量，它没有类型，我们所说的”类型”是变量所指的内存中对象的类型。</p></blockquote><p>java：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String message;</span><br><span class="line">message = &quot;This is a string&quot;;</span><br></pre></td></tr></table></figure><p>python:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">message = &quot;This is a string&quot;</span><br></pre></td></tr></table></figure><p><em><strong>注意：py语句末尾不用加分号，以换行表示语句结束</strong></em></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+    <summary type="html">&lt;h3 id=&quot;变量&quot;&gt;&lt;a href=&quot;#变量&quot; class=&quot;headerlink&quot; title=&quot;变量&quot;&gt;&lt;/a&gt;变量&lt;/h3&gt;&lt;h4 id=&quot;对比1：py变量不用声明&quot;&gt;&lt;a href=&quot;#对比1：py变量不用声明&quot; class=&quot;headerlink&quot; title=&quot;对</summary>
       
     
     
