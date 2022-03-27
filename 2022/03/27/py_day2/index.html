@@ -5,13 +5,17 @@
   
 
   
-  <title>Hexo</title>
+  <title>Python学习2-字符串和数字 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="用了小书匠来写文本，客户端上预览的效果格式正确，怎么一上传到github上格式就不对了捏？还没整明白，慢慢来吧。初次学py，发现py和matlab的语法相似啊  py的数据类型有六个：数字、字符串、列表、元组、集合、字典其中：数字、字符串、元组是不可变的；列表、字典、集合是可变的  字符串java中的字符串是类，py里面变成了数据类型。 语法差不多，双引号””和单引号’’都能用，拼接是是用加号+，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python学习2-字符串和数字">
+<meta property="og:url" content="http://example.com/2022/03/27/py_day2/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="用了小书匠来写文本，客户端上预览的效果格式正确，怎么一上传到github上格式就不对了捏？还没整明白，慢慢来吧。初次学py，发现py和matlab的语法相似啊  py的数据类型有六个：数字、字符串、列表、元组、集合、字典其中：数字、字符串、元组是不可变的；列表、字典、集合是可变的  字符串java中的字符串是类，py里面变成了数据类型。 语法差不多，双引号””和单引号’’都能用，拼接是是用加号+，">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-27T11:55:42.974Z">
+<meta property="article:modified_time" content="2022-03-27T11:55:43.059Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -62,9 +66,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-py_day2" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-py_day2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/03/27/py_day2/" class="article-date">
   <time datetime="2022-03-27T11:55:42.974Z" itemprop="datePublished">2022-03-27</time>
@@ -77,8 +79,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/27/py_day2/">Python学习2-字符串和数字</a>
+    <h1 class="article-title" itemprop="name">
+      Python学习2-字符串和数字
     </h1>
   
 
@@ -106,57 +108,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-py_day1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/03/26/py_day1/" class="article-date">
-  <time datetime="2022-03-26T02:32:23.308Z" itemprop="datePublished">2022-03-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/26/py_day1/">Python学习1-变量</a>
-    </h1>
+    <a href="/2022/03/26/py_day1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python学习1-变量</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h4 id="对比1：py变量不用声明"><a href="#对比1：py变量不用声明" class="headerlink" title="对比1：py变量不用声明"></a>对比1：py变量不用声明</h4><p> <strong>java ：</strong><br>1、变量就是申请内存来存储值。也就是说，当创建变量的时候，需要在内存中申请空间。<br>2、内存管理系统根据变量的类型为变量分配存储空间，分配的空间只能用来储存该类型数据。因此，通过定义不同类型的变量，可以在内存中储存整数、小数或者字符。</p>
-<p><strong>与java不同，py的变量不需要预先定义类型。</strong><br><strong>py：</strong><br>Python 中的变量不需要声明。每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。</p>
-<p><strong>py的变量没有自动初始化，因此在使用之前必须先赋好值。</strong></p>
-<h4 id="对比2：py变量没有变量（对象）类型"><a href="#对比2：py变量没有变量（对象）类型" class="headerlink" title="对比2：py变量没有变量（对象）类型"></a>对比2：py变量没有变量（对象）类型</h4><p> <strong>java ：</strong><br>支持的变量类型有：类变量、实例变量、局部变量</p>
-<p><strong>py：</strong><br>变量就是变量，它没有类型，我们所说的”类型”是变量所指的内存中对象的类型。</p>
-<p>java：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String message;</span><br><span class="line">message = &quot;This is a string&quot;;</span><br></pre></td></tr></table></figure>
-<p>python:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">message = &quot;This is a string&quot;</span><br></pre></td></tr></table></figure>
-<p><em><strong>注意：py语句末尾不用加分号，以换行表示语句结束</strong></em></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/26/py_day1/" data-id="cl1987xfo00042gvxa21hcig5" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
 
 </section>
         
