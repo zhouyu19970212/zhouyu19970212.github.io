@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-04-08T08:07:10.484Z</updated>
+  <updated>2022-04-08T08:11:19.768Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Python学习3-列表的增删改查</title>
+    <title>Python学习4-组织列表</title>
     <link href="http://example.com/2022/04/08/py_day4/"/>
     <id>http://example.com/2022/04/08/py_day4/</id>
     <published>2022-04-08T08:07:10.412Z</published>
-    <updated>2022-04-08T08:07:10.484Z</updated>
+    <updated>2022-04-08T08:11:19.768Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1、sort-和sorted-：永久排序和临时排序"><a href="#1、sort-和sorted-：永久排序和临时排序" class="headerlink" title="1、sort()和sorted()：永久排序和临时排序"></a>1、sort()和sorted()：永久排序和临时排序</h3><p>list.sort()              ：对已存在的列表进行排序，可以带参数 reverse = True<br>sorted(iterable)    ：对一切可迭代对象排序，对对象的副本进行排序，并返回这个副本，可以带参数 reverse = True</p><h3 id="2、reverse-：反转列表"><a href="#2、reverse-：反转列表" class="headerlink" title="2、reverse()：反转列表"></a>2、reverse()：反转列表</h3><p>list.reverse()        ：</p><h3 id="3、len-：返回列表长度"><a href="#3、len-：返回列表长度" class="headerlink" title="3、len()：返回列表长度"></a>3、len()：返回列表长度</h3><p>len(list)                ：</p><h3 id="加餐：sort-内部实现原理"><a href="#加餐：sort-内部实现原理" class="headerlink" title="加餐：sort()内部实现原理"></a>加餐：sort()内部实现原理</h3><p>py中的sort()采用的是 Timsort 算法<br>最坏时间复杂度 O(nlogn)<br>空间复杂度 O(n)<br>相比快排，Timsort是稳定的</p><blockquote><p>Timsort是结合了合并排序（merge sort）和插入排序（insertion sort）而得出的排序算法，它在现实中有很好的效率。Tim Peters在2002年设计了该算法并在Python中使用（TimSort 是 Python 中 list.sort 的默认实现）。该算法找到数据中已经排好序的块-分区，每一个分区叫一个run，然后按规则合并这些run。Pyhton自从2.3版以来一直采用Timsort算法排序，现在Java SE7和Android也采用Timsort算法对数组排序。</p></blockquote><h4 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h4><p>针对现实中需要排序的数据分析，大多数的数据通常都是部分排序好的数据块，Timsort就是利用了这一个特点。<br>Timsort将已经排序好的数据块称为 run，在排序时，Timsort将数据元素放到不同的run里面，并将run按规则进行归并，最后只剩一个run，这个run就是最后的结果。</p><p>Timsort会有一个minrun属性，如果初始的run小于这个minrun，则用插入排序将未排序的数据插入进来，直到达到条件，之后使用归并排序合并多个run。</p>]]></content>
     
