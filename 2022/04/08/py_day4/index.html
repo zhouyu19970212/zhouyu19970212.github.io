@@ -5,17 +5,17 @@
   
 
   
-  <title>Python学习2-字符串和数字 | Hexo</title>
+  <title>Python学习3-列表的增删改查 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="用了小书匠来写文本，客户端上预览的效果格式正确，怎么一上传到github上格式就不对了捏？还没整明白，慢慢来吧。初次学py，发现py和matlab的语法相似啊  py的数据类型有六个：数字、字符串、列表、元组、集合、字典其中：数字、字符串、元组是不可变的；列表、字典、集合是可变的  字符串java中的字符串是类，py里面变成了数据类型。 语法差不多，双引号””和单引号’’都能用，拼接是是用加号+，">
+  <meta name="description" content="1、sort()和sorted()：永久排序和临时排序list.sort()              ：对已存在的列表进行排序，可以带参数 reverse &#x3D; Truesorted(iterable)    ：对一切可迭代对象排序，对对象的副本进行排序，并返回这个副本，可以带参数 reverse &#x3D; True 2、reverse()：反转列表list.reverse()        ： 3、l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python学习2-字符串和数字">
-<meta property="og:url" content="http://example.com/2022/03/27/py_day2/index.html">
+<meta property="og:title" content="Python学习3-列表的增删改查">
+<meta property="og:url" content="http://example.com/2022/04/08/py_day4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="用了小书匠来写文本，客户端上预览的效果格式正确，怎么一上传到github上格式就不对了捏？还没整明白，慢慢来吧。初次学py，发现py和matlab的语法相似啊  py的数据类型有六个：数字、字符串、列表、元组、集合、字典其中：数字、字符串、元组是不可变的；列表、字典、集合是可变的  字符串java中的字符串是类，py里面变成了数据类型。 语法差不多，双引号””和单引号’’都能用，拼接是是用加号+，">
+<meta property="og:description" content="1、sort()和sorted()：永久排序和临时排序list.sort()              ：对已存在的列表进行排序，可以带参数 reverse &#x3D; Truesorted(iterable)    ：对一切可迭代对象排序，对对象的副本进行排序，并返回这个副本，可以带参数 reverse &#x3D; True 2、reverse()：反转列表list.reverse()        ： 3、l">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-03-27T11:55:42.974Z">
-<meta property="article:modified_time" content="2022-03-27T11:59:58.737Z">
+<meta property="article:published_time" content="2022-04-08T08:07:10.412Z">
+<meta property="article:modified_time" content="2022-04-08T08:07:10.484Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -66,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-py_day2" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-py_day4" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/27/py_day2/" class="article-date">
-  <time datetime="2022-03-27T11:55:42.974Z" itemprop="datePublished">2022-03-27</time>
+    <a href="/2022/04/08/py_day4/" class="article-date">
+  <time datetime="2022-04-08T08:07:10.412Z" itemprop="datePublished">2022-04-08</time>
 </a>
     
   </div>
@@ -80,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Python学习2-字符串和数字
+      Python学习3-列表的增删改查
     </h1>
   
 
@@ -88,22 +88,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>用了小书匠来写文本，客户端上预览的效果格式正确，怎么一上传到github上格式就不对了捏？<br>还没整明白，慢慢来吧。<br>初次学py，发现py和matlab的语法相似啊</p>
+        <h3 id="1、sort-和sorted-：永久排序和临时排序"><a href="#1、sort-和sorted-：永久排序和临时排序" class="headerlink" title="1、sort()和sorted()：永久排序和临时排序"></a>1、sort()和sorted()：永久排序和临时排序</h3><p>list.sort()              ：对已存在的列表进行排序，可以带参数 reverse = True<br>sorted(iterable)    ：对一切可迭代对象排序，对对象的副本进行排序，并返回这个副本，可以带参数 reverse = True</p>
+<h3 id="2、reverse-：反转列表"><a href="#2、reverse-：反转列表" class="headerlink" title="2、reverse()：反转列表"></a>2、reverse()：反转列表</h3><p>list.reverse()        ：</p>
+<h3 id="3、len-：返回列表长度"><a href="#3、len-：返回列表长度" class="headerlink" title="3、len()：返回列表长度"></a>3、len()：返回列表长度</h3><p>len(list)                ：</p>
+<h3 id="加餐：sort-内部实现原理"><a href="#加餐：sort-内部实现原理" class="headerlink" title="加餐：sort()内部实现原理"></a>加餐：sort()内部实现原理</h3><p>py中的sort()采用的是 Timsort 算法<br>最坏时间复杂度 O(nlogn)<br>空间复杂度 O(n)<br>相比快排，Timsort是稳定的</p>
 <blockquote>
-<p>py的数据类型有六个：数字、字符串、列表、元组、集合、字典<br>其中：数字、字符串、元组是不可变的；列表、字典、集合是可变的</p>
+<p>Timsort是结合了合并排序（merge sort）和插入排序（insertion sort）而得出的排序算法，它在现实中有很好的效率。Tim Peters在2002年设计了该算法并在Python中使用（TimSort 是 Python 中 list.sort 的默认实现）。该算法找到数据中已经排好序的块-分区，每一个分区叫一个run，然后按规则合并这些run。Pyhton自从2.3版以来一直采用Timsort算法排序，现在Java SE7和Android也采用Timsort算法对数组排序。</p>
 </blockquote>
-<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p><em><strong>java中的字符串是类，py里面变成了数据类型。</strong></em></p>
-<p>语法差不多，双引号””和单引号’’都能用，拼接是是用加号+，目的应该就是为了灵活输出 “ 以及 ‘ 吧。<br>书上给了几个字符串方法：<br>    title()：首字母大写显示单词<br>    lower()：全部变小写<br>    upper()：全部变大写<br>    restrip()：删除末尾空白，调用这个语句看上去好像只是删除了副本，要想彻底删除得用下面这个语句</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str = str.restrip()</span><br></pre></td></tr></table></figure>
-<p>lstrip()：删除左边空白<br>rstrip()：删除右边空白</p>
-<h3 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h3><h4 id="1、整数"><a href="#1、整数" class="headerlink" title="1、整数"></a>1、整数</h4><p>py中可以用操作数直接表示次方：**<br>例如：3 ** 2<br>&gt;&gt;&gt; 9</p>
-<h4 id="2、浮点数"><a href="#2、浮点数" class="headerlink" title="2、浮点数"></a>2、浮点数</h4><p>py中的浮点数直接表示，但也会存在精度问题</p>
-<p><em><strong>数字运算基本和java类似</strong></em></p>
+<h4 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h4><p>针对现实中需要排序的数据分析，大多数的数据通常都是部分排序好的数据块，Timsort就是利用了这一个特点。<br>Timsort将已经排序好的数据块称为 run，在排序时，Timsort将数据元素放到不同的run里面，并将run按规则进行归并，最后只剩一个run，这个run就是最后的结果。</p>
+<p>Timsort会有一个minrun属性，如果初始的run小于这个minrun，则用插入排序将未排序的数据插入进来，直到达到条件，之后使用归并排序合并多个run。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/27/py_day2/" data-id="cl1q5cexj0005f0vx2iuwgqvm" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl1q5cexm0007f0vx0gst08yo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -112,19 +110,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/04/01/py_day3/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Python学习3-列表的增删改查
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/03/26/py_day1/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/04/01/py_day3/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Python学习1-变量</div>
+      <div class="article-nav-title">Python学习3-列表的增删改查</div>
     </a>
   
 </nav>
