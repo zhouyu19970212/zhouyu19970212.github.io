@@ -64,6 +64,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-py_day5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/05/12/py_day5/" class="article-date">
+  <time datetime="2022-05-12T08:28:05.542Z" itemprop="datePublished">2022-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/12/py_day5/">Python学习5-操作列表</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、for循环遍历"><a href="#1、for循环遍历" class="headerlink" title="1、for循环遍历"></a>1、for循环遍历</h3><p>结构：for 临时变量 in 列表: （缩进）语句1（缩进）语句2 ……</p>
+<h3 id="2、range-函数"><a href="#2、range-函数" class="headerlink" title="2、range()函数"></a>2、range()函数</h3><p>用法1，遍历数字：for num in range(number1, number2): ……<br>用法2，创建连续数字集合：nums = list(range(1, 6))<br>用法3，创建偶数集合：even_nums = list(range(2, 11, 2))<br>range的范围是number1到number2 - 1，左闭右开</p>
+<p>注意：range(0, 0)、range(2, 0)均是空集合</p>
+<h3 id="3、统计数字列表：min、max、sum"><a href="#3、统计数字列表：min、max、sum" class="headerlink" title="3、统计数字列表：min、max、sum"></a>3、统计数字列表：min、max、sum</h3><p>用法：min(列表)、max(列表)、sum(列表)</p>
+<h3 id="4、列表解析"><a href="#4、列表解析" class="headerlink" title="4、列表解析"></a>4、列表解析</h3><p>列表解析将for循环和创建新元素合并成一行代码，并自动附加新元素。</p>
+<p>用法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">squares = [value**<span class="number">2</span> <span class="keyword">for</span> value <span class="keyword">in</span> <span class="title function_">range</span>(<span class="number">1</span>, <span class="number">11</span>)]</span><br><span class="line"># 列表名 = [表达式 <span class="keyword">for</span>循环]</span><br><span class="line"># 表达式用于生成存储值，<span class="keyword">for</span>循环用于给表达式提供值</span><br></pre></td></tr></table></figure>
+
+<h3 id="5、切片"><a href="#5、切片" class="headerlink" title="5、切片"></a>5、切片</h3><p>用法1：列表[索引1: 索引2]<br>用法2：列表[: 索引] 不指定首个索引，则自动从表头开始<br>用法3：列表[索引: ]<br>用法4：列表[负数索引: ]  负数索引切表尾</p>
+<h3 id="6、复制列表"><a href="#6、复制列表" class="headerlink" title="6、复制列表"></a>6、复制列表</h3><p>用法：列表副本 = 列表[:]</p>
+<h3 id="7、元组（不可变的列表）"><a href="#7、元组（不可变的列表）" class="headerlink" title="7、元组（不可变的列表）"></a>7、元组（不可变的列表）</h3><p>用法：元组 = (元素1, 元素2, ……)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl32r2f4f00088kvxad966v1i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-py_day4" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/04/08/py_day4/" class="article-date">
@@ -99,7 +146,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl1q5ghn4000724vxdqtecwvb" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl32r2f4e00078kvxgfr75vn9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -181,7 +228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/py_day3/" data-id="cl1q5ghn3000524vx8io7fmvs" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/py_day3/" data-id="cl32r2f4d00058kvxhj6h33oi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -228,7 +275,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/27/py_day2/" data-id="cl1q5ghn2000324vx17hz4igo" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/27/py_day2/" data-id="cl32r2f4c00038kvx9w5d70ju" class="article-share-link">Share</a>
       
       
     </footer>
@@ -274,7 +321,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/26/py_day1/" data-id="cl1q5ghmz000124vxb5sl1yyy" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/26/py_day1/" data-id="cl32r2f4900018kvx8qx9607k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -302,7 +349,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
     </div>
   </div>
 
@@ -313,6 +360,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/05/12/py_day5/">Python学习5-操作列表</a>
+          </li>
         
           <li>
             <a href="/2022/04/08/py_day4/">Python学习4-组织列表</a>
