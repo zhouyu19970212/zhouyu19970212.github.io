@@ -64,6 +64,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-py_day7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/05/19/py_day7/" class="article-date">
+  <time datetime="2022-05-19T13:30:48.971Z" itemprop="datePublished">2022-05-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/19/py_day7/">Python学习7-字典</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、使用字典"><a href="#1、使用字典" class="headerlink" title="1、使用字典"></a>1、使用字典</h3><p>1.1、字典是一系列的k-v对。<br>1.2、用法：student = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}<br>            空字典： student = {}<br>1.3、增：<br>student[‘weight’] = 65<br>student[‘nation’] = ‘china’</p>
+<p>1.4、删：<br>del student[‘weight’]</p>
+<p>1.5、改：<br>student[‘weight’] = student[‘weight’] + 10<br>student[‘name’] = ‘zhangyifei’</p>
+<h3 id="2、遍历字典"><a href="#2、遍历字典" class="headerlink" title="2、遍历字典"></a>2、遍历字典</h3><p>2.1、遍历k-v对：<br>for k, v in student.items():<br>    print(k)<br>    print(v)</p>
+<p>2.2、遍历key：<br>for k in student.keys():<br>    print(k)</p>
+<p>for k in student:<br>    print(k)</p>
+<p>2.3、按顺序遍历key：<br>for k in sorted(student.keys()):<br>    print(k)</p>
+<p>2.4、遍历value：<br>for v in student.values():<br>    print(v)</p>
+<p>2.5、用集合set剔除重复：<br>for v in set(student.values()):<br>    print(v)</p>
+<h3 id="3、嵌套"><a href="#3、嵌套" class="headerlink" title="3、嵌套"></a>3、嵌套</h3><p>3.1、列表中嵌套字典：<br>student1 = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}<br>student2 = {‘name’: ‘zhangyifei’, ‘age’: 26, ‘sex’: ‘man’}<br>student3 = {‘name’: ‘wanghaozun’, ‘age’: 24, ‘sex’: ‘man’}</p>
+<p>students = [student1, student2, student3]</p>
+<p>for stu in students:<br>    print(stu)</p>
+<p>3.2、字典中嵌套列表（一个key对多个value）：<br>students = {<br>    ‘zhouyu’: [25, ‘man’],<br>    ‘zhangyifei’: [26, ‘man’],<br>    ‘wanghaozun’: [24, ‘man’]<br>}<br>for name, ageAndSex in students.items():<br>    print(name)<br>    print(ageAndSex)</p>
+<p>3.3、字典中嵌套字典<br>school = {<br>    ‘students’: {<br>        ‘zhouyu’: [25, ‘man’],<br>        ‘zhangyifei’: [26, ‘man’],<br>        ‘wanghaozun’: [24, ‘man’]<br>    },<br>    ‘teachers’: {<br>        ‘lishumao’: [45, ‘man’],<br>        ‘liujing’: [30, ‘woman’],<br>        ‘wangyingchun’: [65, ‘man’]<br>    }<br>}<br>for stu, teacher in school.items():<br>    print(stu)<br>    print(teacher)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/05/19/py_day7/" data-id="cl3d1yoj700082svxd2ew7tuy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-py_day6" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/05/19/py_day6/" class="article-date">
@@ -94,7 +144,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/19/py_day6/" data-id="cl3czg27l0009p4vxfq7z9377" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/05/19/py_day6/" data-id="cl3d1yoj8000a2svx0j60c4hw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -141,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl3czg27k0007p4vx4ybvbkb9" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl3d1yoj700092svxgrrz8xpm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -186,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl3czg27k0008p4vx0mm68ycq" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl3d1yoj600062svxd38v3dl5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -268,7 +318,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/py_day3/" data-id="cl3czg27j0006p4vx7vxl4q15" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/py_day3/" data-id="cl3d1yoj700072svx1zng219d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -315,7 +365,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/27/py_day2/" data-id="cl3czg27i0005p4vxgqa86pnr" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/27/py_day2/" data-id="cl3d1yoj500052svx6a5s2nnh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -361,7 +411,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/26/py_day1/" data-id="cl3czg27h0004p4vxajbx9f87" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/26/py_day1/" data-id="cl3d1yoj000012svxd12rd5bh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -402,6 +452,10 @@
       <ul>
         
           <li>
+            <a href="/2022/05/19/py_day7/">Python学习7-字典</a>
+          </li>
+        
+          <li>
             <a href="/2022/05/19/py_day6/">Python学习6-if语句</a>
           </li>
         
@@ -415,10 +469,6 @@
         
           <li>
             <a href="/2022/04/01/py_day3/">Python学习3-列表的增删改查</a>
-          </li>
-        
-          <li>
-            <a href="/2022/03/27/py_day2/">Python学习2-字符串和数字</a>
           </li>
         
       </ul>

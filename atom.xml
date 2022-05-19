@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-05-19T12:20:30.914Z</updated>
+  <updated>2022-05-19T13:30:49.052Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python学习7-字典</title>
+    <link href="http://example.com/2022/05/19/py_day7/"/>
+    <id>http://example.com/2022/05/19/py_day7/</id>
+    <published>2022-05-19T13:30:48.971Z</published>
+    <updated>2022-05-19T13:30:49.052Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、使用字典"><a href="#1、使用字典" class="headerlink" title="1、使用字典"></a>1、使用字典</h3><p>1.1、字典是一系列的k-v对。<br>1.2、用法：student = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}<br>            空字典： student = {}<br>1.3、增：<br>student[‘weight’] = 65<br>student[‘nation’] = ‘china’</p><p>1.4、删：<br>del student[‘weight’]</p><p>1.5、改：<br>student[‘weight’] = student[‘weight’] + 10<br>student[‘name’] = ‘zhangyifei’</p><h3 id="2、遍历字典"><a href="#2、遍历字典" class="headerlink" title="2、遍历字典"></a>2、遍历字典</h3><p>2.1、遍历k-v对：<br>for k, v in student.items():<br>    print(k)<br>    print(v)</p><p>2.2、遍历key：<br>for k in student.keys():<br>    print(k)</p><p>for k in student:<br>    print(k)</p><p>2.3、按顺序遍历key：<br>for k in sorted(student.keys()):<br>    print(k)</p><p>2.4、遍历value：<br>for v in student.values():<br>    print(v)</p><p>2.5、用集合set剔除重复：<br>for v in set(student.values()):<br>    print(v)</p><h3 id="3、嵌套"><a href="#3、嵌套" class="headerlink" title="3、嵌套"></a>3、嵌套</h3><p>3.1、列表中嵌套字典：<br>student1 = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}<br>student2 = {‘name’: ‘zhangyifei’, ‘age’: 26, ‘sex’: ‘man’}<br>student3 = {‘name’: ‘wanghaozun’, ‘age’: 24, ‘sex’: ‘man’}</p><p>students = [student1, student2, student3]</p><p>for stu in students:<br>    print(stu)</p><p>3.2、字典中嵌套列表（一个key对多个value）：<br>students = {<br>    ‘zhouyu’: [25, ‘man’],<br>    ‘zhangyifei’: [26, ‘man’],<br>    ‘wanghaozun’: [24, ‘man’]<br>}<br>for name, ageAndSex in students.items():<br>    print(name)<br>    print(ageAndSex)</p><p>3.3、字典中嵌套字典<br>school = {<br>    ‘students’: {<br>        ‘zhouyu’: [25, ‘man’],<br>        ‘zhangyifei’: [26, ‘man’],<br>        ‘wanghaozun’: [24, ‘man’]<br>    },<br>    ‘teachers’: {<br>        ‘lishumao’: [45, ‘man’],<br>        ‘liujing’: [30, ‘woman’],<br>        ‘wangyingchun’: [65, ‘man’]<br>    }<br>}<br>for stu, teacher in school.items():<br>    print(stu)<br>    print(teacher)</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1、使用字典&quot;&gt;&lt;a href=&quot;#1、使用字典&quot; class=&quot;headerlink&quot; title=&quot;1、使用字典&quot;&gt;&lt;/a&gt;1、使用字典&lt;/h3&gt;&lt;p&gt;1.1、字典是一系列的k-v对。&lt;br&gt;1.2、用法：student = {‘name’: ‘zhouyu’</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Python学习6-if语句</title>
