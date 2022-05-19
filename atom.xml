@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-05-12T08:28:05.670Z</updated>
+  <updated>2022-05-19T12:20:30.914Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python学习6-if语句</title>
+    <link href="http://example.com/2022/05/19/py_day6/"/>
+    <id>http://example.com/2022/05/19/py_day6/</id>
+    <published>2022-05-19T12:20:30.848Z</published>
+    <updated>2022-05-19T12:20:30.914Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、条件测试"><a href="#1、条件测试" class="headerlink" title="1、条件测试"></a>1、条件测试</h3><p>检查列表中某个特定值：in/not in<br>names = [‘zhouyu’, ‘zhangyifei’, ‘wanghaozun’]<br>print(‘zhouyu’ in names) ==&gt; True<br>print(‘zhouy’ not in names) ==&gt; True</p><h3 id="2、if语句"><a href="#2、if语句" class="headerlink" title="2、if语句"></a>2、if语句</h3><p>与java不同，不用加括号；与matlab不同，不用加end作为结束；py的if-else要加冒号，并且靠缩进来判断if里面的语句。<br>此外，java中if-elseif是可以多次判断的。而py中if为true则跳过elseif<br>if: condition<br>    do sth</p><p>if:<br>    do sth1<br>else:<br>    do sth2</p><p>if:<br>    do sth1<br>elseif:<br>    do sth2<br>else:<br>    do sth3</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1、条件测试&quot;&gt;&lt;a href=&quot;#1、条件测试&quot; class=&quot;headerlink&quot; title=&quot;1、条件测试&quot;&gt;&lt;/a&gt;1、条件测试&lt;/h3&gt;&lt;p&gt;检查列表中某个特定值：in/not in&lt;br&gt;names = [‘zhouyu’, ‘zhangyifei</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Python学习5-操作列表</title>
