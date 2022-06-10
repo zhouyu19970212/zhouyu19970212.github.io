@@ -7,15 +7,15 @@
   
   <title>Python学习7-字典 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、使用字典1.1、字典是一系列的k-v对。1.2、用法：student &#x3D; {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}            空字典： student &#x3D; {}1.3、增：student[‘weight’] &#x3D; 65student[‘nation’] &#x3D; ‘china’ 1.4、删：del student[‘weight’] 1.5、改">
+  <meta name="description" content="1、使用字典1.1、字典是一系列的k-v对。1.2、用法：student &#x3D; {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}空字典： student &#x3D; {}1.3、增：student[‘weight’] &#x3D; 65student[‘nation’] &#x3D; ‘china’ 1.4、删：del student[‘weight’] 1.5、改：student[‘we">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python学习7-字典">
-<meta property="og:url" content="http://example.com/2022/05/19/py_day7/index.html">
+<meta property="og:url" content="http://example.com/2022/06/10/py_day7/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1、使用字典1.1、字典是一系列的k-v对。1.2、用法：student &#x3D; {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}            空字典： student &#x3D; {}1.3、增：student[‘weight’] &#x3D; 65student[‘nation’] &#x3D; ‘china’ 1.4、删：del student[‘weight’] 1.5、改">
+<meta property="og:description" content="1、使用字典1.1、字典是一系列的k-v对。1.2、用法：student &#x3D; {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}空字典： student &#x3D; {}1.3、增：student[‘weight’] &#x3D; 65student[‘nation’] &#x3D; ‘china’ 1.4、删：del student[‘weight’] 1.5、改：student[‘we">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-05-19T13:30:48.971Z">
-<meta property="article:modified_time" content="2022-05-19T13:30:49.052Z">
+<meta property="article:published_time" content="2022-06-10T07:17:33.024Z">
+<meta property="article:modified_time" content="2022-06-10T07:17:33.084Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -68,8 +68,8 @@
       <div class="outer">
         <section id="main"><article id="post-py_day7" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/05/19/py_day7/" class="article-date">
-  <time datetime="2022-05-19T13:30:48.971Z" itemprop="datePublished">2022-05-19</time>
+    <a href="/2022/06/10/py_day7/" class="article-date">
+  <time datetime="2022-06-10T07:17:33.024Z" itemprop="datePublished">2022-06-10</time>
 </a>
     
   </div>
@@ -88,25 +88,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1、使用字典"><a href="#1、使用字典" class="headerlink" title="1、使用字典"></a>1、使用字典</h3><p>1.1、字典是一系列的k-v对。<br>1.2、用法：student = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}<br>            空字典： student = {}<br>1.3、增：<br>student[‘weight’] = 65<br>student[‘nation’] = ‘china’</p>
+        <h3 id="1、使用字典"><a href="#1、使用字典" class="headerlink" title="1、使用字典"></a>1、使用字典</h3><p>1.1、字典是一系列的k-v对。<br>1.2、用法：student = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}<br>空字典： student = {}<br>1.3、增：<br>student[‘weight’] = 65<br>student[‘nation’] = ‘china’</p>
 <p>1.4、删：<br>del student[‘weight’]</p>
 <p>1.5、改：<br>student[‘weight’] = student[‘weight’] + 10<br>student[‘name’] = ‘zhangyifei’</p>
-<h3 id="2、遍历字典"><a href="#2、遍历字典" class="headerlink" title="2、遍历字典"></a>2、遍历字典</h3><p>2.1、遍历k-v对：<br>for k, v in student.items():<br>    print(k)<br>    print(v)</p>
-<p>2.2、遍历key：<br>for k in student.keys():<br>    print(k)</p>
-<p>for k in student:<br>    print(k)</p>
-<p>2.3、按顺序遍历key：<br>for k in sorted(student.keys()):<br>    print(k)</p>
-<p>2.4、遍历value：<br>for v in student.values():<br>    print(v)</p>
-<p>2.5、用集合set剔除重复：<br>for v in set(student.values()):<br>    print(v)</p>
+<h3 id="2、遍历字典"><a href="#2、遍历字典" class="headerlink" title="2、遍历字典"></a>2、遍历字典</h3><p>2.1、遍历k-v对：<br>for k, v in student.items():<br>print(k)<br>print(v)</p>
+<p>2.2、遍历key：<br>for k in student.keys():<br>print(k)</p>
+<p>for k in student:<br>print(k)</p>
+<p>2.3、按顺序遍历key：<br>for k in sorted(student.keys()):<br>print(k)</p>
+<p>2.4、遍历value：<br>for v in student.values():<br>print(v)</p>
+<p>2.5、用集合set剔除重复：<br>for v in set(student.values()):<br>print(v)</p>
 <h3 id="3、嵌套"><a href="#3、嵌套" class="headerlink" title="3、嵌套"></a>3、嵌套</h3><p>3.1、列表中嵌套字典：<br>student1 = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}<br>student2 = {‘name’: ‘zhangyifei’, ‘age’: 26, ‘sex’: ‘man’}<br>student3 = {‘name’: ‘wanghaozun’, ‘age’: 24, ‘sex’: ‘man’}</p>
 <p>students = [student1, student2, student3]</p>
-<p>for stu in students:<br>    print(stu)</p>
-<p>3.2、字典中嵌套列表（一个key对多个value）：<br>students = {<br>    ‘zhouyu’: [25, ‘man’],<br>    ‘zhangyifei’: [26, ‘man’],<br>    ‘wanghaozun’: [24, ‘man’]<br>}<br>for name, ageAndSex in students.items():<br>    print(name)<br>    print(ageAndSex)</p>
-<p>3.3、字典中嵌套字典<br>school = {<br>    ‘students’: {<br>        ‘zhouyu’: [25, ‘man’],<br>        ‘zhangyifei’: [26, ‘man’],<br>        ‘wanghaozun’: [24, ‘man’]<br>    },<br>    ‘teachers’: {<br>        ‘lishumao’: [45, ‘man’],<br>        ‘liujing’: [30, ‘woman’],<br>        ‘wangyingchun’: [65, ‘man’]<br>    }<br>}<br>for stu, teacher in school.items():<br>    print(stu)<br>    print(teacher)</p>
+<p>for stu in students:<br>print(stu)</p>
+<p>3.2、字典中嵌套列表（一个key对多个value）：<br>students = {<br>‘zhouyu’: [25, ‘man’],<br>‘zhangyifei’: [26, ‘man’],<br>‘wanghaozun’: [24, ‘man’]<br>}<br>for name, ageAndSex in students.items():<br>print(name)<br>print(ageAndSex)</p>
+<p>3.3、字典中嵌套字典<br>school = {<br>‘students’: {<br>‘zhouyu’: [25, ‘man’],<br>‘zhangyifei’: [26, ‘man’],<br>‘wanghaozun’: [24, ‘man’]<br>},<br>‘teachers’: {<br>‘lishumao’: [45, ‘man’],<br>‘liujing’: [30, ‘woman’],<br>‘wangyingchun’: [65, ‘man’]<br>}<br>}<br>for stu, teacher in school.items():<br>print(stu)<br>print(teacher)</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/19/py_day7/" data-id="cl3d1yoj700082svxd2ew7tuy" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl484b4c8000acsvx1kux36cu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -116,9 +116,9 @@
 <nav id="article-nav">
   
   
-    <a href="/2022/05/19/py_day6/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/06/10/py_day8/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Python学习6-if语句</div>
+      <div class="article-nav-title">Python学习8-input和while</div>
     </a>
   
 </nav>
@@ -142,7 +142,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
     </div>
   </div>
 
@@ -155,7 +155,11 @@
       <ul>
         
           <li>
-            <a href="/2022/05/19/py_day7/">Python学习7-字典</a>
+            <a href="/2022/06/10/py_day7/">Python学习7-字典</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/10/py_day8/">Python学习8-input和while</a>
           </li>
         
           <li>
@@ -168,10 +172,6 @@
         
           <li>
             <a href="/2022/04/08/py_day4/">Python学习4-组织列表</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/01/py_day3/">Python学习3-列表的增删改查</a>
           </li>
         
       </ul>
