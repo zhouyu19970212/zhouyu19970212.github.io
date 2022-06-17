@@ -64,6 +64,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-py_day9" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/10/py_day9/" class="article-date">
+  <time datetime="2022-06-10T07:29:05.111Z" itemprop="datePublished">2022-06-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/10/py_day9/">Python学习9-函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、定义函数"><a href="#1、定义函数" class="headerlink" title="1、定义函数"></a>1、定义函数</h3><p>用法：def 函数名(完成任务需要的信息):<br>        （缩进）函数体</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def greet_user(username):</span><br><span class="line">    print(&quot;Hello, &quot; + username.title() + &quot;!&quot;)</span><br><span class="line"></span><br><span class="line">greet_user(&#x27;zhouyu&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、传递实参"><a href="#2、传递实参" class="headerlink" title="2、传递实参"></a>2、传递实参</h3><h4 id="2-1、位置实参"><a href="#2-1、位置实参" class="headerlink" title="2.1、位置实参"></a>2.1、位置实参</h4><blockquote>
+<p>关联方式是基于实参的顺序。这种关联方式被称为位置实参。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def describe_pet(animal_type, pet_name):</span><br><span class="line">    print(&quot;\nI have a &quot; + animal_type + &quot;.&quot;)</span><br><span class="line">    print(&quot;My &quot; + animal_type + &quot; &#x27;s name is &quot; + pet_name + &quot;.&quot;)</span><br><span class="line"></span><br><span class="line">describe_pet(&#x27;dog&#x27;, &#x27;wangwang&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2、关键字实参"><a href="#2-2、关键字实参" class="headerlink" title="2.2、关键字实参"></a>2.2、关键字实参</h4><blockquote>
+<p>关键字实参是传递给函数的名称—值对。关键字实参让你无需考虑函数调用中的实参顺序，还清楚地指出了函数调用中各个值的用途。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def describe_pet(animal_type, pet_name):</span><br><span class="line">    print(&quot;\nI have a &quot; + animal_type + &quot;.&quot;)</span><br><span class="line">    print(&quot;My &quot; + animal_type + &quot; &#x27;s name is &quot; + pet_name + &quot;.&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">describe_pet(animal_type=&#x27;dog&#x27;, pet_name=&#x27;wangwang&#x27;)</span><br></pre></td></tr></table></figure>
+<p>***关键字实参的顺序无关紧要，因为Python知道各个值该存储到哪个形参中。</p>
+<h4 id="2-3、默认值"><a href="#2-3、默认值" class="headerlink" title="2.3、默认值"></a>2.3、默认值</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def describe_pet(pet_name, animal_type=&#x27;dog&#x27;):</span><br><span class="line">    print(&quot;\nI have a &quot; + animal_type + &quot;.&quot;)</span><br><span class="line">    print(&quot;My &quot; + animal_type + &quot; &#x27;s name is &quot; + pet_name + &quot;.&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">describe_pet(&#x27;wangwang&#x27;)</span><br></pre></td></tr></table></figure>
+<p>***使用默认值时，在形参列表中必须先列出没有默认值的形参，再列出有默认值的实参。<br>这让Python依然能够正确地解读位置实参</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/10/py_day9/" data-id="cl4htkkyb000cn0vxbq2gec3x" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-py_day7" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/06/10/py_day7/" class="article-date">
@@ -104,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl484l8vs000a7svx1ggrc6cd" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl4htkky80009n0vx3qzpg74d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -149,7 +200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day8/" data-id="cl484l8vt000b7svxflibhvts" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day8/" data-id="cl4htkkyb000bn0vxhpkaft7j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -189,7 +240,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/19/py_day6/" data-id="cl484l8vr00097svx4pv67yjf" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/05/19/py_day6/" data-id="cl4htkky9000an0vxcllyauy9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -236,7 +287,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl484l8vq00087svxbpc004tt" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl4htkky80008n0vx30ona4m1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -281,7 +332,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl484l8vq00077svxfgo1azic" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl4htkky70007n0vxabzhe0nx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -363,7 +414,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/py_day3/" data-id="cl484l8vp00057svxfn35c22t" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/py_day3/" data-id="cl4htkky70005n0vx72vq95mh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -410,7 +461,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/27/py_day2/" data-id="cl484l8vl00017svxemkocwp2" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/27/py_day2/" data-id="cl4htkky50003n0vx5vav5rr5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -456,7 +507,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/26/py_day1/" data-id="cl484l8vn00037svx4971frlv" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/26/py_day1/" data-id="cl4htkky20001n0vx3qenc3fj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -497,6 +548,10 @@
       <ul>
         
           <li>
+            <a href="/2022/06/10/py_day9/">Python学习9-函数</a>
+          </li>
+        
+          <li>
             <a href="/2022/06/10/py_day7/">Python学习7-字典</a>
           </li>
         
@@ -510,10 +565,6 @@
         
           <li>
             <a href="/2022/05/12/py_day5/">Python学习5-操作列表</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/08/py_day4/">Python学习4-组织列表</a>
           </li>
         
       </ul>
