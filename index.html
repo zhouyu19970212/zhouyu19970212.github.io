@@ -64,6 +64,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-py_day10" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/19/py_day10/" class="article-date">
+  <time datetime="2022-06-19T02:05:05.962Z" itemprop="datePublished">2022-06-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/19/py_day10/">Python学习10-类</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、创建和使用类"><a href="#1、创建和使用类" class="headerlink" title="1、创建和使用类"></a>1、创建和使用类</h3><h4 id="1-1、创建类"><a href="#1-1、创建类" class="headerlink" title="1.1、创建类"></a>1.1、创建类</h4><blockquote>
+<p>根据约定，在Python中，首字母大写的名称指的是类。这个类定义中的括号是空的，因为我们要从空白创建这个类。</p>
+</blockquote>
+<p>用法：class Name(object):<br>            def  _<em>init_</em>(self):</p>
+<p>1、_<em>init_</em>(self)<br>这是一个特殊的方法，类似java中的构造器，每当创建新实例的时候，py就会自动运行这个方法。方法中self形参必不可少，且必须位于最前面。self是一个指向实例本身的引用，相当于java中的this。<br>在类的代码中，需要访问当前实例中的变量和函数，即访问实例中的：<br>    a、对应的变量（属性）：Instance.ProperyNam，实现读写<br>    b、调用对应函数：Instance.function()，执行对应的动作<br>需要访问实例变量和调用实例函数，当然需要对应的实例对象本身。而在py中就规定好了，函数的第一个参数，就必须是实例对象本身，并且规定为self。</p>
+<p>**类在初始化实例时通过self拿到实例引用，然后给实例进行初始化</p>
+<h4 id="1-2、创建实例"><a href="#1-2、创建实例" class="headerlink" title="1.2、创建实例"></a>1.2、创建实例</h4><p>用法： instance = class();<br>py通过class的init方法创建一个实例，然后将其引用返回给instance。</p>
+<h3 id="2、使用类和实例"><a href="#2、使用类和实例" class="headerlink" title="2、使用类和实例"></a>2、使用类和实例</h3><h4 id="2-1、修改属性的值"><a href="#2-1、修改属性的值" class="headerlink" title="2.1、修改属性的值"></a>2.1、修改属性的值</h4><p>a、直接修改<br>instance.propery = x<br>b、通过方法修改<br>def updatePropery(self, num):<br>    self.propery = num</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/19/py_day10/" data-id="cl4l7zksw0003p8vx2gm5cgjw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-py_day9" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/06/10/py_day9/" class="article-date">
@@ -135,7 +179,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day9/" data-id="cl4knx5ev000c60vxfcb1h8dq" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day9/" data-id="cl4l7zkt4000dp8vxaiig2h0r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -185,7 +229,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl4knx5et000a60vxe2ni42bj" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl4l7zkt3000bp8vx3e7e6ysr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -230,7 +274,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day8/" data-id="cl4knx5eu000b60vxcpiue7xy" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day8/" data-id="cl4l7zkt4000cp8vx0tmqg0ri" class="article-share-link">Share</a>
       
       
     </footer>
@@ -270,7 +314,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/19/py_day6/" data-id="cl4knx5er000860vx8iowgsri" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/05/19/py_day6/" data-id="cl4l7zkt1000ap8vxbnv3a4rd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -317,7 +361,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl4knx5es000960vx8oo7dzja" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl4l7zkt00009p8vxa8c139mp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -362,7 +406,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl4knx5er000760vx7o3r52o9" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl4l7zksz0008p8vxhze6aphd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -444,7 +488,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/py_day3/" data-id="cl4knx5eq000560vxakqj0ovx" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/py_day3/" data-id="cl4l7zksz0007p8vx83kj434v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -491,7 +535,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/27/py_day2/" data-id="cl4knx5ep000360vxav9i7zej" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/27/py_day2/" data-id="cl4l7zksx0005p8vxhqgv3wgs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -537,7 +581,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/26/py_day1/" data-id="cl4knx5em000160vx9h74dvv9" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/26/py_day1/" data-id="cl4l7zkst0001p8vx8a14hhu6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -578,6 +622,10 @@
       <ul>
         
           <li>
+            <a href="/2022/06/19/py_day10/">Python学习10-类</a>
+          </li>
+        
+          <li>
             <a href="/2022/06/10/py_day9/">Python学习9-函数</a>
           </li>
         
@@ -591,10 +639,6 @@
         
           <li>
             <a href="/2022/05/19/py_day6/">Python学习6-if语句</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/12/py_day5/">Python学习5-操作列表</a>
           </li>
         
       </ul>

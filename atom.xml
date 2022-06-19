@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-06-19T02:00:55.037Z</updated>
+  <updated>2022-06-19T11:22:31.703Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python学习10-类</title>
+    <link href="http://example.com/2022/06/19/py_day10/"/>
+    <id>http://example.com/2022/06/19/py_day10/</id>
+    <published>2022-06-19T02:05:05.962Z</published>
+    <updated>2022-06-19T11:22:31.703Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、创建和使用类"><a href="#1、创建和使用类" class="headerlink" title="1、创建和使用类"></a>1、创建和使用类</h3><h4 id="1-1、创建类"><a href="#1-1、创建类" class="headerlink" title="1.1、创建类"></a>1.1、创建类</h4><blockquote><p>根据约定，在Python中，首字母大写的名称指的是类。这个类定义中的括号是空的，因为我们要从空白创建这个类。</p></blockquote><p>用法：class Name(object):<br>            def  _<em>init_</em>(self):</p><p>1、_<em>init_</em>(self)<br>这是一个特殊的方法，类似java中的构造器，每当创建新实例的时候，py就会自动运行这个方法。方法中self形参必不可少，且必须位于最前面。self是一个指向实例本身的引用，相当于java中的this。<br>在类的代码中，需要访问当前实例中的变量和函数，即访问实例中的：<br>    a、对应的变量（属性）：Instance.ProperyNam，实现读写<br>    b、调用对应函数：Instance.function()，执行对应的动作<br>需要访问实例变量和调用实例函数，当然需要对应的实例对象本身。而在py中就规定好了，函数的第一个参数，就必须是实例对象本身，并且规定为self。</p><p>**类在初始化实例时通过self拿到实例引用，然后给实例进行初始化</p><h4 id="1-2、创建实例"><a href="#1-2、创建实例" class="headerlink" title="1.2、创建实例"></a>1.2、创建实例</h4><p>用法： instance = class();<br>py通过class的init方法创建一个实例，然后将其引用返回给instance。</p><h3 id="2、使用类和实例"><a href="#2、使用类和实例" class="headerlink" title="2、使用类和实例"></a>2、使用类和实例</h3><h4 id="2-1、修改属性的值"><a href="#2-1、修改属性的值" class="headerlink" title="2.1、修改属性的值"></a>2.1、修改属性的值</h4><p>a、直接修改<br>instance.propery = x<br>b、通过方法修改<br>def updatePropery(self, num):<br>    self.propery = num</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1、创建和使用类&quot;&gt;&lt;a href=&quot;#1、创建和使用类&quot; class=&quot;headerlink&quot; title=&quot;1、创建和使用类&quot;&gt;&lt;/a&gt;1、创建和使用类&lt;/h3&gt;&lt;h4 id=&quot;1-1、创建类&quot;&gt;&lt;a href=&quot;#1-1、创建类&quot; class=&quot;header</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Python学习9-函数</title>

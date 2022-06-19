@@ -5,17 +5,17 @@
   
 
   
-  <title>Python学习7-字典 | Hexo</title>
+  <title>Python学习10-类 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、使用字典1.1、字典是一系列的k-v对。1.2、用法：student &#x3D; {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}空字典： student &#x3D; {}1.3、增：student[‘weight’] &#x3D; 65student[‘nation’] &#x3D; ‘china’ 1.4、删：del student[‘weight’] 1.5、改：student[‘we">
+  <meta name="description" content="1、创建和使用类1.1、创建类 根据约定，在Python中，首字母大写的名称指的是类。这个类定义中的括号是空的，因为我们要从空白创建这个类。  用法：class Name(object):            def  _init_(self): 1、_init_(self)这是一个特殊的方法，类似java中的构造器，每当创建新实例的时候，py就会自动运行这个方法。方法中self形参必不可少，且">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python学习7-字典">
-<meta property="og:url" content="http://example.com/2022/06/10/py_day7/index.html">
+<meta property="og:title" content="Python学习10-类">
+<meta property="og:url" content="http://example.com/2022/06/19/py_day10/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1、使用字典1.1、字典是一系列的k-v对。1.2、用法：student &#x3D; {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}空字典： student &#x3D; {}1.3、增：student[‘weight’] &#x3D; 65student[‘nation’] &#x3D; ‘china’ 1.4、删：del student[‘weight’] 1.5、改：student[‘we">
+<meta property="og:description" content="1、创建和使用类1.1、创建类 根据约定，在Python中，首字母大写的名称指的是类。这个类定义中的括号是空的，因为我们要从空白创建这个类。  用法：class Name(object):            def  _init_(self): 1、_init_(self)这是一个特殊的方法，类似java中的构造器，每当创建新实例的时候，py就会自动运行这个方法。方法中self形参必不可少，且">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-06-10T07:17:33.024Z">
-<meta property="article:modified_time" content="2022-06-10T07:17:33.084Z">
+<meta property="article:published_time" content="2022-06-19T02:05:05.962Z">
+<meta property="article:modified_time" content="2022-06-19T11:22:31.703Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -66,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-py_day7" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-py_day10" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/06/10/py_day7/" class="article-date">
-  <time datetime="2022-06-10T07:17:33.024Z" itemprop="datePublished">2022-06-10</time>
+    <a href="/2022/06/19/py_day10/" class="article-date">
+  <time datetime="2022-06-19T02:05:05.962Z" itemprop="datePublished">2022-06-19</time>
 </a>
     
   </div>
@@ -80,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Python学习7-字典
+      Python学习10-类
     </h1>
   
 
@@ -88,25 +88,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1、使用字典"><a href="#1、使用字典" class="headerlink" title="1、使用字典"></a>1、使用字典</h3><p>1.1、字典是一系列的k-v对。<br>1.2、用法：student = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}<br>空字典： student = {}<br>1.3、增：<br>student[‘weight’] = 65<br>student[‘nation’] = ‘china’</p>
-<p>1.4、删：<br>del student[‘weight’]</p>
-<p>1.5、改：<br>student[‘weight’] = student[‘weight’] + 10<br>student[‘name’] = ‘zhangyifei’</p>
-<h3 id="2、遍历字典"><a href="#2、遍历字典" class="headerlink" title="2、遍历字典"></a>2、遍历字典</h3><p>2.1、遍历k-v对：<br>for k, v in student.items():<br>print(k)<br>print(v)</p>
-<p>2.2、遍历key：<br>for k in student.keys():<br>print(k)</p>
-<p>for k in student:<br>print(k)</p>
-<p>2.3、按顺序遍历key：<br>for k in sorted(student.keys()):<br>print(k)</p>
-<p>2.4、遍历value：<br>for v in student.values():<br>print(v)</p>
-<p>2.5、用集合set剔除重复：<br>for v in set(student.values()):<br>print(v)</p>
-<h3 id="3、嵌套"><a href="#3、嵌套" class="headerlink" title="3、嵌套"></a>3、嵌套</h3><p>3.1、列表中嵌套字典：<br>student1 = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}<br>student2 = {‘name’: ‘zhangyifei’, ‘age’: 26, ‘sex’: ‘man’}<br>student3 = {‘name’: ‘wanghaozun’, ‘age’: 24, ‘sex’: ‘man’}</p>
-<p>students = [student1, student2, student3]</p>
-<p>for stu in students:<br>print(stu)</p>
-<p>3.2、字典中嵌套列表（一个key对多个value）：<br>students = {<br>‘zhouyu’: [25, ‘man’],<br>‘zhangyifei’: [26, ‘man’],<br>‘wanghaozun’: [24, ‘man’]<br>}<br>for name, ageAndSex in students.items():<br>print(name)<br>print(ageAndSex)</p>
-<p>3.3、字典中嵌套字典<br>school = {<br>‘students’: {<br>‘zhouyu’: [25, ‘man’],<br>‘zhangyifei’: [26, ‘man’],<br>‘wanghaozun’: [24, ‘man’]<br>},<br>‘teachers’: {<br>‘lishumao’: [45, ‘man’],<br>‘liujing’: [30, ‘woman’],<br>‘wangyingchun’: [65, ‘man’]<br>}<br>}<br>for stu, teacher in school.items():<br>print(stu)<br>print(teacher)</p>
+        <h3 id="1、创建和使用类"><a href="#1、创建和使用类" class="headerlink" title="1、创建和使用类"></a>1、创建和使用类</h3><h4 id="1-1、创建类"><a href="#1-1、创建类" class="headerlink" title="1.1、创建类"></a>1.1、创建类</h4><blockquote>
+<p>根据约定，在Python中，首字母大写的名称指的是类。这个类定义中的括号是空的，因为我们要从空白创建这个类。</p>
+</blockquote>
+<p>用法：class Name(object):<br>            def  _<em>init_</em>(self):</p>
+<p>1、_<em>init_</em>(self)<br>这是一个特殊的方法，类似java中的构造器，每当创建新实例的时候，py就会自动运行这个方法。方法中self形参必不可少，且必须位于最前面。self是一个指向实例本身的引用，相当于java中的this。<br>在类的代码中，需要访问当前实例中的变量和函数，即访问实例中的：<br>    a、对应的变量（属性）：Instance.ProperyNam，实现读写<br>    b、调用对应函数：Instance.function()，执行对应的动作<br>需要访问实例变量和调用实例函数，当然需要对应的实例对象本身。而在py中就规定好了，函数的第一个参数，就必须是实例对象本身，并且规定为self。</p>
+<p>**类在初始化实例时通过self拿到实例引用，然后给实例进行初始化</p>
+<h4 id="1-2、创建实例"><a href="#1-2、创建实例" class="headerlink" title="1.2、创建实例"></a>1.2、创建实例</h4><p>用法： instance = class();<br>py通过class的init方法创建一个实例，然后将其引用返回给instance。</p>
+<h3 id="2、使用类和实例"><a href="#2、使用类和实例" class="headerlink" title="2、使用类和实例"></a>2、使用类和实例</h3><h4 id="2-1、修改属性的值"><a href="#2-1、修改属性的值" class="headerlink" title="2.1、修改属性的值"></a>2.1、修改属性的值</h4><p>a、直接修改<br>instance.propery = x<br>b、通过方法修改<br>def updatePropery(self, num):<br>    self.propery = num</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl4l7zkt3000bp8vx3e7e6ysr" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/19/py_day10/" data-id="cl4l7zksw0003p8vx2gm5cgjw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -115,19 +109,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/06/10/py_day9/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Python学习9-函数
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/06/10/py_day8/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/06/10/py_day9/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Python学习8-input和while</div>
+      <div class="article-nav-title">Python学习9-函数</div>
     </a>
   
 </nav>
