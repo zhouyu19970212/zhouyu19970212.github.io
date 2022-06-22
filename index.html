@@ -64,6 +64,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-py_day12" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/22/py_day12/" class="article-date">
+  <time datetime="2022-06-22T02:37:47.100Z" itemprop="datePublished">2022-06-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/22/py_day12/">Python学习12-文件的读写</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、读文件"><a href="#1、读文件" class="headerlink" title="1、读文件"></a>1、读文件</h3><h4 id="1-1、读取整个文件"><a href="#1-1、读取整个文件" class="headerlink" title="1.1、读取整个文件"></a>1.1、读取整个文件</h4><p>用法：with open(‘文件名’) as 别名<br>            变量 = 别名.read()<br>            print(变量)</p>
+<p>步骤：<br>–&gt; 打开文件，open()。Python在当前执行的文件所在的目录中查找指定的文件。函数open()返回一个表示文件的对象。<br>–&gt; 关闭文件，with()自动关闭文件。<br>–&gt; 读取文件，read()，返回一个字符串存储在变量中。</p>
+<h4 id="1-2、文件路径"><a href="#1-2、文件路径" class="headerlink" title="1.2、文件路径"></a>1.2、文件路径</h4><p>相对路径：<br>                linux/OS X：with open(‘text_files/filename.txt’) as file_object:       （斜杠）<br>                Windows：with open(‘text_files\filename.txt’) as file_object:        （反斜杠）<br>绝对路径：<br>                linux/OS X：file_path = ‘/home/ehmatthes/other_files/text_files/filename.txt’<br>                                    with open(file_path) as file_object:<br>                Windows：file_path = ‘C:\Users\ehmatthes\other_files\text_files\filename.txt’<br>                                    with open(file_path) as file_object:</p>
+<h4 id="1-3、逐行读取"><a href="#1-3、逐行读取" class="headerlink" title="1.3、逐行读取"></a>1.3、逐行读取</h4><p>使用for循环</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;pi_digits.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename) as fileObject:</span><br><span class="line">    for line in fileObject:</span><br><span class="line">        print(line.rstrip())</span><br></pre></td></tr></table></figure>
+<h4 id="1-4、使用列表保存文件内容"><a href="#1-4、使用列表保存文件内容" class="headerlink" title="1.4、使用列表保存文件内容"></a>1.4、使用列表保存文件内容</h4><blockquote>
+<p>使用关键字with时， open()返回的文件对象只在with代码块内可用。如果要在with代码块外<br>访问文件的内容，可在with代码块内将文件的各行存储在一个列表中，并在with代码块外使用该<br>列表：你可以立即处理文件的各个部分，也可推迟到程序后面再处理。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;pi_digits.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename) as fileObject:</span><br><span class="line">    lines = fileObject.readlines()</span><br><span class="line"></span><br><span class="line">for line in lines:</span><br><span class="line">    print(line.rstrip())</span><br></pre></td></tr></table></figure>
+<p>**readlines()方法返回一个列表，文件各行存储在这这个列表中</p>
+<h4 id="1-5、使用文件的内容"><a href="#1-5、使用文件的内容" class="headerlink" title="1.5、使用文件的内容"></a>1.5、使用文件的内容</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;pi_digits.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename) as fileObject:</span><br><span class="line">    lines = fileObject.readlines()</span><br><span class="line"></span><br><span class="line">piStr = &#x27;&#x27;</span><br><span class="line">for line in lines:</span><br><span class="line">    piStr += line.strip()</span><br><span class="line"></span><br><span class="line">print(piStr)</span><br><span class="line">print(len(piStr))</span><br></pre></td></tr></table></figure>
+<p>***读取文本文件时， Python将其中的所有文本都解读为字符串。如果你读取的是数字，并要将其作为数值使用，就必须使用函数int()将其转换为整数，或使用函数float()将其转换为浮点数。</p>
+<h3 id="2、写文件"><a href="#2、写文件" class="headerlink" title="2、写文件"></a>2、写文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;programming.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename, &#x27;w&#x27;) as fileObject:</span><br><span class="line">    fileObject.write(&quot;I love programming&quot;)</span><br></pre></td></tr></table></figure>
+<p>open()中第一个参数指要打开文件的名称，第二个参数指以写入的方式打开文件。<br>可指定模式有的：w（写入）、r（读取）、a（附加）、r+（读写）。py默认读取模式打开文件。</p>
+<p>***Python只能将字符串写入文本文件。要将数值数据存储到文本文件中，必须先使用函数str()将其转换为字符串格式。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/22/py_day12/" data-id="cl4p9qwol0003jwvxdh6xa9lb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-py_day11" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/06/21/py_day11/" class="article-date">
@@ -105,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/21/py_day11/" data-id="cl4oyrr2i00050kvx4pyk0cf9" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/21/py_day11/" data-id="cl4p9qwon0007jwvxa1jugzow" class="article-share-link">Share</a>
       
       
     </footer>
@@ -149,7 +200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/19/py_day10/" data-id="cl4oyrr2g00030kvx54ycblq4" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/19/py_day10/" data-id="cl4p9qwom0005jwvx4x6heacj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -230,7 +281,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day9/" data-id="cl4oyrr2o000e0kvxgtvw6qsf" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day9/" data-id="cl4p9qwou000fjwvx3cm705u7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -280,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl4oyrr2n000c0kvx7h4j1lsk" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl4p9qwos000djwvx2e2g3nuw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -325,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day8/" data-id="cl4oyrr2o000d0kvx5z3s0w9g" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day8/" data-id="cl4p9qwot000ejwvxcqq4797v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -365,7 +416,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/19/py_day6/" data-id="cl4oyrr2m000b0kvx9ig963pj" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/05/19/py_day6/" data-id="cl4p9qwor000cjwvxevbsd4av" class="article-share-link">Share</a>
       
       
     </footer>
@@ -412,7 +463,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl4oyrr2k00090kvxbao86h3u" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl4p9qwor000bjwvx21k937on" class="article-share-link">Share</a>
       
       
     </footer>
@@ -457,7 +508,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl4oyrr2l000a0kvx1lyz6s6u" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl4p9qwop000ajwvxen0nb9xe" class="article-share-link">Share</a>
       
       
     </footer>
@@ -539,54 +590,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/py_day3/" data-id="cl4oyrr2j00070kvxbqqs27x8" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/03/27/py_day2/" class="article-date">
-  <time datetime="2022-03-27T11:55:42.974Z" itemprop="datePublished">2022-03-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/27/py_day2/">Python学习2-字符串和数字</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>用了小书匠来写文本，客户端上预览的效果格式正确，怎么一上传到github上格式就不对了捏？<br>还没整明白，慢慢来吧。<br>初次学py，发现py和matlab的语法相似啊</p>
-<blockquote>
-<p>py的数据类型有六个：数字、字符串、列表、元组、集合、字典<br>其中：数字、字符串、元组是不可变的；列表、字典、集合是可变的</p>
-</blockquote>
-<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p><em><strong>java中的字符串是类，py里面变成了数据类型。</strong></em></p>
-<p>语法差不多，双引号””和单引号’’都能用，拼接是是用加号+，目的应该就是为了灵活输出 “ 以及 ‘ 吧。<br>书上给了几个字符串方法：<br>    title()：首字母大写显示单词<br>    lower()：全部变小写<br>    upper()：全部变大写<br>    restrip()：删除末尾空白，调用这个语句看上去好像只是删除了副本，要想彻底删除得用下面这个语句</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str = str.restrip()</span><br></pre></td></tr></table></figure>
-<p>lstrip()：删除左边空白<br>rstrip()：删除右边空白</p>
-<h3 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h3><h4 id="1、整数"><a href="#1、整数" class="headerlink" title="1、整数"></a>1、整数</h4><p>py中可以用操作数直接表示次方：**<br>例如：3 ** 2<br>&gt;&gt;&gt; 9</p>
-<h4 id="2、浮点数"><a href="#2、浮点数" class="headerlink" title="2、浮点数"></a>2、浮点数</h4><p>py中的浮点数直接表示，但也会存在精度问题</p>
-<p><em><strong>数字运算基本和java类似</strong></em></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/27/py_day2/" data-id="cl4oyrr2j00080kvx5bjpdb6a" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/py_day3/" data-id="cl4p9qwoo0009jwvx8xbq29jv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -632,6 +636,10 @@
       <ul>
         
           <li>
+            <a href="/2022/06/22/py_day12/">Python学习12-文件的读写</a>
+          </li>
+        
+          <li>
             <a href="/2022/06/21/py_day11/">Python学习11-继承</a>
           </li>
         
@@ -645,10 +653,6 @@
         
           <li>
             <a href="/2022/06/10/py_day7/">Python学习7-字典</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/10/py_day8/">Python学习8-input和while</a>
           </li>
         
       </ul>
