@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Python学习11-继承 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、子类构造器 创建子类的实例时， Python首先需要完成的任务是给父类的所有属性赋值。为此，子类的方法__init__()需要父类施以援手。  **py的属性是放在构造器里的 a、创建子类时，父类位于子类前面b、定义子类时，必须在括号内指定父类的名称c、super()引用父类的构造器 1234567891011121314151617181920212223242526272829303132">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python学习11-继承">
+<meta property="og:url" content="http://example.com/2022/06/21/py_day11/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、子类构造器 创建子类的实例时， Python首先需要完成的任务是给父类的所有属性赋值。为此，子类的方法__init__()需要父类施以援手。  **py的属性是放在构造器里的 a、创建子类时，父类位于子类前面b、定义子类时，必须在括号内指定父类的名称c、super()引用父类的构造器 1234567891011121314151617181920212223242526272829303132">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-06-21T09:12:50.958Z">
+<meta property="article:modified_time" content="2022-06-22T02:15:44.911Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-py_day11" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/21/py_day11/" class="article-date">
+  <time datetime="2022-06-21T09:12:50.958Z" itemprop="datePublished">2022-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python学习11-继承
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、子类构造器"><a href="#1、子类构造器" class="headerlink" title="1、子类构造器"></a>1、子类构造器</h3><blockquote>
+<p>创建子类的实例时， Python首先需要完成的任务是给父类的所有属性赋值。为此，子类的方法__init__()需要父类施以援手。</p>
+</blockquote>
+<p>**py的属性是放在构造器里的</p>
+<p>a、创建子类时，父类位于子类前面<br>b、定义子类时，必须在括号内指定父类的名称<br>c、super()引用父类的构造器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">class Car():</span><br><span class="line"></span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        self.make = make</span><br><span class="line">        self.model = model</span><br><span class="line">        self.year = year</span><br><span class="line">        self.odometerReading = 0</span><br><span class="line"></span><br><span class="line">    def getDescriptiveName(self):</span><br><span class="line">        longName = str(self.year) + &#x27; &#x27; + self.make + &#x27; &#x27; + self.model</span><br><span class="line">        return longName.title()</span><br><span class="line"></span><br><span class="line">    def readOdometer(self):</span><br><span class="line">        print(&quot;This car has &quot; + str(self.odometerReading) + &quot; miles on it.&quot;)</span><br><span class="line"></span><br><span class="line">    def updateOdometer(self, mileage):</span><br><span class="line">        if mileage &gt;= self.odometerReading:</span><br><span class="line">            self.odometerReading = mileage</span><br><span class="line">        else:</span><br><span class="line">            print(&quot;You can&#x27;t roll back an odometer!&quot;)</span><br><span class="line"></span><br><span class="line">    def incrementOdometer(self, miles):</span><br><span class="line">        self.odometerReading += miles</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class ElectricCar(Car):</span><br><span class="line">    </span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        super().__init__(make, model, year)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">myTesla = ElectricCar(&#x27;tesla&#x27;, &#x27;model s&#x27;, 2016)</span><br><span class="line">print(myTesla.getDescriptiveName())</span><br></pre></td></tr></table></figure>
+<h3 id="2、给子类定义属性和方法"><a href="#2、给子类定义属性和方法" class="headerlink" title="2、给子类定义属性和方法"></a>2、给子类定义属性和方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class ElectricCar(Car):</span><br><span class="line"></span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        super().__init__(make, model, year)</span><br><span class="line">        self.batterySize = 70</span><br><span class="line"></span><br><span class="line">    def describeBattery(self):</span><br><span class="line">        print(&quot;This car has a &quot; + str(self.batterySize) + &quot;-kWh battery.&quot;)</span><br><span class="line"></span><br><span class="line">myTesla = ElectricCar(&#x27;tesla&#x27;, &#x27;model s&#x27;, 2016)</span><br><span class="line">print(myTesla.getDescriptiveName())</span><br><span class="line">myTesla.describeBattery()</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、重写"><a href="#3、重写" class="headerlink" title="3、重写"></a>3、重写</h3><blockquote>
+<p>对于父类的方法，只要它不符合子类模拟的实物的行为，都可对其进行重写。为此，可在子类中定义一个这样的方法，即它与要重写的父类方法同名。这样， Python将不会考虑这个父类方法，而只关注你在子类中定义的相应方法。</p>
+</blockquote>
+<h3 id="4、将实例用作属性"><a href="#4、将实例用作属性" class="headerlink" title="4、将实例用作属性"></a>4、将实例用作属性</h3><blockquote>
+<p>不断给ElectricCar类添加细节时，我们可能会发现其中包含很多专门针对汽车电瓶的属性和方法。在这种情况下，我们可将这些属性和方法提取出来，放到另一个名为Battery的类中，并将一个Battery实例用作ElectricCar类的一个属性。</p>
+</blockquote>
+<p>***这行代码让Python在实例my_tesla中查找属性battery，并对存储在该属性中的Battery实例调用方法describe_battery()。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">class Battery():</span><br><span class="line"></span><br><span class="line">    def __init__(self, batterySzie =70):</span><br><span class="line">        self.batterySize = batterySzie</span><br><span class="line"></span><br><span class="line">    def describeBattery(self):</span><br><span class="line">        print(&quot;This car has a &quot; + str(self.batterySize) + &quot;-kWh battery.&quot;)</span><br><span class="line"></span><br><span class="line">    def getRange(self):</span><br><span class="line">        if self.batterySize == 70:</span><br><span class="line">            range = 240</span><br><span class="line">        elif self.batterySize == 85:</span><br><span class="line">            range = 270</span><br><span class="line"></span><br><span class="line">        message = &quot;This car can go approximately &quot; + str(range)</span><br><span class="line">        message += &quot; miles on a full charge.&quot;</span><br><span class="line">        print(message)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class ElectricCar(Car):</span><br><span class="line"></span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        super().__init__(make, model, year)</span><br><span class="line">        self.battery = Battery()</span><br><span class="line"></span><br><span class="line">    def describeBattery(self):</span><br><span class="line">        print(&quot;This car has a &quot; + str(self.batterySize) + &quot;-kWh battery.&quot;)</span><br><span class="line"></span><br><span class="line">myTesla = ElectricCar(&#x27;tesla&#x27;, &#x27;model s&#x27;, 2016)</span><br><span class="line">print(myTesla.getDescriptiveName())</span><br><span class="line">myTesla.battery.describeBattery()</span><br><span class="line">myTesla.battery.getRange()</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/21/py_day11/" data-id="cl4oyrr2i00050kvx4pyk0cf9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/06/19/py_day10/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python学习10-类</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/06/21/py_day11/">Python学习11-继承</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/19/py_day10/">Python学习10-类</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/10/py_day9/">Python学习9-函数</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/10/py_day7/">Python学习7-字典</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/10/py_day8/">Python学习8-input和while</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

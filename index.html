@@ -64,6 +64,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-py_day11" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/21/py_day11/" class="article-date">
+  <time datetime="2022-06-21T09:12:50.958Z" itemprop="datePublished">2022-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/21/py_day11/">Python学习11-继承</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、子类构造器"><a href="#1、子类构造器" class="headerlink" title="1、子类构造器"></a>1、子类构造器</h3><blockquote>
+<p>创建子类的实例时， Python首先需要完成的任务是给父类的所有属性赋值。为此，子类的方法__init__()需要父类施以援手。</p>
+</blockquote>
+<p>**py的属性是放在构造器里的</p>
+<p>a、创建子类时，父类位于子类前面<br>b、定义子类时，必须在括号内指定父类的名称<br>c、super()引用父类的构造器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">class Car():</span><br><span class="line"></span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        self.make = make</span><br><span class="line">        self.model = model</span><br><span class="line">        self.year = year</span><br><span class="line">        self.odometerReading = 0</span><br><span class="line"></span><br><span class="line">    def getDescriptiveName(self):</span><br><span class="line">        longName = str(self.year) + &#x27; &#x27; + self.make + &#x27; &#x27; + self.model</span><br><span class="line">        return longName.title()</span><br><span class="line"></span><br><span class="line">    def readOdometer(self):</span><br><span class="line">        print(&quot;This car has &quot; + str(self.odometerReading) + &quot; miles on it.&quot;)</span><br><span class="line"></span><br><span class="line">    def updateOdometer(self, mileage):</span><br><span class="line">        if mileage &gt;= self.odometerReading:</span><br><span class="line">            self.odometerReading = mileage</span><br><span class="line">        else:</span><br><span class="line">            print(&quot;You can&#x27;t roll back an odometer!&quot;)</span><br><span class="line"></span><br><span class="line">    def incrementOdometer(self, miles):</span><br><span class="line">        self.odometerReading += miles</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class ElectricCar(Car):</span><br><span class="line">    </span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        super().__init__(make, model, year)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">myTesla = ElectricCar(&#x27;tesla&#x27;, &#x27;model s&#x27;, 2016)</span><br><span class="line">print(myTesla.getDescriptiveName())</span><br></pre></td></tr></table></figure>
+<h3 id="2、给子类定义属性和方法"><a href="#2、给子类定义属性和方法" class="headerlink" title="2、给子类定义属性和方法"></a>2、给子类定义属性和方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class ElectricCar(Car):</span><br><span class="line"></span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        super().__init__(make, model, year)</span><br><span class="line">        self.batterySize = 70</span><br><span class="line"></span><br><span class="line">    def describeBattery(self):</span><br><span class="line">        print(&quot;This car has a &quot; + str(self.batterySize) + &quot;-kWh battery.&quot;)</span><br><span class="line"></span><br><span class="line">myTesla = ElectricCar(&#x27;tesla&#x27;, &#x27;model s&#x27;, 2016)</span><br><span class="line">print(myTesla.getDescriptiveName())</span><br><span class="line">myTesla.describeBattery()</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、重写"><a href="#3、重写" class="headerlink" title="3、重写"></a>3、重写</h3><blockquote>
+<p>对于父类的方法，只要它不符合子类模拟的实物的行为，都可对其进行重写。为此，可在子类中定义一个这样的方法，即它与要重写的父类方法同名。这样， Python将不会考虑这个父类方法，而只关注你在子类中定义的相应方法。</p>
+</blockquote>
+<h3 id="4、将实例用作属性"><a href="#4、将实例用作属性" class="headerlink" title="4、将实例用作属性"></a>4、将实例用作属性</h3><blockquote>
+<p>不断给ElectricCar类添加细节时，我们可能会发现其中包含很多专门针对汽车电瓶的属性和方法。在这种情况下，我们可将这些属性和方法提取出来，放到另一个名为Battery的类中，并将一个Battery实例用作ElectricCar类的一个属性。</p>
+</blockquote>
+<p>***这行代码让Python在实例my_tesla中查找属性battery，并对存储在该属性中的Battery实例调用方法describe_battery()。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">class Battery():</span><br><span class="line"></span><br><span class="line">    def __init__(self, batterySzie =70):</span><br><span class="line">        self.batterySize = batterySzie</span><br><span class="line"></span><br><span class="line">    def describeBattery(self):</span><br><span class="line">        print(&quot;This car has a &quot; + str(self.batterySize) + &quot;-kWh battery.&quot;)</span><br><span class="line"></span><br><span class="line">    def getRange(self):</span><br><span class="line">        if self.batterySize == 70:</span><br><span class="line">            range = 240</span><br><span class="line">        elif self.batterySize == 85:</span><br><span class="line">            range = 270</span><br><span class="line"></span><br><span class="line">        message = &quot;This car can go approximately &quot; + str(range)</span><br><span class="line">        message += &quot; miles on a full charge.&quot;</span><br><span class="line">        print(message)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class ElectricCar(Car):</span><br><span class="line"></span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        super().__init__(make, model, year)</span><br><span class="line">        self.battery = Battery()</span><br><span class="line"></span><br><span class="line">    def describeBattery(self):</span><br><span class="line">        print(&quot;This car has a &quot; + str(self.batterySize) + &quot;-kWh battery.&quot;)</span><br><span class="line"></span><br><span class="line">myTesla = ElectricCar(&#x27;tesla&#x27;, &#x27;model s&#x27;, 2016)</span><br><span class="line">print(myTesla.getDescriptiveName())</span><br><span class="line">myTesla.battery.describeBattery()</span><br><span class="line">myTesla.battery.getRange()</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/21/py_day11/" data-id="cl4oyrr2i00050kvx4pyk0cf9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-py_day10" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/06/19/py_day10/" class="article-date">
@@ -98,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/19/py_day10/" data-id="cl4l7zksw0003p8vx2gm5cgjw" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/19/py_day10/" data-id="cl4oyrr2g00030kvx54ycblq4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -179,7 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day9/" data-id="cl4l7zkt4000dp8vxaiig2h0r" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day9/" data-id="cl4oyrr2o000e0kvxgtvw6qsf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -229,7 +280,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl4l7zkt3000bp8vx3e7e6ysr" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl4oyrr2n000c0kvx7h4j1lsk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -274,7 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day8/" data-id="cl4l7zkt4000cp8vx0tmqg0ri" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day8/" data-id="cl4oyrr2o000d0kvx5z3s0w9g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -314,7 +365,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/19/py_day6/" data-id="cl4l7zkt1000ap8vxbnv3a4rd" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/05/19/py_day6/" data-id="cl4oyrr2m000b0kvx9ig963pj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -361,7 +412,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl4l7zkt00009p8vxa8c139mp" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl4oyrr2k00090kvxbao86h3u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -406,7 +457,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl4l7zksz0008p8vxhze6aphd" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl4oyrr2l000a0kvx1lyz6s6u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -488,7 +539,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/py_day3/" data-id="cl4l7zksz0007p8vx83kj434v" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/py_day3/" data-id="cl4oyrr2j00070kvxbqqs27x8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -535,53 +586,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/27/py_day2/" data-id="cl4l7zksx0005p8vxhqgv3wgs" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/03/26/py_day1/" class="article-date">
-  <time datetime="2022-03-26T02:32:23.308Z" itemprop="datePublished">2022-03-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/26/py_day1/">Python学习1-变量</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h4 id="对比1：py变量不用声明"><a href="#对比1：py变量不用声明" class="headerlink" title="对比1：py变量不用声明"></a>对比1：py变量不用声明</h4><p> <strong>java ：</strong><br>1、变量就是申请内存来存储值。也就是说，当创建变量的时候，需要在内存中申请空间。<br>2、内存管理系统根据变量的类型为变量分配存储空间，分配的空间只能用来储存该类型数据。因此，通过定义不同类型的变量，可以在内存中储存整数、小数或者字符。</p>
-<p><strong>与java不同，py的变量不需要预先定义类型。</strong><br><strong>py：</strong><br>Python 中的变量不需要声明。每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。</p>
-<p><strong>py的变量没有自动初始化，因此在使用之前必须先赋好值。</strong></p>
-<h4 id="对比2：py变量没有变量（对象）类型"><a href="#对比2：py变量没有变量（对象）类型" class="headerlink" title="对比2：py变量没有变量（对象）类型"></a>对比2：py变量没有变量（对象）类型</h4><p> <strong>java ：</strong><br>支持的变量类型有：类变量、实例变量、局部变量</p>
-<p><strong>py：</strong><br>变量就是变量，它没有类型，我们所说的”类型”是变量所指的内存中对象的类型。</p>
-<p>java：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String message;</span><br><span class="line">message = &quot;This is a string&quot;;</span><br></pre></td></tr></table></figure>
-<p>python:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">message = &quot;This is a string&quot;</span><br></pre></td></tr></table></figure>
-<p><em><strong>注意：py语句末尾不用加分号，以换行表示语句结束</strong></em></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/26/py_day1/" data-id="cl4l7zkst0001p8vx8a14hhu6" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/27/py_day2/" data-id="cl4oyrr2j00080kvx5bjpdb6a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -592,6 +597,11 @@
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -622,6 +632,10 @@
       <ul>
         
           <li>
+            <a href="/2022/06/21/py_day11/">Python学习11-继承</a>
+          </li>
+        
+          <li>
             <a href="/2022/06/19/py_day10/">Python学习10-类</a>
           </li>
         
@@ -635,10 +649,6 @@
         
           <li>
             <a href="/2022/06/10/py_day8/">Python学习8-input和while</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/19/py_day6/">Python学习6-if语句</a>
           </li>
         
       </ul>
