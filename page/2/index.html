@@ -64,6 +64,88 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-py_day3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/01/py_day3/" class="article-date">
+  <time datetime="2022-04-01T03:38:56.757Z" itemprop="datePublished">2022-04-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/01/py_day3/">Python学习3-列表的增删改查</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>事真的好多，老师发了200块让帮忙审稿，从研一到现在不记得审了多少篇IEEE了，（关键我都看不懂别人写的文章，啥领域的都让我审）。<br>大论文第三章被老师否了，说不够新意，让我重新增加内容，加大难度，难顶<br>小论文还没改好latex，啥时候能投出去呢？</p>
+<blockquote>
+<p>列表是元素的集合，栈结构</p>
+</blockquote>
+<h3 id="创建一个列表并打印"><a href="#创建一个列表并打印" class="headerlink" title="创建一个列表并打印"></a>创建一个列表并打印</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">names = [&#x27;zhouyu&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhouyu&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure>
+<h3 id="查"><a href="#查" class="headerlink" title="查"></a>查</h3><p>通过索引访问<br>names[index]<br>表头索引是0，-1索引表示表尾，-2表示尾巴第二个数，以此类推</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(names[0])</span><br><span class="line">print(names[-1])</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zhouyu</span><br><span class="line">zhangyifei</span><br></pre></td></tr></table></figure>
+<p><em><strong>注意：索引不能超过列表长度</strong></em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(names[100])</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IndexError: list index out of range</span><br></pre></td></tr></table></figure>
+
+<h3 id="改"><a href="#改" class="headerlink" title="改"></a>改</h3><p> 对元素进行修改<br> names[index] = ‘xxx’</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names[0] = &#x27;zhourui&#x27;</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhouyu&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure>
+
+<h3 id="增"><a href="#增" class="headerlink" title="增"></a>增</h3><p>1、appen()方法：在末尾添加元素<br>names.append(‘xxx’)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names.append(&#x27;zhouqingxiang&#x27;)</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;, &#x27;zhouqingxiang&#x27;]</span><br></pre></td></tr></table></figure>
+<p>2、insert()方法：在中间插入元素<br>names.insert(index, ‘xxx’)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names.insert(0, &#x27;zhouqingxiang&#x27;)</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhouqingxiang&#x27;, &#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure>
+<p><em><strong>注意1：如果在 -1 处插入，则是插入在倒数第二个，在 0 插入则插入至表头</strong></em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names.insert(-1, &#x27;zhouqingxiang&#x27;)</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhouqingxiang&#x27;, &#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure>
+<p><em><strong>注意2：如果插入的索引超过列表长度，不会报错，会在表尾插入</strong></em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names.insert(100, &#x27;zhouqingxiang&#x27;)</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;, &#x27;zhouqingxiang&#x27;]</span><br></pre></td></tr></table></figure>
+
+<h3 id="删"><a href="#删" class="headerlink" title="删"></a>删</h3><p>1、del语句：指定位置删除元素<br>del names[index]</p>
+<p>2、pop()方法：弹出元素<br>names.pop()：末尾弹出<br>names.pop(index)：索引位置弹出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print(&quot;names中的元素: %s&quot; % names)</span><br><span class="line">names2 = []</span><br><span class="line">names2.append(names.pop())</span><br><span class="line">print(&quot;弹出末尾元素后，names中的元素: %s&quot; % names)</span><br><span class="line">print(&quot;names2中的元素: %s&quot; % names2)</span><br></pre></td></tr></table></figure>
+<p>输出结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">names中的元素: [&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">弹出末尾元素后，names中的元素: [&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;]</span><br><span class="line">names2中的元素: [&#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure>
+<p><em><strong>注意3：如果pop()不指定index，则是弹出末尾元素。如果pop(index)，则是弹出索引处元素。如果pop(-1)，与pop()相当。</strong></em><br><em><strong>注意4：如果pop(index)中索引超过列表长度，会报错</strong></em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IndexError: pop index out of range</span><br></pre></td></tr></table></figure>
+<p>3、remove()方法：根据键值删除元素，remove()也可以使用删除的值<br>names.remove(‘xxx’)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/01/py_day3/" data-id="cl4qt2ywi000atsvx9c863kbe" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-py_day2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/03/27/py_day2/" class="article-date">
@@ -101,7 +183,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/27/py_day2/" data-id="cl4p9qwon0008jwvxfuw89erw" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/27/py_day2/" data-id="cl4qt2ywh0009tsvx75hwd9se" class="article-share-link">Share</a>
       
       
     </footer>
@@ -147,7 +229,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/26/py_day1/" data-id="cl4p9qwoi0001jwvx34jubz3d" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/26/py_day1/" data-id="cl4qt2ywb0001tsvxavxxdo69" class="article-share-link">Share</a>
       
       
     </footer>
@@ -193,6 +275,10 @@
       <ul>
         
           <li>
+            <a href="/2022/06/23/py_day13/">Python学习13-异常</a>
+          </li>
+        
+          <li>
             <a href="/2022/06/22/py_day12/">Python学习12-文件的读写</a>
           </li>
         
@@ -206,10 +292,6 @@
         
           <li>
             <a href="/2022/06/10/py_day9/">Python学习9-函数</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/10/py_day7/">Python学习7-字典</a>
           </li>
         
       </ul>

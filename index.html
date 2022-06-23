@@ -64,6 +64,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-py_day13" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/23/py_day13/" class="article-date">
+  <time datetime="2022-06-23T08:24:46.507Z" itemprop="datePublished">2022-06-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/23/py_day13/">Python学习13-异常</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、处理异常try-except"><a href="#1、处理异常try-except" class="headerlink" title="1、处理异常try-except"></a>1、处理异常try-except</h3><p>用法：try:<br>        except:<br>        else:</p>
+<p>例子1：try-except模块中代码执行失败则进入except模块</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    print(5/0)</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">    print(&quot;You can&#x27;t divide by zero!&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>例子2：try-except模块中代码成功执行则进入else模块</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">print(&quot;Give me two nums, and I will divide them.&quot;)</span><br><span class="line">print(&quot;Enter &#x27;q&#x27; to quit.&quot;)</span><br><span class="line"></span><br><span class="line">while True:</span><br><span class="line">    firstNumber = input(&quot;\nFirst num: &quot;)</span><br><span class="line">    if firstNumber == &#x27;q&#x27;:</span><br><span class="line">        break</span><br><span class="line">    elif not str.isdigit(firstNumber):</span><br><span class="line">        print(&quot;Plz re-input&quot;)</span><br><span class="line">        continue</span><br><span class="line">    secondNumber = input(&quot;\nFirst num: &quot;)</span><br><span class="line">    if secondNumber == &#x27;q&#x27;:</span><br><span class="line">        break</span><br><span class="line">    elif not str.isdigit(secondNumber):</span><br><span class="line">        print(&quot;Plz re-input&quot;)</span><br><span class="line">        continue</span><br><span class="line">    try:</span><br><span class="line">        answer = int(firstNumber) / int(secondNumber)</span><br><span class="line">    except ZeroDivisionError:</span><br><span class="line">        print(&quot;You can&#x27;t divide by 0!&quot;)</span><br><span class="line">    else:</span><br><span class="line">        print(answer)</span><br></pre></td></tr></table></figure>
+
+<p>例子3：捕获到异常时什么都不做</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;alice.txt&#x27;</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">    with open(filename) as fObj:</span><br><span class="line">        contents = fObj.read()</span><br><span class="line">except FileNotFoundError:</span><br><span class="line">    pass</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/23/py_day13/" data-id="cl4qt2ywg0008tsvx4z0m0bj7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-py_day12" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/06/22/py_day12/" class="article-date">
@@ -86,26 +134,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1、读文件"><a href="#1、读文件" class="headerlink" title="1、读文件"></a>1、读文件</h3><h4 id="1-1、读取整个文件"><a href="#1-1、读取整个文件" class="headerlink" title="1.1、读取整个文件"></a>1.1、读取整个文件</h4><p>用法：with open(‘文件名’) as 别名<br>            变量 = 别名.read()<br>            print(变量)</p>
+        <h3 id="1、读文件"><a href="#1、读文件" class="headerlink" title="1、读文件"></a>1、读文件</h3><h4 id="1-1、读文件"><a href="#1-1、读文件" class="headerlink" title="1.1、读文件"></a>1.1、读文件</h4><p>用法：with open(‘文件名’) as 别名<br>变量 = 别名.read()<br>print(变量)</p>
 <p>步骤：<br>–&gt; 打开文件，open()。Python在当前执行的文件所在的目录中查找指定的文件。函数open()返回一个表示文件的对象。<br>–&gt; 关闭文件，with()自动关闭文件。<br>–&gt; 读取文件，read()，返回一个字符串存储在变量中。</p>
-<h4 id="1-2、文件路径"><a href="#1-2、文件路径" class="headerlink" title="1.2、文件路径"></a>1.2、文件路径</h4><p>相对路径：<br>                linux/OS X：with open(‘text_files/filename.txt’) as file_object:       （斜杠）<br>                Windows：with open(‘text_files\filename.txt’) as file_object:        （反斜杠）<br>绝对路径：<br>                linux/OS X：file_path = ‘/home/ehmatthes/other_files/text_files/filename.txt’<br>                                    with open(file_path) as file_object:<br>                Windows：file_path = ‘C:\Users\ehmatthes\other_files\text_files\filename.txt’<br>                                    with open(file_path) as file_object:</p>
+<h4 id="1-2、文件路径"><a href="#1-2、文件路径" class="headerlink" title="1.2、文件路径"></a>1.2、文件路径</h4><p>相对路径：<br>linux/OS X：with open(‘text_files/filename.txt’) as file_object: （斜杠）<br>Windows：with open(‘text_files\filename.txt’) as file_object: （反斜杠）<br>绝对路径：<br>linux/OS X：file_path = ‘/home/ehmatthes/other_files/text_files/filename.txt’<br>with open(file_path) as file_object:<br>Windows：file_path = ‘C:\Users\ehmatthes\other_files\text_files\filename.txt’<br>with open(file_path) as file_object:</p>
 <h4 id="1-3、逐行读取"><a href="#1-3、逐行读取" class="headerlink" title="1.3、逐行读取"></a>1.3、逐行读取</h4><p>使用for循环</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;pi_digits.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename) as fileObject:</span><br><span class="line">    for line in fileObject:</span><br><span class="line">        print(line.rstrip())</span><br></pre></td></tr></table></figure>
 <h4 id="1-4、使用列表保存文件内容"><a href="#1-4、使用列表保存文件内容" class="headerlink" title="1.4、使用列表保存文件内容"></a>1.4、使用列表保存文件内容</h4><blockquote>
-<p>使用关键字with时， open()返回的文件对象只在with代码块内可用。如果要在with代码块外<br>访问文件的内容，可在with代码块内将文件的各行存储在一个列表中，并在with代码块外使用该<br>列表：你可以立即处理文件的各个部分，也可推迟到程序后面再处理。</p>
+<p>使用关键字with时， open()返回的文件对象只在with代码块内可用。如果要在with代码块外访问文件的内容，可在with代码块内将文件的各行存储在一个列表中，并在with代码块外使用该列表：你可以立即处理文件的各个部分，也可推迟到程序后面再处理。</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;pi_digits.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename) as fileObject:</span><br><span class="line">    lines = fileObject.readlines()</span><br><span class="line"></span><br><span class="line">for line in lines:</span><br><span class="line">    print(line.rstrip())</span><br></pre></td></tr></table></figure>
-<p>**readlines()方法返回一个列表，文件各行存储在这这个列表中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;pi_digits.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename) as fileObject:</span><br><span class="line">    lines = fileObject.readlines()</span><br><span class="line"></span><br><span class="line">for line in lines:</span><br><span class="line">    print(line.rstrip())</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>readlines()方法返回一个列表，文件各行存储在这这个列表中</strong></p>
 <h4 id="1-5、使用文件的内容"><a href="#1-5、使用文件的内容" class="headerlink" title="1.5、使用文件的内容"></a>1.5、使用文件的内容</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;pi_digits.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename) as fileObject:</span><br><span class="line">    lines = fileObject.readlines()</span><br><span class="line"></span><br><span class="line">piStr = &#x27;&#x27;</span><br><span class="line">for line in lines:</span><br><span class="line">    piStr += line.strip()</span><br><span class="line"></span><br><span class="line">print(piStr)</span><br><span class="line">print(len(piStr))</span><br></pre></td></tr></table></figure>
-<p>***读取文本文件时， Python将其中的所有文本都解读为字符串。如果你读取的是数字，并要将其作为数值使用，就必须使用函数int()将其转换为整数，或使用函数float()将其转换为浮点数。</p>
+
+<p><em><strong>读取文本文件时， Python将其中的所有文本都解读为字符串。如果你读取的是数字，并要将其作为数值使用，就必须使用函数int()将其转换为整数，或使用函数float()将其转换为浮点数。</strong></em></p>
 <h3 id="2、写文件"><a href="#2、写文件" class="headerlink" title="2、写文件"></a>2、写文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;programming.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename, &#x27;w&#x27;) as fileObject:</span><br><span class="line">    fileObject.write(&quot;I love programming&quot;)</span><br></pre></td></tr></table></figure>
 <p>open()中第一个参数指要打开文件的名称，第二个参数指以写入的方式打开文件。<br>可指定模式有的：w（写入）、r（读取）、a（附加）、r+（读写）。py默认读取模式打开文件。</p>
-<p>***Python只能将字符串写入文本文件。要将数值数据存储到文本文件中，必须先使用函数str()将其转换为字符串格式。</p>
+<p><em><strong>Python只能将字符串写入文本文件。要将数值数据存储到文本文件中，必须先使用函数str()将其转换为字符串格式。</strong></em></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/22/py_day12/" data-id="cl4p9qwol0003jwvxdh6xa9lb" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/22/py_day12/" data-id="cl4qt2ywg0007tsvxecul1da2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -156,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/21/py_day11/" data-id="cl4p9qwon0007jwvxa1jugzow" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/21/py_day11/" data-id="cl4qt2ywd0003tsvx3yhz4ej5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -200,7 +250,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/19/py_day10/" data-id="cl4p9qwom0005jwvx4x6heacj" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/19/py_day10/" data-id="cl4qt2ywf0005tsvx9xnt7vwo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -281,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day9/" data-id="cl4p9qwou000fjwvx3cm705u7" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day9/" data-id="cl4qt2ywn000ftsvxg15e1q09" class="article-share-link">Share</a>
       
       
     </footer>
@@ -331,7 +381,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl4p9qwos000djwvx2e2g3nuw" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl4qt2ywl000dtsvx55a21l7f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -376,7 +426,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day8/" data-id="cl4p9qwot000ejwvxcqq4797v" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day8/" data-id="cl4qt2ywo000gtsvx18279tow" class="article-share-link">Share</a>
       
       
     </footer>
@@ -416,7 +466,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/19/py_day6/" data-id="cl4p9qwor000cjwvxevbsd4av" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/05/19/py_day6/" data-id="cl4qt2ywm000etsvxb8rh6pnj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -463,7 +513,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl4p9qwor000bjwvx21k937on" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl4qt2ywj000ctsvx62tkcxsy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -508,89 +558,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl4p9qwop000ajwvxen0nb9xe" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/04/01/py_day3/" class="article-date">
-  <time datetime="2022-04-01T03:38:56.757Z" itemprop="datePublished">2022-04-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/01/py_day3/">Python学习3-列表的增删改查</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>事真的好多，老师发了200块让帮忙审稿，从研一到现在不记得审了多少篇IEEE了，（关键我都看不懂别人写的文章，啥领域的都让我审）。<br>大论文第三章被老师否了，说不够新意，让我重新增加内容，加大难度，难顶<br>小论文还没改好latex，啥时候能投出去呢？</p>
-<blockquote>
-<p>列表是元素的集合，栈结构</p>
-</blockquote>
-<h3 id="创建一个列表并打印"><a href="#创建一个列表并打印" class="headerlink" title="创建一个列表并打印"></a>创建一个列表并打印</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">names = [&#x27;zhouyu&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure>
-<p>输出结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhouyu&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure>
-<h3 id="查"><a href="#查" class="headerlink" title="查"></a>查</h3><p>通过索引访问<br>names[index]<br>表头索引是0，-1索引表示表尾，-2表示尾巴第二个数，以此类推</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(names[0])</span><br><span class="line">print(names[-1])</span><br></pre></td></tr></table></figure>
-<p>输出结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zhouyu</span><br><span class="line">zhangyifei</span><br></pre></td></tr></table></figure>
-<p><em><strong>注意：索引不能超过列表长度</strong></em></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(names[100])</span><br></pre></td></tr></table></figure>
-<p>输出结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IndexError: list index out of range</span><br></pre></td></tr></table></figure>
-
-<h3 id="改"><a href="#改" class="headerlink" title="改"></a>改</h3><p> 对元素进行修改<br> names[index] = ‘xxx’</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names[0] = &#x27;zhourui&#x27;</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure>
-<p>输出结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhouyu&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure>
-
-<h3 id="增"><a href="#增" class="headerlink" title="增"></a>增</h3><p>1、appen()方法：在末尾添加元素<br>names.append(‘xxx’)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names.append(&#x27;zhouqingxiang&#x27;)</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure>
-<p>输出结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;, &#x27;zhouqingxiang&#x27;]</span><br></pre></td></tr></table></figure>
-<p>2、insert()方法：在中间插入元素<br>names.insert(index, ‘xxx’)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names.insert(0, &#x27;zhouqingxiang&#x27;)</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure>
-<p>输出结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhouqingxiang&#x27;, &#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure>
-<p><em><strong>注意1：如果在 -1 处插入，则是插入在倒数第二个，在 0 插入则插入至表头</strong></em></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names.insert(-1, &#x27;zhouqingxiang&#x27;)</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure>
-<p>输出结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhouqingxiang&#x27;, &#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure>
-<p><em><strong>注意2：如果插入的索引超过列表长度，不会报错，会在表尾插入</strong></em></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names.insert(100, &#x27;zhouqingxiang&#x27;)</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure>
-<p>输出结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;, &#x27;zhouqingxiang&#x27;]</span><br></pre></td></tr></table></figure>
-
-<h3 id="删"><a href="#删" class="headerlink" title="删"></a>删</h3><p>1、del语句：指定位置删除元素<br>del names[index]</p>
-<p>2、pop()方法：弹出元素<br>names.pop()：末尾弹出<br>names.pop(index)：索引位置弹出</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print(&quot;names中的元素: %s&quot; % names)</span><br><span class="line">names2 = []</span><br><span class="line">names2.append(names.pop())</span><br><span class="line">print(&quot;弹出末尾元素后，names中的元素: %s&quot; % names)</span><br><span class="line">print(&quot;names2中的元素: %s&quot; % names2)</span><br></pre></td></tr></table></figure>
-<p>输出结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">names中的元素: [&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">弹出末尾元素后，names中的元素: [&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;]</span><br><span class="line">names2中的元素: [&#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure>
-<p><em><strong>注意3：如果pop()不指定index，则是弹出末尾元素。如果pop(index)，则是弹出索引处元素。如果pop(-1)，与pop()相当。</strong></em><br><em><strong>注意4：如果pop(index)中索引超过列表长度，会报错</strong></em></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IndexError: pop index out of range</span><br></pre></td></tr></table></figure>
-<p>3、remove()方法：根据键值删除元素，remove()也可以使用删除的值<br>names.remove(‘xxx’)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/py_day3/" data-id="cl4p9qwoo0009jwvx8xbq29jv" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl4qt2ywj000btsvxc3fxb3ry" class="article-share-link">Share</a>
       
       
     </footer>
@@ -636,6 +604,10 @@
       <ul>
         
           <li>
+            <a href="/2022/06/23/py_day13/">Python学习13-异常</a>
+          </li>
+        
+          <li>
             <a href="/2022/06/22/py_day12/">Python学习12-文件的读写</a>
           </li>
         
@@ -649,10 +621,6 @@
         
           <li>
             <a href="/2022/06/10/py_day9/">Python学习9-函数</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/10/py_day7/">Python学习7-字典</a>
           </li>
         
       </ul>
