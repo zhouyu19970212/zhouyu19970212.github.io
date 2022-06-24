@@ -64,6 +64,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-py_day14" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/23/py_day14/" class="article-date">
+  <time datetime="2022-06-23T09:16:43.947Z" itemprop="datePublished">2022-06-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/23/py_day14/">Python学习14-存储数据</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、数据的存取（json格式）"><a href="#1、数据的存取（json格式）" class="headerlink" title="1、数据的存取（json格式）"></a>1、数据的存取（json格式）</h3><h4 id="1-1、写（存）数据-json-dump-文件名-操作类型"><a href="#1-1、写（存）数据-json-dump-文件名-操作类型" class="headerlink" title="1.1、写（存）数据 json.dump(文件名, 操作类型)"></a>1.1、写（存）数据 json.dump(文件名, 操作类型)</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line"></span><br><span class="line">numbers = [2, 3, 5, 7, 11, 13]</span><br><span class="line"></span><br><span class="line">filename = &#x27;numbers.json&#x27;</span><br><span class="line">with open(filename, &#x27;w&#x27;) as fObj:</span><br><span class="line">    json.dump(numbers, fObj)</span><br></pre></td></tr></table></figure>
+<h4 id="1-2、读（取）数据-json-load-对象"><a href="#1-2、读（取）数据-json-load-对象" class="headerlink" title="1.2、读（取）数据 json.load(对象)"></a>1.2、读（取）数据 json.load(对象)</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line"></span><br><span class="line">numbers = [2, 3, 5, 7, 11, 13]</span><br><span class="line"></span><br><span class="line">filename = &#x27;numbers.json&#x27;</span><br><span class="line">with open(filename) as fObj:</span><br><span class="line">    numbers = json.load(fObj)</span><br><span class="line"></span><br><span class="line">print(numbers)</span><br></pre></td></tr></table></figure>
+
+<p>例子1：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line"></span><br><span class="line">filename = &#x27;username.json&#x27;</span><br><span class="line">try:</span><br><span class="line">    with open(filename) as fObj:</span><br><span class="line">        username = json.load(fObj)</span><br><span class="line">except FileNotFoundError:</span><br><span class="line">    username = input(&quot;What is your name? &quot;)</span><br><span class="line">    with open(filename, &#x27;w&#x27;) as fObj:</span><br><span class="line">        json.dump(username, fObj)</span><br><span class="line">        print(&quot;We will remember you when you come back, &quot; + username + &quot;!&quot;)</span><br><span class="line">else:</span><br><span class="line">    print(&quot;Welcome back, &quot; + username + &quot;!&quot;)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/23/py_day14/" data-id="cl4rripke0009fcvxcqqg9h7h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-py_day13" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/06/23/py_day13/" class="article-date">
@@ -102,7 +142,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/23/py_day13/" data-id="cl4qt2ywg0008tsvx4z0m0bj7" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/23/py_day13/" data-id="cl4rripkd0008fcvx3z92eq9x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -155,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/22/py_day12/" data-id="cl4qt2ywg0007tsvxecul1da2" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/22/py_day12/" data-id="cl4rripkd0007fcvx2s06bi3f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -206,7 +246,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/21/py_day11/" data-id="cl4qt2ywd0003tsvx3yhz4ej5" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/21/py_day11/" data-id="cl4rripkc0005fcvx8n7yguus" class="article-share-link">Share</a>
       
       
     </footer>
@@ -250,7 +290,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/19/py_day10/" data-id="cl4qt2ywf0005tsvx9xnt7vwo" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/19/py_day10/" data-id="cl4rripkb0003fcvx4frg455y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -331,7 +371,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day9/" data-id="cl4qt2ywn000ftsvxg15e1q09" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day9/" data-id="cl4rripkj000hfcvx91214rcc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -381,7 +421,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl4qt2ywl000dtsvx55a21l7f" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl4rripki000ffcvx1bg7c6bq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -426,7 +466,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day8/" data-id="cl4qt2ywo000gtsvx18279tow" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day8/" data-id="cl4rripkj000gfcvxc0bh6fvz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -466,7 +506,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/19/py_day6/" data-id="cl4qt2ywm000etsvxb8rh6pnj" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/05/19/py_day6/" data-id="cl4rripkh000efcvxc2v0aufn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -513,52 +553,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl4qt2ywj000ctsvx62tkcxsy" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day4" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/04/08/py_day4/" class="article-date">
-  <time datetime="2022-04-08T08:07:10.412Z" itemprop="datePublished">2022-04-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/08/py_day4/">Python学习4-组织列表</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、sort-和sorted-：永久排序和临时排序"><a href="#1、sort-和sorted-：永久排序和临时排序" class="headerlink" title="1、sort()和sorted()：永久排序和临时排序"></a>1、sort()和sorted()：永久排序和临时排序</h3><p>list.sort()              ：对已存在的列表进行排序，可以带参数 reverse = True<br>sorted(iterable)    ：对一切可迭代对象排序，对对象的副本进行排序，并返回这个副本，可以带参数 reverse = True</p>
-<h3 id="2、reverse-：反转列表"><a href="#2、reverse-：反转列表" class="headerlink" title="2、reverse()：反转列表"></a>2、reverse()：反转列表</h3><p>list.reverse()        ：</p>
-<h3 id="3、len-：返回列表长度"><a href="#3、len-：返回列表长度" class="headerlink" title="3、len()：返回列表长度"></a>3、len()：返回列表长度</h3><p>len(list)                ：</p>
-<h3 id="加餐：sort-内部实现原理"><a href="#加餐：sort-内部实现原理" class="headerlink" title="加餐：sort()内部实现原理"></a>加餐：sort()内部实现原理</h3><p>py中的sort()采用的是 Timsort 算法<br>最坏时间复杂度 O(nlogn)<br>空间复杂度 O(n)<br>相比快排，Timsort是稳定的</p>
-<blockquote>
-<p>Timsort是结合了合并排序（merge sort）和插入排序（insertion sort）而得出的排序算法，它在现实中有很好的效率。Tim Peters在2002年设计了该算法并在Python中使用（TimSort 是 Python 中 list.sort 的默认实现）。该算法找到数据中已经排好序的块-分区，每一个分区叫一个run，然后按规则合并这些run。Pyhton自从2.3版以来一直采用Timsort算法排序，现在Java SE7和Android也采用Timsort算法对数组排序。</p>
-</blockquote>
-<h4 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h4><p>针对现实中需要排序的数据分析，大多数的数据通常都是部分排序好的数据块，Timsort就是利用了这一个特点。<br>Timsort将已经排序好的数据块称为 run，在排序时，Timsort将数据元素放到不同的run里面，并将run按规则进行归并，最后只剩一个run，这个run就是最后的结果。</p>
-<p>Timsort会有一个minrun属性，如果初始的run小于这个minrun，则用插入排序将未排序的数据插入进来，直到达到条件，之后使用归并排序合并多个run。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl4qt2ywj000btsvxc3fxb3ry" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl4rripkh000dfcvx0ogxhsal" class="article-share-link">Share</a>
       
       
     </footer>
@@ -604,6 +599,10 @@
       <ul>
         
           <li>
+            <a href="/2022/06/23/py_day14/">Python学习14-存储数据</a>
+          </li>
+        
+          <li>
             <a href="/2022/06/23/py_day13/">Python学习13-异常</a>
           </li>
         
@@ -617,10 +616,6 @@
         
           <li>
             <a href="/2022/06/19/py_day10/">Python学习10-类</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/10/py_day9/">Python学习9-函数</a>
           </li>
         
       </ul>

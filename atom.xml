@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-06-23T09:11:44.100Z</updated>
+  <updated>2022-06-24T01:14:41.483Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python学习14-存储数据</title>
+    <link href="http://example.com/2022/06/23/py_day14/"/>
+    <id>http://example.com/2022/06/23/py_day14/</id>
+    <published>2022-06-23T09:16:43.947Z</published>
+    <updated>2022-06-24T01:14:41.483Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、数据的存取（json格式）"><a href="#1、数据的存取（json格式）" class="headerlink" title="1、数据的存取（json格式）"></a>1、数据的存取（json格式）</h3><h4 id="1-1、写（存）数据-json-dump-文件名-操作类型"><a href="#1-1、写（存）数据-json-dump-文件名-操作类型" class="headerlink" title="1.1、写（存）数据 json.dump(文件名, 操作类型)"></a>1.1、写（存）数据 json.dump(文件名, 操作类型)</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line"></span><br><span class="line">numbers = [2, 3, 5, 7, 11, 13]</span><br><span class="line"></span><br><span class="line">filename = &#x27;numbers.json&#x27;</span><br><span class="line">with open(filename, &#x27;w&#x27;) as fObj:</span><br><span class="line">    json.dump(numbers, fObj)</span><br></pre></td></tr></table></figure><h4 id="1-2、读（取）数据-json-load-对象"><a href="#1-2、读（取）数据-json-load-对象" class="headerlink" title="1.2、读（取）数据 json.load(对象)"></a>1.2、读（取）数据 json.load(对象)</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line"></span><br><span class="line">numbers = [2, 3, 5, 7, 11, 13]</span><br><span class="line"></span><br><span class="line">filename = &#x27;numbers.json&#x27;</span><br><span class="line">with open(filename) as fObj:</span><br><span class="line">    numbers = json.load(fObj)</span><br><span class="line"></span><br><span class="line">print(numbers)</span><br></pre></td></tr></table></figure><p>例子1：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line"></span><br><span class="line">filename = &#x27;username.json&#x27;</span><br><span class="line">try:</span><br><span class="line">    with open(filename) as fObj:</span><br><span class="line">        username = json.load(fObj)</span><br><span class="line">except FileNotFoundError:</span><br><span class="line">    username = input(&quot;What is your name? &quot;)</span><br><span class="line">    with open(filename, &#x27;w&#x27;) as fObj:</span><br><span class="line">        json.dump(username, fObj)</span><br><span class="line">        print(&quot;We will remember you when you come back, &quot; + username + &quot;!&quot;)</span><br><span class="line">else:</span><br><span class="line">    print(&quot;Welcome back, &quot; + username + &quot;!&quot;)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1、数据的存取（json格式）&quot;&gt;&lt;a href=&quot;#1、数据的存取（json格式）&quot; class=&quot;headerlink&quot; title=&quot;1、数据的存取（json格式）&quot;&gt;&lt;/a&gt;1、数据的存取（json格式）&lt;/h3&gt;&lt;h4 id=&quot;1-1、写（存）数据-js</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Python学习13-异常</title>
