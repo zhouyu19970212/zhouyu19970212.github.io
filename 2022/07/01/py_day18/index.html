@@ -5,17 +5,17 @@
   
 
   
-  <title>Python学习7-字典 | Hexo</title>
+  <title>linux学习4-vim | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、使用字典1.1、字典是一系列的k-v对。1.2、用法：student &#x3D; {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}空字典： student &#x3D; {}1.3、增：student[‘weight’] &#x3D; 65student[‘nation’] &#x3D; ‘china’ 1.4、删：del student[‘weight’] 1.5、改：student[‘we">
+  <meta name="description" content="1、常用的三种模式a、正常模式以vim打开一个档案就直接进入一般模式了（这是默认的模式）。在这个模式中，可以使用【上下左右】按键来移动光标，可以使用【删除字符】或【删除整行】来处理档案内容，也可以使用【复制、粘贴】来处理你的文件数据。 b、插入模式按下i，I，o，O，a，A，r，R等任何一个字母之后才会进入编辑模式，一般来说按i即可。 c、命令行模式顺序输入 “esc” 、 “：” 进入命令行模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python学习7-字典">
-<meta property="og:url" content="http://example.com/2022/06/10/py_day7/index.html">
+<meta property="og:title" content="linux学习4-vim">
+<meta property="og:url" content="http://example.com/2022/07/01/py_day18/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1、使用字典1.1、字典是一系列的k-v对。1.2、用法：student &#x3D; {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}空字典： student &#x3D; {}1.3、增：student[‘weight’] &#x3D; 65student[‘nation’] &#x3D; ‘china’ 1.4、删：del student[‘weight’] 1.5、改：student[‘we">
+<meta property="og:description" content="1、常用的三种模式a、正常模式以vim打开一个档案就直接进入一般模式了（这是默认的模式）。在这个模式中，可以使用【上下左右】按键来移动光标，可以使用【删除字符】或【删除整行】来处理档案内容，也可以使用【复制、粘贴】来处理你的文件数据。 b、插入模式按下i，I，o，O，a，A，r，R等任何一个字母之后才会进入编辑模式，一般来说按i即可。 c、命令行模式顺序输入 “esc” 、 “：” 进入命令行模式">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-06-10T07:17:33.024Z">
-<meta property="article:modified_time" content="2022-06-10T07:17:33.084Z">
+<meta property="article:published_time" content="2022-07-01T01:53:35.361Z">
+<meta property="article:modified_time" content="2022-07-01T09:58:59.041Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -66,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-py_day7" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-py_day18" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/06/10/py_day7/" class="article-date">
-  <time datetime="2022-06-10T07:17:33.024Z" itemprop="datePublished">2022-06-10</time>
+    <a href="/2022/07/01/py_day18/" class="article-date">
+  <time datetime="2022-07-01T01:53:35.361Z" itemprop="datePublished">2022-07-01</time>
 </a>
     
   </div>
@@ -80,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Python学习7-字典
+      linux学习4-vim
     </h1>
   
 
@@ -88,25 +88,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1、使用字典"><a href="#1、使用字典" class="headerlink" title="1、使用字典"></a>1、使用字典</h3><p>1.1、字典是一系列的k-v对。<br>1.2、用法：student = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}<br>空字典： student = {}<br>1.3、增：<br>student[‘weight’] = 65<br>student[‘nation’] = ‘china’</p>
-<p>1.4、删：<br>del student[‘weight’]</p>
-<p>1.5、改：<br>student[‘weight’] = student[‘weight’] + 10<br>student[‘name’] = ‘zhangyifei’</p>
-<h3 id="2、遍历字典"><a href="#2、遍历字典" class="headerlink" title="2、遍历字典"></a>2、遍历字典</h3><p>2.1、遍历k-v对：<br>for k, v in student.items():<br>print(k)<br>print(v)</p>
-<p>2.2、遍历key：<br>for k in student.keys():<br>print(k)</p>
-<p>for k in student:<br>print(k)</p>
-<p>2.3、按顺序遍历key：<br>for k in sorted(student.keys()):<br>print(k)</p>
-<p>2.4、遍历value：<br>for v in student.values():<br>print(v)</p>
-<p>2.5、用集合set剔除重复：<br>for v in set(student.values()):<br>print(v)</p>
-<h3 id="3、嵌套"><a href="#3、嵌套" class="headerlink" title="3、嵌套"></a>3、嵌套</h3><p>3.1、列表中嵌套字典：<br>student1 = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}<br>student2 = {‘name’: ‘zhangyifei’, ‘age’: 26, ‘sex’: ‘man’}<br>student3 = {‘name’: ‘wanghaozun’, ‘age’: 24, ‘sex’: ‘man’}</p>
-<p>students = [student1, student2, student3]</p>
-<p>for stu in students:<br>print(stu)</p>
-<p>3.2、字典中嵌套列表（一个key对多个value）：<br>students = {<br>‘zhouyu’: [25, ‘man’],<br>‘zhangyifei’: [26, ‘man’],<br>‘wanghaozun’: [24, ‘man’]<br>}<br>for name, ageAndSex in students.items():<br>print(name)<br>print(ageAndSex)</p>
-<p>3.3、字典中嵌套字典<br>school = {<br>‘students’: {<br>‘zhouyu’: [25, ‘man’],<br>‘zhangyifei’: [26, ‘man’],<br>‘wanghaozun’: [24, ‘man’]<br>},<br>‘teachers’: {<br>‘lishumao’: [45, ‘man’],<br>‘liujing’: [30, ‘woman’],<br>‘wangyingchun’: [65, ‘man’]<br>}<br>}<br>for stu, teacher in school.items():<br>print(stu)<br>print(teacher)</p>
+        <h3 id="1、常用的三种模式"><a href="#1、常用的三种模式" class="headerlink" title="1、常用的三种模式"></a>1、常用的三种模式</h3><p>a、正常模式<br>以vim打开一个档案就直接进入一般模式了（这是默认的模式）。在这个模式中，可以使用【上下左右】按键来移动光标，可以使用【删除字符】或【删除整行】来处理档案内容，也可以使用【复制、粘贴】来处理你的文件数据。</p>
+<p>b、插入模式<br>按下i，I，o，O，a，A，r，R等任何一个字母之后才会进入编辑模式，一般来说按i即可。</p>
+<p>c、命令行模式<br>顺序输入 “esc” 、 “：” 进入命令行模式。在这个模式当中，可以提供你相关指令。读取、存盘、替换、离开vim、显示行号等动作是在此模式中达成。</p>
+<hr>
+<h3 id="2、各种模式的相互切换"><a href="#2、各种模式的相互切换" class="headerlink" title="2、各种模式的相互切换"></a>2、各种模式的相互切换</h3><p>命令行进入一般模式：vim xxx</p>
+<p>一般模式进入编辑模式：i或a<br>编辑模式进入一般模式：esc<br>一般模式进入命令模式：“：”或者 “ / “<br>命令模式进入一般模式：esc</p>
+<p>命令模式退出到命令行：“ :wq ”（保存退出）、“ :q ”（退出）、“ :q! ”（强制退出，不保存）</p>
+<hr>
+<h3 id="3、快捷键"><a href="#3、快捷键" class="headerlink" title="3、快捷键"></a>3、快捷键</h3><p>1、拷贝当前行 yy，拷贝当前行向下的5行 5yy，并粘贴（输入p）。<br>2、删除当前行 dd，删除当前行向下的5行 5dd。<br>3、在文件中查找某个单词 [命令行向下 /关键字，回车 查找，输入 n 就是查找下一个]</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl52aaspf000jdkvxcoq47qeg" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/07/01/py_day18/" data-id="cl52aaspb000cdkvxfgzj17p5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -115,19 +110,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/06/10/py_day9/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Python学习9-函数
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/06/10/py_day8/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/06/30/py_day17/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Python学习8-input和while</div>
+      <div class="article-nav-title">linux学习3-目录结构</div>
     </a>
   
 </nav>

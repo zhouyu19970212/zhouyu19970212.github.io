@@ -64,6 +64,193 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-py_day18" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/01/py_day18/" class="article-date">
+  <time datetime="2022-07-01T01:53:35.361Z" itemprop="datePublished">2022-07-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/01/py_day18/">linux学习4-vim</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、常用的三种模式"><a href="#1、常用的三种模式" class="headerlink" title="1、常用的三种模式"></a>1、常用的三种模式</h3><p>a、正常模式<br>以vim打开一个档案就直接进入一般模式了（这是默认的模式）。在这个模式中，可以使用【上下左右】按键来移动光标，可以使用【删除字符】或【删除整行】来处理档案内容，也可以使用【复制、粘贴】来处理你的文件数据。</p>
+<p>b、插入模式<br>按下i，I，o，O，a，A，r，R等任何一个字母之后才会进入编辑模式，一般来说按i即可。</p>
+<p>c、命令行模式<br>顺序输入 “esc” 、 “：” 进入命令行模式。在这个模式当中，可以提供你相关指令。读取、存盘、替换、离开vim、显示行号等动作是在此模式中达成。</p>
+<hr>
+<h3 id="2、各种模式的相互切换"><a href="#2、各种模式的相互切换" class="headerlink" title="2、各种模式的相互切换"></a>2、各种模式的相互切换</h3><p>命令行进入一般模式：vim xxx</p>
+<p>一般模式进入编辑模式：i或a<br>编辑模式进入一般模式：esc<br>一般模式进入命令模式：“：”或者 “ / “<br>命令模式进入一般模式：esc</p>
+<p>命令模式退出到命令行：“ :wq ”（保存退出）、“ :q ”（退出）、“ :q! ”（强制退出，不保存）</p>
+<hr>
+<h3 id="3、快捷键"><a href="#3、快捷键" class="headerlink" title="3、快捷键"></a>3、快捷键</h3><p>1、拷贝当前行 yy，拷贝当前行向下的5行 5yy，并粘贴（输入p）。<br>2、删除当前行 dd，删除当前行向下的5行 5dd。<br>3、在文件中查找某个单词 [命令行向下 /关键字，回车 查找，输入 n 就是查找下一个]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/01/py_day18/" data-id="cl52aaspb000cdkvxfgzj17p5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-py_day17" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/30/py_day17/" class="article-date">
+  <time datetime="2022-06-30T09:30:30.219Z" itemprop="datePublished">2022-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/30/py_day17/">linux学习3-目录结构</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、基本介绍"><a href="#1、基本介绍" class="headerlink" title="1、基本介绍"></a>1、基本介绍</h3><p>linux的文件系统采用的是层级式的树状目录结构，在此结构中的最上层式根目录 “/”，然后在此目录下再创建其他的目录。<strong>在linux世界里，一切皆文件。</strong></p>
+<hr>
+<h3 id="2、具体的目录结构"><a href="#2、具体的目录结构" class="headerlink" title="2、具体的目录结构"></a>2、具体的目录结构</h3><p>/bin 【常用】 （/usr/bin、/usr/local/bin）<br>是Binary的缩写，这个目录存放着最经常使用的命令。</p>
+<p>/sbin （/usr/sbin、/usr/local/sbin）<br>s就是super user的意思，这里存放的是系统管理员使用的系统管理程序。</p>
+<p>/home 【常用】<br>存放普通用户的主目录，在linux中每个用户都有一个自己的目录，一般该目录名是以用户的账号命名。</p>
+<p>/root 【常用】<br>该目录为系统管理员，也称作超级权限者的用户主目录。</p>
+<p>/lib<br>系统开机所需要最基本的动态连接共享库，其作用类似于Windows里的DLL文件。几乎所有的应用程序都需要用到这些共享库。</p>
+<p>/lost+found<br>这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。</p>
+<p>/etc 【常用】<br>所有的系统管理所需要的配置文件和子目录，比如安装mysql数据库 my.conf。</p>
+<p>/usr 【常用】<br>这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似与windows下的program files目录。</p>
+<p>/boot 【常用】<br>存放的是启动linux时使用的一些核心文件，包括一些连接文件以及镜像文件。</p>
+<p>/proc 【不能动】<br>这个目录是一个虚拟的目录，它是系统内存的映射，访问这个目录来获取系统信息。</p>
+<p>/srv 【不能动】<br>service缩写，该目录存放一些服务启动之后需要提取的数据。</p>
+<p>/sys 【不能动】<br>这是linux2.6内核的一个很大的变化，该目录下安装了2.6内核中新出现的一个文件系统sysfs。</p>
+<p>/tmp<br>这个目录是用来存放一些临时文件的。</p>
+<p>/dev<br>类似于Windows的设备管理器，把所有的硬件用文件的形式存储。</p>
+<p>/media 【常用】<br>linux系统会自动识别一些设备，例如U盘、光驱等等，当识别后，linux会把识别的设备挂载到这个目录下。</p>
+<p>/mnt 【常用】<br>系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将外部的存储挂载在 /mnt/ 上，<br>然后进入该目录就可以查看里面的内容了。d:/myshare</p>
+<p>/opt<br>这是给主机额外安装软件所摆放的目录。如安装ORACLE数据库就可以放到该目录下。默认为空。</p>
+<p>/usr/local 【常用】<br>这是另一个给主机额外安装软件所安装的目录。一般是通过编译源码方式安装的程序。</p>
+<p>/var 【常用】<br>这个目录中存放着在不断扩充着的东西，习惯将经常被修改的目录放在这个目录下。包括各种日志文件。</p>
+<p>/selinux [security-enhanced linux]<br>SELinux是一种安全子系统，它能控制程序只能访问特定文件，有三种工作模式，可以自行设置。</p>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/30/py_day17/" data-id="cl52aaspb000bdkvx9ffu0lr4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-py_day16" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/30/py_day16/" class="article-date">
+  <time datetime="2022-06-30T08:09:59.968Z" itemprop="datePublished">2022-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/30/py_day16/">linux学习2-虚拟机的克隆、快照、迁移和删除</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、虚拟机克隆"><a href="#1、虚拟机克隆" class="headerlink" title="1、虚拟机克隆"></a>1、虚拟机克隆</h3><p>如果已经安装了一台linux操作系统，还想再要更多的，没有必要再重新安装，只需要克隆就可以了。</p>
+<p>方式1：直接拷贝一份安装好的虚拟机文件<br>方式2：使用vmware的克隆操作，克隆时，需要先关闭linux系统</p>
+<hr>
+<h3 id="2、虚拟机快照"><a href="#2、虚拟机快照" class="headerlink" title="2、虚拟机快照"></a>2、虚拟机快照</h3><p>如果再使用虚拟机系统的时候（比如linux），想要回到原先的某一个状态，也就是说你担心可能有些误操作造成系统异常，需要回到原先某个正常的运行状态，vmware也提供了这样的功能，就叫快照管理</p>
+<p>应用实例：<br>1、按照好系统以后，先做一个快照A<br>2、进入到系统。创建一个文件夹，再保存一个快照B<br>3、回到系统刚刚按照好的状态，即 快照A</p>
+<hr>
+<h3 id="3、虚拟机迁移和删除"><a href="#3、虚拟机迁移和删除" class="headerlink" title="3、虚拟机迁移和删除"></a>3、虚拟机迁移和删除</h3><p>虚拟系统安装好了，它的本质就是文件。因此虚拟系统的迁移很方便，可以把安装好的虚拟系统这个文件夹整体<strong>拷贝或者剪切</strong>到另外位置使用。删除也很简单，用vmware进行移除，在点击菜单-&gt;从磁盘删除即可，或者直接手动删除虚拟系统对应的文件夹即可。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/30/py_day16/" data-id="cl52aasp9000adkvx5p1g3eno" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-py_day15" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/30/py_day15/" class="article-date">
+  <time datetime="2022-06-30T03:38:21.213Z" itemprop="datePublished">2022-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/30/py_day15/">学习14-存储数据</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、数据的存取（json格式）"><a href="#1、数据的存取（json格式）" class="headerlink" title="1、数据的存取（json格式）"></a>1、数据的存取（json格式）</h3><h4 id="1-1、写（存）数据-json-dump-文件名-操作类型"><a href="#1-1、写（存）数据-json-dump-文件名-操作类型" class="headerlink" title="1.1、写（存）数据 json.dump(文件名, 操作类型)"></a>1.1、写（存）数据 json.dump(文件名, 操作类型)</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line"></span><br><span class="line">numbers = [2, 3, 5, 7, 11, 13]</span><br><span class="line"></span><br><span class="line">filename = &#x27;numbers.json&#x27;</span><br><span class="line">with open(filename, &#x27;w&#x27;) as fObj:</span><br><span class="line">    json.dump(numbers, fObj)</span><br></pre></td></tr></table></figure>
+<h4 id="1-2、读（取）数据-json-load-对象"><a href="#1-2、读（取）数据-json-load-对象" class="headerlink" title="1.2、读（取）数据 json.load(对象)"></a>1.2、读（取）数据 json.load(对象)</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line"></span><br><span class="line">numbers = [2, 3, 5, 7, 11, 13]</span><br><span class="line"></span><br><span class="line">filename = &#x27;numbers.json&#x27;</span><br><span class="line">with open(filename) as fObj:</span><br><span class="line">    numbers = json.load(fObj)</span><br><span class="line"></span><br><span class="line">print(numbers)</span><br></pre></td></tr></table></figure>
+
+<p>例子1：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line"></span><br><span class="line">filename = &#x27;username.json&#x27;</span><br><span class="line">try:</span><br><span class="line">    with open(filename) as fObj:</span><br><span class="line">        username = json.load(fObj)</span><br><span class="line">except FileNotFoundError:</span><br><span class="line">    username = input(&quot;What is your name? &quot;)</span><br><span class="line">    with open(filename, &#x27;w&#x27;) as fObj:</span><br><span class="line">        json.dump(username, fObj)</span><br><span class="line">        print(&quot;We will remember you when you come back, &quot; + username + &quot;!&quot;)</span><br><span class="line">else:</span><br><span class="line">    print(&quot;Welcome back, &quot; + username + &quot;!&quot;)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/30/py_day15/" data-id="cl52aasp80009dkvx0le4dqcn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-py_day14" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/06/23/py_day14/" class="article-date">
@@ -94,7 +281,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/23/py_day14/" data-id="cl4rripke0009fcvxcqqg9h7h" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/23/py_day14/" data-id="cl52aaspc000ddkvx0kjl1xqv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -142,7 +329,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/23/py_day13/" data-id="cl4rripkd0008fcvx3z92eq9x" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/23/py_day13/" data-id="cl52aasp70008dkvxb3l98tf7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -195,7 +382,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/22/py_day12/" data-id="cl4rripkd0007fcvx2s06bi3f" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/22/py_day12/" data-id="cl52aasp60007dkvxcf2r59ng" class="article-share-link">Share</a>
       
       
     </footer>
@@ -246,7 +433,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/21/py_day11/" data-id="cl4rripkc0005fcvx8n7yguus" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/21/py_day11/" data-id="cl52aasp50005dkvx025n1lun" class="article-share-link">Share</a>
       
       
     </footer>
@@ -290,7 +477,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/19/py_day10/" data-id="cl4rripkb0003fcvx4frg455y" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/19/py_day10/" data-id="cl52aasp30003dkvxe40k857a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -371,189 +558,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day9/" data-id="cl4rripkj000hfcvx91214rcc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day7" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/06/10/py_day7/" class="article-date">
-  <time datetime="2022-06-10T07:17:33.024Z" itemprop="datePublished">2022-06-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/10/py_day7/">Python学习7-字典</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、使用字典"><a href="#1、使用字典" class="headerlink" title="1、使用字典"></a>1、使用字典</h3><p>1.1、字典是一系列的k-v对。<br>1.2、用法：student = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}<br>空字典： student = {}<br>1.3、增：<br>student[‘weight’] = 65<br>student[‘nation’] = ‘china’</p>
-<p>1.4、删：<br>del student[‘weight’]</p>
-<p>1.5、改：<br>student[‘weight’] = student[‘weight’] + 10<br>student[‘name’] = ‘zhangyifei’</p>
-<h3 id="2、遍历字典"><a href="#2、遍历字典" class="headerlink" title="2、遍历字典"></a>2、遍历字典</h3><p>2.1、遍历k-v对：<br>for k, v in student.items():<br>print(k)<br>print(v)</p>
-<p>2.2、遍历key：<br>for k in student.keys():<br>print(k)</p>
-<p>for k in student:<br>print(k)</p>
-<p>2.3、按顺序遍历key：<br>for k in sorted(student.keys()):<br>print(k)</p>
-<p>2.4、遍历value：<br>for v in student.values():<br>print(v)</p>
-<p>2.5、用集合set剔除重复：<br>for v in set(student.values()):<br>print(v)</p>
-<h3 id="3、嵌套"><a href="#3、嵌套" class="headerlink" title="3、嵌套"></a>3、嵌套</h3><p>3.1、列表中嵌套字典：<br>student1 = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}<br>student2 = {‘name’: ‘zhangyifei’, ‘age’: 26, ‘sex’: ‘man’}<br>student3 = {‘name’: ‘wanghaozun’, ‘age’: 24, ‘sex’: ‘man’}</p>
-<p>students = [student1, student2, student3]</p>
-<p>for stu in students:<br>print(stu)</p>
-<p>3.2、字典中嵌套列表（一个key对多个value）：<br>students = {<br>‘zhouyu’: [25, ‘man’],<br>‘zhangyifei’: [26, ‘man’],<br>‘wanghaozun’: [24, ‘man’]<br>}<br>for name, ageAndSex in students.items():<br>print(name)<br>print(ageAndSex)</p>
-<p>3.3、字典中嵌套字典<br>school = {<br>‘students’: {<br>‘zhouyu’: [25, ‘man’],<br>‘zhangyifei’: [26, ‘man’],<br>‘wanghaozun’: [24, ‘man’]<br>},<br>‘teachers’: {<br>‘lishumao’: [45, ‘man’],<br>‘liujing’: [30, ‘woman’],<br>‘wangyingchun’: [65, ‘man’]<br>}<br>}<br>for stu, teacher in school.items():<br>print(stu)<br>print(teacher)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl4rripki000ffcvx1bg7c6bq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day8" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/06/10/py_day8/" class="article-date">
-  <time datetime="2022-06-10T07:15:40.656Z" itemprop="datePublished">2022-06-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/10/py_day8/">Python学习8-input和while</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、input"><a href="#1、input" class="headerlink" title="1、input()"></a>1、input()</h3><p>用法：var = input()<br>input()函数将键入的信息存储到一个变量中；<br>每次使用input()时，都应该指定浅显易懂的提示，告诉用户需要提供什么样的信息。</p>
-<h3 id="2、while"><a href="#2、while" class="headerlink" title="2、while"></a>2、while</h3><p>用法：while 判断条件:</p>
-<p>break退出循环；<br>continue：跳至下一轮循环</p>
-<h3 id="3、使用while循环处理列表和字典"><a href="#3、使用while循环处理列表和字典" class="headerlink" title="3、使用while循环处理列表和字典"></a>3、使用while循环处理列表和字典</h3><blockquote>
-<p>在for循环中不应修改列表，否则将导致Python难以跟踪其中的元素。要在遍历列表的同时对其进行修改，可使用while循环。</p>
-</blockquote>
-<h4 id="3-1、-在列表之间移动元素"><a href="#3-1、-在列表之间移动元素" class="headerlink" title="3.1、 在列表之间移动元素"></a>3.1、 在列表之间移动元素</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">unconfirmed_users = [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;]</span><br><span class="line">confirmed_users = []</span><br><span class="line"></span><br><span class="line">while unconfirmed_users:</span><br><span class="line">    current_user = unconfirmed_users.pop()</span><br><span class="line">    print(&quot;Verifying users: &quot; + current_user)</span><br><span class="line">    confirmed_users.append(current_user)</span><br><span class="line"></span><br><span class="line">print(&quot;\n The following users have been confirmed: &quot;)</span><br><span class="line">for confirmed_user in confirmed_users:</span><br><span class="line">    print(confirmed_user.title())</span><br></pre></td></tr></table></figure>
-<h4 id="3-2、-删除包含特定值的所有列表元素"><a href="#3-2、-删除包含特定值的所有列表元素" class="headerlink" title="3.2、 删除包含特定值的所有列表元素"></a>3.2、 删除包含特定值的所有列表元素</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pets = [&#x27;dog&#x27;, &#x27;cat&#x27;, &#x27;dog&#x27;, &#x27;goldfish&#x27;, &#x27;cat&#x27;, &#x27;rabbit&#x27;, &#x27;cat&#x27;]</span><br><span class="line">print(pets)</span><br><span class="line"></span><br><span class="line">while &#x27;cat&#x27; in pets:</span><br><span class="line">    pets.remove(&#x27;cat&#x27;)</span><br><span class="line"></span><br><span class="line">print(pets)</span><br></pre></td></tr></table></figure>
-<h4 id="3-3、使用用户输入来填充字典"><a href="#3-3、使用用户输入来填充字典" class="headerlink" title="3.3、使用用户输入来填充字典"></a>3.3、使用用户输入来填充字典</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">responds = &#123;&#125;</span><br><span class="line"></span><br><span class="line">polling_active = True</span><br><span class="line"></span><br><span class="line">while polling_active:</span><br><span class="line">    name = input(&quot;\nWhat&#x27;s ur name? &quot;)</span><br><span class="line">    response = input(&quot;Witch mountain would u like to climb someday? &quot;)</span><br><span class="line"></span><br><span class="line">    responds[name] = response</span><br><span class="line"></span><br><span class="line">    repeat = input(&quot;Would u like to let another person respond? (yes/no) &quot;)</span><br><span class="line">    if repeat == &#x27;no&#x27;:</span><br><span class="line">        polling_active = False</span><br><span class="line"></span><br><span class="line">print(&quot;\n--- Poll Result ---&quot;)</span><br><span class="line">for name, response in responds.items():</span><br><span class="line">    print(name + &quot;would like to climb&quot; + response + &quot;.&quot;)</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day8/" data-id="cl4rripkj000gfcvxc0bh6fvz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day6" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/05/19/py_day6/" class="article-date">
-  <time datetime="2022-05-19T12:20:30.848Z" itemprop="datePublished">2022-05-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/19/py_day6/">Python学习6-if语句</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、条件测试"><a href="#1、条件测试" class="headerlink" title="1、条件测试"></a>1、条件测试</h3><p>检查列表中某个特定值：in/not in<br>names = [‘zhouyu’, ‘zhangyifei’, ‘wanghaozun’]<br>print(‘zhouyu’ in names) ==&gt; True<br>print(‘zhouy’ not in names) ==&gt; True</p>
-<h3 id="2、if语句"><a href="#2、if语句" class="headerlink" title="2、if语句"></a>2、if语句</h3><p>与java不同，不用加括号；与matlab不同，不用加end作为结束；py的if-else要加冒号，并且靠缩进来判断if里面的语句。<br>此外，java中if-elseif是可以多次判断的。而py中if为true则跳过elseif<br>if: condition<br>    do sth</p>
-<p>if:<br>    do sth1<br>else:<br>    do sth2</p>
-<p>if:<br>    do sth1<br>elseif:<br>    do sth2<br>else:<br>    do sth3</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/19/py_day6/" data-id="cl4rripkh000efcvxc2v0aufn" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day5" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/05/12/py_day5/" class="article-date">
-  <time datetime="2022-05-12T08:28:05.542Z" itemprop="datePublished">2022-05-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/12/py_day5/">Python学习5-操作列表</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、for循环遍历"><a href="#1、for循环遍历" class="headerlink" title="1、for循环遍历"></a>1、for循环遍历</h3><p>结构：for 临时变量 in 列表: （缩进）语句1（缩进）语句2 ……</p>
-<h3 id="2、range-函数"><a href="#2、range-函数" class="headerlink" title="2、range()函数"></a>2、range()函数</h3><p>用法1，遍历数字：for num in range(number1, number2): ……<br>用法2，创建连续数字集合：nums = list(range(1, 6))<br>用法3，创建偶数集合：even_nums = list(range(2, 11, 2))<br>range的范围是number1到number2 - 1，左闭右开</p>
-<p>注意：range(0, 0)、range(2, 0)均是空集合</p>
-<h3 id="3、统计数字列表：min、max、sum"><a href="#3、统计数字列表：min、max、sum" class="headerlink" title="3、统计数字列表：min、max、sum"></a>3、统计数字列表：min、max、sum</h3><p>用法：min(列表)、max(列表)、sum(列表)</p>
-<h3 id="4、列表解析"><a href="#4、列表解析" class="headerlink" title="4、列表解析"></a>4、列表解析</h3><p>列表解析将for循环和创建新元素合并成一行代码，并自动附加新元素。</p>
-<p>用法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">squares = [value**<span class="number">2</span> <span class="keyword">for</span> value <span class="keyword">in</span> <span class="title function_">range</span>(<span class="number">1</span>, <span class="number">11</span>)]</span><br><span class="line"># 列表名 = [表达式 <span class="keyword">for</span>循环]</span><br><span class="line"># 表达式用于生成存储值，<span class="keyword">for</span>循环用于给表达式提供值</span><br></pre></td></tr></table></figure>
-
-<h3 id="5、切片"><a href="#5、切片" class="headerlink" title="5、切片"></a>5、切片</h3><p>用法1：列表[索引1: 索引2]<br>用法2：列表[: 索引] 不指定首个索引，则自动从表头开始<br>用法3：列表[索引: ]<br>用法4：列表[负数索引: ]  负数索引切表尾</p>
-<h3 id="6、复制列表"><a href="#6、复制列表" class="headerlink" title="6、复制列表"></a>6、复制列表</h3><p>用法：列表副本 = 列表[:]</p>
-<h3 id="7、元组（不可变的列表）"><a href="#7、元组（不可变的列表）" class="headerlink" title="7、元组（不可变的列表）"></a>7、元组（不可变的列表）</h3><p>用法：元组 = (元素1, 元素2, ……)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl4rripkh000dfcvx0ogxhsal" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day9/" data-id="cl52aaspg000kdkvx1qt50e7o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -586,7 +591,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
     </div>
   </div>
 
@@ -599,23 +604,23 @@
       <ul>
         
           <li>
+            <a href="/2022/07/01/py_day18/">linux学习4-vim</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/30/py_day17/">linux学习3-目录结构</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/30/py_day16/">linux学习2-虚拟机的克隆、快照、迁移和删除</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/30/py_day15/">学习14-存储数据</a>
+          </li>
+        
+          <li>
             <a href="/2022/06/23/py_day14/">Python学习14-存储数据</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/23/py_day13/">Python学习13-异常</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/22/py_day12/">Python学习12-文件的读写</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/21/py_day11/">Python学习11-继承</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/19/py_day10/">Python学习10-类</a>
           </li>
         
       </ul>

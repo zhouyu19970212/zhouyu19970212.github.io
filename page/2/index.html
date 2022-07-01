@@ -64,6 +64,188 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-py_day7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/10/py_day7/" class="article-date">
+  <time datetime="2022-06-10T07:17:33.024Z" itemprop="datePublished">2022-06-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/10/py_day7/">Python学习7-字典</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、使用字典"><a href="#1、使用字典" class="headerlink" title="1、使用字典"></a>1、使用字典</h3><p>1.1、字典是一系列的k-v对。<br>1.2、用法：student = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}<br>空字典： student = {}<br>1.3、增：<br>student[‘weight’] = 65<br>student[‘nation’] = ‘china’</p>
+<p>1.4、删：<br>del student[‘weight’]</p>
+<p>1.5、改：<br>student[‘weight’] = student[‘weight’] + 10<br>student[‘name’] = ‘zhangyifei’</p>
+<h3 id="2、遍历字典"><a href="#2、遍历字典" class="headerlink" title="2、遍历字典"></a>2、遍历字典</h3><p>2.1、遍历k-v对：<br>for k, v in student.items():<br>print(k)<br>print(v)</p>
+<p>2.2、遍历key：<br>for k in student.keys():<br>print(k)</p>
+<p>for k in student:<br>print(k)</p>
+<p>2.3、按顺序遍历key：<br>for k in sorted(student.keys()):<br>print(k)</p>
+<p>2.4、遍历value：<br>for v in student.values():<br>print(v)</p>
+<p>2.5、用集合set剔除重复：<br>for v in set(student.values()):<br>print(v)</p>
+<h3 id="3、嵌套"><a href="#3、嵌套" class="headerlink" title="3、嵌套"></a>3、嵌套</h3><p>3.1、列表中嵌套字典：<br>student1 = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}<br>student2 = {‘name’: ‘zhangyifei’, ‘age’: 26, ‘sex’: ‘man’}<br>student3 = {‘name’: ‘wanghaozun’, ‘age’: 24, ‘sex’: ‘man’}</p>
+<p>students = [student1, student2, student3]</p>
+<p>for stu in students:<br>print(stu)</p>
+<p>3.2、字典中嵌套列表（一个key对多个value）：<br>students = {<br>‘zhouyu’: [25, ‘man’],<br>‘zhangyifei’: [26, ‘man’],<br>‘wanghaozun’: [24, ‘man’]<br>}<br>for name, ageAndSex in students.items():<br>print(name)<br>print(ageAndSex)</p>
+<p>3.3、字典中嵌套字典<br>school = {<br>‘students’: {<br>‘zhouyu’: [25, ‘man’],<br>‘zhangyifei’: [26, ‘man’],<br>‘wanghaozun’: [24, ‘man’]<br>},<br>‘teachers’: {<br>‘lishumao’: [45, ‘man’],<br>‘liujing’: [30, ‘woman’],<br>‘wangyingchun’: [65, ‘man’]<br>}<br>}<br>for stu, teacher in school.items():<br>print(stu)<br>print(teacher)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl52aaspf000jdkvxcoq47qeg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-py_day8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/10/py_day8/" class="article-date">
+  <time datetime="2022-06-10T07:15:40.656Z" itemprop="datePublished">2022-06-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/10/py_day8/">Python学习8-input和while</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、input"><a href="#1、input" class="headerlink" title="1、input()"></a>1、input()</h3><p>用法：var = input()<br>input()函数将键入的信息存储到一个变量中；<br>每次使用input()时，都应该指定浅显易懂的提示，告诉用户需要提供什么样的信息。</p>
+<h3 id="2、while"><a href="#2、while" class="headerlink" title="2、while"></a>2、while</h3><p>用法：while 判断条件:</p>
+<p>break退出循环；<br>continue：跳至下一轮循环</p>
+<h3 id="3、使用while循环处理列表和字典"><a href="#3、使用while循环处理列表和字典" class="headerlink" title="3、使用while循环处理列表和字典"></a>3、使用while循环处理列表和字典</h3><blockquote>
+<p>在for循环中不应修改列表，否则将导致Python难以跟踪其中的元素。要在遍历列表的同时对其进行修改，可使用while循环。</p>
+</blockquote>
+<h4 id="3-1、-在列表之间移动元素"><a href="#3-1、-在列表之间移动元素" class="headerlink" title="3.1、 在列表之间移动元素"></a>3.1、 在列表之间移动元素</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">unconfirmed_users = [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;]</span><br><span class="line">confirmed_users = []</span><br><span class="line"></span><br><span class="line">while unconfirmed_users:</span><br><span class="line">    current_user = unconfirmed_users.pop()</span><br><span class="line">    print(&quot;Verifying users: &quot; + current_user)</span><br><span class="line">    confirmed_users.append(current_user)</span><br><span class="line"></span><br><span class="line">print(&quot;\n The following users have been confirmed: &quot;)</span><br><span class="line">for confirmed_user in confirmed_users:</span><br><span class="line">    print(confirmed_user.title())</span><br></pre></td></tr></table></figure>
+<h4 id="3-2、-删除包含特定值的所有列表元素"><a href="#3-2、-删除包含特定值的所有列表元素" class="headerlink" title="3.2、 删除包含特定值的所有列表元素"></a>3.2、 删除包含特定值的所有列表元素</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pets = [&#x27;dog&#x27;, &#x27;cat&#x27;, &#x27;dog&#x27;, &#x27;goldfish&#x27;, &#x27;cat&#x27;, &#x27;rabbit&#x27;, &#x27;cat&#x27;]</span><br><span class="line">print(pets)</span><br><span class="line"></span><br><span class="line">while &#x27;cat&#x27; in pets:</span><br><span class="line">    pets.remove(&#x27;cat&#x27;)</span><br><span class="line"></span><br><span class="line">print(pets)</span><br></pre></td></tr></table></figure>
+<h4 id="3-3、使用用户输入来填充字典"><a href="#3-3、使用用户输入来填充字典" class="headerlink" title="3.3、使用用户输入来填充字典"></a>3.3、使用用户输入来填充字典</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">responds = &#123;&#125;</span><br><span class="line"></span><br><span class="line">polling_active = True</span><br><span class="line"></span><br><span class="line">while polling_active:</span><br><span class="line">    name = input(&quot;\nWhat&#x27;s ur name? &quot;)</span><br><span class="line">    response = input(&quot;Witch mountain would u like to climb someday? &quot;)</span><br><span class="line"></span><br><span class="line">    responds[name] = response</span><br><span class="line"></span><br><span class="line">    repeat = input(&quot;Would u like to let another person respond? (yes/no) &quot;)</span><br><span class="line">    if repeat == &#x27;no&#x27;:</span><br><span class="line">        polling_active = False</span><br><span class="line"></span><br><span class="line">print(&quot;\n--- Poll Result ---&quot;)</span><br><span class="line">for name, response in responds.items():</span><br><span class="line">    print(name + &quot;would like to climb&quot; + response + &quot;.&quot;)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/10/py_day8/" data-id="cl52aaspg000ldkvx40km183l" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-py_day6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/05/19/py_day6/" class="article-date">
+  <time datetime="2022-05-19T12:20:30.848Z" itemprop="datePublished">2022-05-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/19/py_day6/">Python学习6-if语句</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、条件测试"><a href="#1、条件测试" class="headerlink" title="1、条件测试"></a>1、条件测试</h3><p>检查列表中某个特定值：in/not in<br>names = [‘zhouyu’, ‘zhangyifei’, ‘wanghaozun’]<br>print(‘zhouyu’ in names) ==&gt; True<br>print(‘zhouy’ not in names) ==&gt; True</p>
+<h3 id="2、if语句"><a href="#2、if语句" class="headerlink" title="2、if语句"></a>2、if语句</h3><p>与java不同，不用加括号；与matlab不同，不用加end作为结束；py的if-else要加冒号，并且靠缩进来判断if里面的语句。<br>此外，java中if-elseif是可以多次判断的。而py中if为true则跳过elseif<br>if: condition<br>    do sth</p>
+<p>if:<br>    do sth1<br>else:<br>    do sth2</p>
+<p>if:<br>    do sth1<br>elseif:<br>    do sth2<br>else:<br>    do sth3</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/05/19/py_day6/" data-id="cl52aaspe000idkvxbidb9mn0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-py_day5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/05/12/py_day5/" class="article-date">
+  <time datetime="2022-05-12T08:28:05.542Z" itemprop="datePublished">2022-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/12/py_day5/">Python学习5-操作列表</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、for循环遍历"><a href="#1、for循环遍历" class="headerlink" title="1、for循环遍历"></a>1、for循环遍历</h3><p>结构：for 临时变量 in 列表: （缩进）语句1（缩进）语句2 ……</p>
+<h3 id="2、range-函数"><a href="#2、range-函数" class="headerlink" title="2、range()函数"></a>2、range()函数</h3><p>用法1，遍历数字：for num in range(number1, number2): ……<br>用法2，创建连续数字集合：nums = list(range(1, 6))<br>用法3，创建偶数集合：even_nums = list(range(2, 11, 2))<br>range的范围是number1到number2 - 1，左闭右开</p>
+<p>注意：range(0, 0)、range(2, 0)均是空集合</p>
+<h3 id="3、统计数字列表：min、max、sum"><a href="#3、统计数字列表：min、max、sum" class="headerlink" title="3、统计数字列表：min、max、sum"></a>3、统计数字列表：min、max、sum</h3><p>用法：min(列表)、max(列表)、sum(列表)</p>
+<h3 id="4、列表解析"><a href="#4、列表解析" class="headerlink" title="4、列表解析"></a>4、列表解析</h3><p>列表解析将for循环和创建新元素合并成一行代码，并自动附加新元素。</p>
+<p>用法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">squares = [value**<span class="number">2</span> <span class="keyword">for</span> value <span class="keyword">in</span> <span class="title function_">range</span>(<span class="number">1</span>, <span class="number">11</span>)]</span><br><span class="line"># 列表名 = [表达式 <span class="keyword">for</span>循环]</span><br><span class="line"># 表达式用于生成存储值，<span class="keyword">for</span>循环用于给表达式提供值</span><br></pre></td></tr></table></figure>
+
+<h3 id="5、切片"><a href="#5、切片" class="headerlink" title="5、切片"></a>5、切片</h3><p>用法1：列表[索引1: 索引2]<br>用法2：列表[: 索引] 不指定首个索引，则自动从表头开始<br>用法3：列表[索引: ]<br>用法4：列表[负数索引: ]  负数索引切表尾</p>
+<h3 id="6、复制列表"><a href="#6、复制列表" class="headerlink" title="6、复制列表"></a>6、复制列表</h3><p>用法：列表副本 = 列表[:]</p>
+<h3 id="7、元组（不可变的列表）"><a href="#7、元组（不可变的列表）" class="headerlink" title="7、元组（不可变的列表）"></a>7、元组（不可变的列表）</h3><p>用法：元组 = (元素1, 元素2, ……)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl52aaspd000hdkvxbchbb5vr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-py_day4" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/04/08/py_day4/" class="article-date">
@@ -99,7 +281,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl4rripkg000cfcvxesjt2opv" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl52aaspd000gdkvxegwgf08w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -181,7 +363,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/py_day3/" data-id="cl4rripkf000bfcvxf68tfec0" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/py_day3/" data-id="cl52aaspc000edkvxevmsemi0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -228,7 +410,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/27/py_day2/" data-id="cl4rripke000afcvxd00rd98w" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/27/py_day2/" data-id="cl52aaspd000fdkvxe5ddh1t9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -274,7 +456,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/26/py_day1/" data-id="cl4rripk80001fcvx7rmzgs7c" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/26/py_day1/" data-id="cl52aasp00001dkvxdhb1051g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -307,7 +489,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
     </div>
   </div>
 
@@ -320,23 +502,23 @@
       <ul>
         
           <li>
+            <a href="/2022/07/01/py_day18/">linux学习4-vim</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/30/py_day17/">linux学习3-目录结构</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/30/py_day16/">linux学习2-虚拟机的克隆、快照、迁移和删除</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/30/py_day15/">学习14-存储数据</a>
+          </li>
+        
+          <li>
             <a href="/2022/06/23/py_day14/">Python学习14-存储数据</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/23/py_day13/">Python学习13-异常</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/22/py_day12/">Python学习12-文件的读写</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/21/py_day11/">Python学习11-继承</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/19/py_day10/">Python学习10-类</a>
           </li>
         
       </ul>
