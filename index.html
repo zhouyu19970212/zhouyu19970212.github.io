@@ -64,6 +64,130 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-py_day20" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/04/py_day20/" class="article-date">
+  <time datetime="2022-07-04T02:11:46.153Z" itemprop="datePublished">2022-07-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/04/py_day20/">linux学习6-实用指令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、运行级别"><a href="#1、运行级别" class="headerlink" title="1、运行级别"></a>1、运行级别</h3><p>0：关机<br>1：单用户【找回丢失密码】<br>2：多用户状态没有网络服务<br>3：多用户状态有网络服务<br>4：系统未使用保留给用户<br>5：图形界面<br>6：系统重启</p>
+<p>常用运行级别是3和5，也可以指定默认运行级别。</p>
+<p>切换运行级别命令：init [0 1 2 3 4 5 6]</p>
+<hr>
+<h3 id="2、帮助指令"><a href="#2、帮助指令" class="headerlink" title="2、帮助指令"></a>2、帮助指令</h3><p>man/help</p>
+<hr>
+<h3 id="3、文件目录指令"><a href="#3、文件目录指令" class="headerlink" title="3、文件目录指令"></a>3、文件目录指令</h3><p>pwd指令<br>基本语法：pwd 【功能描述：显示当前工作目录的绝对路径】</p>
+<p>ls指令<br>基本语法：ls [选项] [目录或是文件]<br>常用选项：<br>-a：显示当前目录所有文件的文件何目录，包括隐藏的。<br>-l：以单列列表的方式显示信息。</p>
+<p>cd指令<br>基本语法：cd [参数] 【功能描述：切换到指定目录】<br>理解：绝对路径何相对路径<br>cd ~或者cd：回到自己的家目录<br>cd ..：回到当前目录的上一级目录</p>
+<p>mkdir指令<br>用于创建目录<br>基本语法：mkdir [选项] 要创建的目录<br>常用选项：<br>-p：创建多级目录</p>
+<p>rmdir指令<br>用于删除目录<br>基本语法：rmdir [选项] 要删除的空目录 【这样做删除的是空目录，如果目录下有内容无法删除】<br>删除非空目录需要使用指令： rm -rf 要删除的目录。比如：rm -rf /home/animal</p>
+<p>touch指令<br>创建一个空文件<br>基本语法：touch 文件名称<br>比如：touch hello.txt</p>
+<p>cp指令<br>拷贝文件到指定目录<br>基本语法：cp [选项] source dest<br>常用选项：<br>-r 【递归复制整个文件夹】【强制覆盖不提示的方法：\cp，\cp -r /home/bbb/opt】</p>
+<p>rm指令<br>移除文件或目录<br>基本语法：rm [选项] 要删除的文件或目录<br>常用选项：<br>-r：递归删除整个文件夹<br>-f：强制删除不提示</p>
+<p>mv指令<br>移动文件与目录/重命名<br>基本语法：<br>mv oldNameFile newNameFile (功能描述：重命名)<br>mv /temp/movefile /targetFolder (功能描述：移动文件)</p>
+<p>cat指令<br>查看文件内容<br>基本语法：cat [选项] 要查看的文件<br>常用选项：-n 【显示行号】<br>【cat只能浏览文件，而不能修改文件，为了浏览方便，一般会带上管道命令 |more [进行交互]】</p>
+<p>more指令<br>这是一个基于VI编辑器的文本过滤器，以全屏幕的方式按页显示文本文件的内容。more指令中内置了若干快捷键。<br>基本语法：more 要查看的文件</p>
+<p>less指令<br>用来分屏查看文件内容，功能与more指令类似，但是比more指令更加强大，支持各种显示终端。less指令再显示文件内容时，并不是一次将整个文件加载之后才显示，而是根据显示需要加载内容，对于显示大型文件具有较高的效率。<br>基本语法：less 要查看的文件</p>
+<p>echo指令<br>输出内容到控制台<br>基本语法：echo [选项] [输出内容]</p>
+<p>head指令<br>用于显示文件的开头部分，默认情况下head指令显示文件的前10行内容。<br>基本语法：head 文件 (功能描述：查看文件头10行内容)<br>                  head -n 5 文件 (功能描述：查看文件头5行内容)</p>
+<p>tail指令<br>用于显示文件的尾部，默认情况下tail指令显示文件的后10行内容。<br>基本语法：tail 文件 (功能描述：查看文件尾10行内容)<br>                  tail -n 5 文件 (功能描述：查看文件尾5行内容)<br>                  tail -f 文件 (功能描述：实时追踪该文档的所有更新)</p>
+<p>/&gt;指令 和 &gt;&gt; 指令<br>/&gt; 输出重定向（覆盖写）<br>/&gt;&gt; 追加<br>基本语法：<br>ls -l &gt; 文件 (功能描述：列表的内容写入文件中（覆盖写）)<br>ls -al &gt;&gt; 文件 (功能描述：列表的内容追加到文件的末尾)<br>cat 文件1 &gt; 文件2 (功能描述：将文件1的内容覆盖到文件2)<br>echo “内容” &gt;&gt; 文件</p>
+<p>ln指令<br>软链接也称为符号链接，类似于windows里的快捷方式，主要存放了链接其他文件的路径<br>基本语法：ln -s [原文件或目录] [软链接名] (功能描述：给原文件创建一个软链接)<br>【删除软链接用 -rm】</p>
+<p>history指令<br>查看已经执行过的历史命令，也可以执行历史指令。<br>基本语法：history (功能描述：查看已经执行过的历史命令)<br>                  history 10 (功能描述：查看最近执行的10个命令)</p>
+<hr>
+<h3 id="4、时间日期类指令"><a href="#4、时间日期类指令" class="headerlink" title="4、时间日期类指令"></a>4、时间日期类指令</h3><p>date指令<br>显示当前日期<br>基本语法：<br>date (功能描述：显示当前时间)<br>date +%Y (功能描述：显示当前年份)<br>date +%m (功能描述：显示当前月份)<br>date +%d (功能描述：显示当前是哪一天)<br>date “+%Y-%m-%d %H:%M:%S” (功能描述：显示年月日时分秒)</p>
+<p>设置日期<br>基本语法：date -s 字符串时间 【比如：date -s “2022-07-05 10:07:35”】</p>
+<p>cal指令<br>查看日历<br>基本语法：cal [选项] (功能描述：不加选项，显示本月日历)</p>
+<hr>
+<h3 id="5、搜素和查找类指令"><a href="#5、搜素和查找类指令" class="headerlink" title="5、搜素和查找类指令"></a>5、搜素和查找类指令</h3><p>find指令<br>从指定目录向下递归地遍历其各个子目录，将满足条件地文件或者目录显示在终端。<br>基本语法：find [搜索范围] [选项]<br>选项说明：<br>-name&lt;查询方式&gt;：按照指定的文件名查找模式查找文件<br>-user&lt;用户名&gt;：查找属于指定用户名所有文件<br>-size&lt;文件大小&gt;：按照指定的文件大小查找文件<br>比如：查找整个linux系统下大于200M的文件（+n大于 -n小于 n等于， 单位有k,M,G）<br>            find / -size +200<br>           按文件名，根据名称查找/home目录下的hello.txt文件<br>           find /home -name hello.txt</p>
+<p>locate指令<br>可以快速定位文件的路径。locate指令利用事先建立的系统中所有文件名称以及路径的locate数据库实现快速定位给定的文件。locate指令无需遍历整个文件系统，查询速度较快。为了保证查询结果的准确度，管理员必须定期更新locate时刻。<br>基本语法：locate 搜索文件<br>【由于locate指令基于数据库进行查询，所以第一次运行前，必须使用updatedb指令创建locate数据库】<br>【没有locate数据库，可以使用指令 yum -y install mlocate 安装】</p>
+<p>grep指令和管道符 |<br>grep过滤查找，管道符 “|” 表示将前一个命令的处理结果输出传递给后面的命令处理。<br>基本语法：grep [选项] 查找内容 源文件<br>常用选项：<br>-n：显示匹配行及行号。<br>-i：忽略字母大小写。<br>比如：在hello.txt文件中，查找“yes”所在行，并显示行号<br>写法1：cat /home/hello.txt | grep -n “yes”<br>写法2：grep -n “yes” /home/hello.txt</p>
+<hr>
+<h3 id="6、压缩和解压类指令"><a href="#6、压缩和解压类指令" class="headerlink" title="6、压缩和解压类指令"></a>6、压缩和解压类指令</h3><p>gzip/gunzip指令<br>gzip用于压缩文件，gunzip用于解压文件。<br>基本语法：<br>gzip 文件 (功能描述：压缩文件，只能将文件压缩为*.gz文件)<br>gunzip 文件 (功能描述：解压缩文件命令)</p>
+<p>zip/unzip指令<br>zip用于压缩文件，unzip用于解压文件，这个在项目打包发布中很有用。<br>基本语法：<br>zip [选项] xxx.zip 将要压缩的内容 (功能描述：压缩文件和目录的命令)<br>unzip [选项] xxx.zip (功能描述：解压缩文件)<br>zip常用选项：<br>-r：递归压缩，即压缩目录<br>比如：将/home下的所有文件/文件夹进行压缩，压缩成myhome.zip<br>zip -r myhome.zip /home/</p>
+<p>tar指令<br>打包。<br>基本语法：tar [选项] xxx.tar.gz 打包的内容 (功能描述：打包目录，压缩后的文件格式.tar.gz)<br>选项说明：<br>-c：新建打包文件<br>-v：显示详细信息<br>-f：指定压缩后的文件名<br>-z：打包同时压缩<br>-x：解包.tar文件<br>一般组合：tar -zcvf</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/04/py_day20/" data-id="cl57luz3f000hy4vx16b30xvg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-py_day19" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/03/py_day19/" class="article-date">
+  <time datetime="2022-07-03T03:50:12.833Z" itemprop="datePublished">2022-07-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/03/py_day19/">linux学习6-用户管理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、添加用户-删除用户"><a href="#1、添加用户-删除用户" class="headerlink" title="1、添加用户/删除用户"></a>1、添加用户/删除用户</h3><p>添加用户基本语法：useradd 用户名<br>删除用户基本语法：userdel 用户名</p>
+<hr>
+<h3 id="2、指定-修改密码"><a href="#2、指定-修改密码" class="headerlink" title="2、指定/修改密码"></a>2、指定/修改密码</h3><p>基本语法：<br>password 用户名</p>
+<hr>
+<h3 id="3、查询用户信息-切换用户-查看当前用户"><a href="#3、查询用户信息-切换用户-查看当前用户" class="headerlink" title="3、查询用户信息/切换用户/查看当前用户"></a>3、查询用户信息/切换用户/查看当前用户</h3><p>基本语法：<br>id 用户名</p>
+<p>基本语法：<br>su - 用户名<br>从权限高的用户切换到权限低的用户，不需要输入密码，反之需要。当需要返回到原来用户时，使用exit/logout指令。</p>
+<p>基本语法：<br>whoami</p>
+<hr>
+<h3 id="4、用户组"><a href="#4、用户组" class="headerlink" title="4、用户组"></a>4、用户组</h3><p>添加<br>基本语法：groupadd 组名</p>
+<p>删除<br>基本语法：groupdel 组名</p>
+<p>增加用户时直接上组<br>基本语法：useradd -g 用户组 用户名</p>
+<p>修改用户组<br>基本语法：usermod -g 用户组 用户名</p>
+<hr>
+<h3 id="5、用户和组相关文件"><a href="#5、用户和组相关文件" class="headerlink" title="5、用户和组相关文件"></a>5、用户和组相关文件</h3><p>/etc/passwd 文件<br>用户(user)的配置文件，记录用户的各种信息。<br>每行的含义：用户名:口令:用户标识号:组织标识号:注释性描述:主目录:登录shell</p>
+<p>/etc/shadow 文件<br>口令的配置文件。<br>每行的含义：登录名:加密口令:最后一次修改时间:最小时间间隔:最大时间间隔:警告时间:不活动时间:失效时间:标志</p>
+<p>/etc/group 文件<br>组(group)配置文件，记录linux包括的组信息。<br>每行含义：组名:口令:组标识符:组内用户列表</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/03/py_day19/" data-id="cl57luz3d000ey4vx1kmte0nd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-py_day18" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/07/01/py_day18/" class="article-date">
@@ -95,11 +219,12 @@
 <p>命令模式退出到命令行：“ :wq ”（保存退出）、“ :q ”（退出）、“ :q! ”（强制退出，不保存）</p>
 <hr>
 <h3 id="3、快捷键"><a href="#3、快捷键" class="headerlink" title="3、快捷键"></a>3、快捷键</h3><p>1、拷贝当前行 yy，拷贝当前行向下的5行 5yy，并粘贴（输入p）。<br>2、删除当前行 dd，删除当前行向下的5行 5dd。<br>3、在文件中查找某个单词 [命令行向下 /关键字，回车 查找，输入 n 就是查找下一个]</p>
+<p>4、设置文件的行号/取消文件的行号。[命令行下 :set nu 和 :set nonu]<br>5、最末行 [G]，最首行 [gg]。<br>6、撤销动作：[u]。<br>7、快速定位行：[行号 shit+g]。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/07/01/py_day18/" data-id="cl52aaspb000cdkvxfgzj17p5" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/07/01/py_day18/" data-id="cl57luz3c000cy4vx7wps8a2k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -158,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/30/py_day17/" data-id="cl52aaspb000bdkvx9ffu0lr4" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/30/py_day17/" data-id="cl57luz3d000dy4vx738zfbxk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -201,7 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/30/py_day16/" data-id="cl52aasp9000adkvx5p1g3eno" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/30/py_day16/" data-id="cl57luz3a000ay4vx13te191l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -241,7 +366,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/30/py_day15/" data-id="cl52aasp80009dkvx0le4dqcn" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/30/py_day15/" data-id="cl57luz370008y4vx1gnt6nxn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -281,7 +406,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/23/py_day14/" data-id="cl52aaspc000ddkvx0kjl1xqv" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/23/py_day14/" data-id="cl57luz3c000by4vxc93tejas" class="article-share-link">Share</a>
       
       
     </footer>
@@ -329,7 +454,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/23/py_day13/" data-id="cl52aasp70008dkvxb3l98tf7" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/23/py_day13/" data-id="cl57luz350005y4vx50nf3uc5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -382,7 +507,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/22/py_day12/" data-id="cl52aasp60007dkvxcf2r59ng" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/22/py_day12/" data-id="cl57luz380009y4vxfyd483ip" class="article-share-link">Share</a>
       
       
     </footer>
@@ -433,132 +558,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/21/py_day11/" data-id="cl52aasp50005dkvx025n1lun" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day10" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/06/19/py_day10/" class="article-date">
-  <time datetime="2022-06-19T02:05:05.962Z" itemprop="datePublished">2022-06-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/19/py_day10/">Python学习10-类</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、创建和使用类"><a href="#1、创建和使用类" class="headerlink" title="1、创建和使用类"></a>1、创建和使用类</h3><h4 id="1-1、创建类"><a href="#1-1、创建类" class="headerlink" title="1.1、创建类"></a>1.1、创建类</h4><blockquote>
-<p>根据约定，在Python中，首字母大写的名称指的是类。这个类定义中的括号是空的，因为我们要从空白创建这个类。</p>
-</blockquote>
-<p>用法：class Name(object):<br>            def  _<em>init_</em>(self):</p>
-<p>1、_<em>init_</em>(self)<br>这是一个特殊的方法，类似java中的构造器，每当创建新实例的时候，py就会自动运行这个方法。方法中self形参必不可少，且必须位于最前面。self是一个指向实例本身的引用，相当于java中的this。<br>在类的代码中，需要访问当前实例中的变量和函数，即访问实例中的：<br>    a、对应的变量（属性）：Instance.ProperyNam，实现读写<br>    b、调用对应函数：Instance.function()，执行对应的动作<br>需要访问实例变量和调用实例函数，当然需要对应的实例对象本身。而在py中就规定好了，函数的第一个参数，就必须是实例对象本身，并且规定为self。</p>
-<p>**类在初始化实例时通过self拿到实例引用，然后给实例进行初始化</p>
-<h4 id="1-2、创建实例"><a href="#1-2、创建实例" class="headerlink" title="1.2、创建实例"></a>1.2、创建实例</h4><p>用法： instance = class();<br>py通过class的init方法创建一个实例，然后将其引用返回给instance。</p>
-<h3 id="2、使用类和实例"><a href="#2、使用类和实例" class="headerlink" title="2、使用类和实例"></a>2、使用类和实例</h3><h4 id="2-1、修改属性的值"><a href="#2-1、修改属性的值" class="headerlink" title="2.1、修改属性的值"></a>2.1、修改属性的值</h4><p>a、直接修改<br>instance.propery = x<br>b、通过方法修改<br>def updatePropery(self, num):<br>    self.propery = num</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/19/py_day10/" data-id="cl52aasp30003dkvxe40k857a" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day9" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/06/10/py_day9/" class="article-date">
-  <time datetime="2022-06-10T07:29:05.111Z" itemprop="datePublished">2022-06-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/10/py_day9/">Python学习9-函数</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、定义函数"><a href="#1、定义函数" class="headerlink" title="1、定义函数"></a>1、定义函数</h3><p>用法：def 函数名(完成任务需要的信息):<br>        （缩进）函数体</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def greet_user(username):</span><br><span class="line">    print(&quot;Hello, &quot; + username.title() + &quot;!&quot;)</span><br><span class="line"></span><br><span class="line">greet_user(&#x27;zhouyu&#x27;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、传递实参"><a href="#2、传递实参" class="headerlink" title="2、传递实参"></a>2、传递实参</h3><h4 id="2-1、位置实参"><a href="#2-1、位置实参" class="headerlink" title="2.1、位置实参"></a>2.1、位置实参</h4><blockquote>
-<p>关联方式是基于实参的顺序。这种关联方式被称为位置实参。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def describe_pet(animal_type, pet_name):</span><br><span class="line">    print(&quot;\nI have a &quot; + animal_type + &quot;.&quot;)</span><br><span class="line">    print(&quot;My &quot; + animal_type + &quot; &#x27;s name is &quot; + pet_name + &quot;.&quot;)</span><br><span class="line"></span><br><span class="line">describe_pet(&#x27;dog&#x27;, &#x27;wangwang&#x27;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-2、关键字实参"><a href="#2-2、关键字实参" class="headerlink" title="2.2、关键字实参"></a>2.2、关键字实参</h4><blockquote>
-<p>关键字实参是传递给函数的名称—值对。关键字实参让你无需考虑函数调用中的实参顺序，还清楚地指出了函数调用中各个值的用途。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def describe_pet(animal_type, pet_name):</span><br><span class="line">    print(&quot;\nI have a &quot; + animal_type + &quot;.&quot;)</span><br><span class="line">    print(&quot;My &quot; + animal_type + &quot; &#x27;s name is &quot; + pet_name + &quot;.&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">describe_pet(animal_type=&#x27;dog&#x27;, pet_name=&#x27;wangwang&#x27;)</span><br></pre></td></tr></table></figure>
-<p>***关键字实参的顺序无关紧要，因为Python知道各个值该存储到哪个形参中。</p>
-<h4 id="2-3、默认值"><a href="#2-3、默认值" class="headerlink" title="2.3、默认值"></a>2.3、默认值</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def describe_pet(pet_name, animal_type=&#x27;dog&#x27;):</span><br><span class="line">    print(&quot;\nI have a &quot; + animal_type + &quot;.&quot;)</span><br><span class="line">    print(&quot;My &quot; + animal_type + &quot; &#x27;s name is &quot; + pet_name + &quot;.&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">describe_pet(&#x27;wangwang&#x27;)</span><br></pre></td></tr></table></figure>
-<p>***使用默认值时，在形参列表中必须先列出没有默认值的形参，再列出有默认值的实参。<br>这让Python依然能够正确地解读位置实参</p>
-<h3 id="3、返回值"><a href="#3、返回值" class="headerlink" title="3、返回值"></a>3、返回值</h3><blockquote>
-<p>在函数中，可使用return语句将值返回到调用函数的代码行。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def getFotmattedName(firstName, lastName):</span><br><span class="line">    fullName = firstName + &quot; &quot; + lastName</span><br><span class="line">    return fullName</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">message = getFotmattedName(&#x27;zhou&#x27;, &#x27;yu&#x27;)</span><br><span class="line">print(message)</span><br></pre></td></tr></table></figure>
-<p>***Python将非空字符串解读为True</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def buildPerson(firstName, lastName):</span><br><span class="line">    person = &#123;&#x27;first&#x27;: firstName, &#x27;last&#x27;: lastName&#125;</span><br><span class="line">    return person</span><br><span class="line"></span><br><span class="line">message = buildPerson(&#x27;zhou&#x27;, &#x27;yu&#x27;)</span><br><span class="line">print(message)</span><br></pre></td></tr></table></figure>
-
-<h3 id="4、传递列表"><a href="#4、传递列表" class="headerlink" title="4、传递列表"></a>4、传递列表</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def greatUsers(names):</span><br><span class="line">    for name in names:</span><br><span class="line">        msg = &quot;Hello! &quot; + name.title() + &quot;!&quot;</span><br><span class="line">        print(msg)</span><br><span class="line"></span><br><span class="line">userNames = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]</span><br><span class="line">greatUsers(userNames)</span><br></pre></td></tr></table></figure>
-<h4 id="4-1、在函数中修改列表"><a href="#4-1、在函数中修改列表" class="headerlink" title="4.1、在函数中修改列表"></a>4.1、在函数中修改列表</h4><p>修改的是原始列表而不是它的副本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def printModels(unprintedDesigns, completedModels):</span><br><span class="line">    while unprintedDesigns:</span><br><span class="line">        currentDesign = unprintedDesigns.pop()</span><br><span class="line">        print(&quot;Printing model: &quot; + currentDesign)</span><br><span class="line">        completedModels.append(currentDesign)</span><br><span class="line"></span><br><span class="line">def showCompletedModels(completedModels):</span><br><span class="line">    print(&quot;\nThe following models have been printed:&quot;)</span><br><span class="line">    for completedModel in completedModels:</span><br><span class="line">        print(completedModel)</span><br><span class="line"></span><br><span class="line">printModels(unprintedDesigns, completedModels)</span><br><span class="line">showCompletedModels(completedModels)</span><br></pre></td></tr></table></figure>
-<h4 id="4-2、在函数中修改列表"><a href="#4-2、在函数中修改列表" class="headerlink" title="4.2、在函数中修改列表"></a>4.2、在函数中修改列表</h4><blockquote>
-<p>可向函数传递列表的副本而不是原件；这样函数所做的任何修改都只影响副本，而丝毫不影响原件。</p>
-</blockquote>
-<p>用法：function_name(list_name[:])</p>
-<blockquote>
-<p>切片表示法[:]创建列表的副本。</p>
-</blockquote>
-<h3 id="5、任意数量实参（可变形参）"><a href="#5、任意数量实参（可变形参）" class="headerlink" title="5、任意数量实参（可变形参）"></a>5、任意数量实参（可变形参）</h3><p>用法：*形参名</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def makePizza(*toppings):</span><br><span class="line">    print(toppings)</span><br><span class="line"></span><br><span class="line">makePizza(&#x27;a&#x27;, &#x27;b&#x27;)</span><br><span class="line">makePizza(&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>形参名*toppings中的星号让Python创建一个名为toppings的空元组，并将收到的所有值都封装到这个元组中。</p>
-</blockquote>
-<h4 id="4-1、结合使用位置实参和任意数量实参"><a href="#4-1、结合使用位置实参和任意数量实参" class="headerlink" title="4.1、结合使用位置实参和任意数量实参"></a>4.1、结合使用位置实参和任意数量实参</h4><blockquote>
-<p>如果要让函数接受不同类型的实参，必须在函数定义中将接纳任意数量实参的形参放在最后。<br>Python先匹配位置实参和关键字实参，再将余下的实参都收集到最后一个形参中。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def makePizza(size, *toppings):</span><br><span class="line">    print(&quot;\nMaking a &quot; + str(size)</span><br><span class="line">          + &quot;-inch pizza with the following toppings:&quot;)</span><br><span class="line">    for topping in toppings:</span><br><span class="line">        print(&quot;- &quot; + topping)</span><br><span class="line">makePizza(16, &#x27;pepperoni&#x27;)</span><br><span class="line">makePizza(12, &#x27;mushrooms&#x27;, &#x27;green peppers&#x27;, &#x27;extra cheese&#x27;)</span><br></pre></td></tr></table></figure>
-<h4 id="4-2、使用任意数量的关键字实参"><a href="#4-2、使用任意数量的关键字实参" class="headerlink" title="4.2、使用任意数量的关键字实参"></a>4.2、使用任意数量的关键字实参</h4><blockquote>
-<p>形参**userInfo中的两个星号让Python创建一个名为userInfo的空字典，并将收到的所有名称—值对都封装到这个字典中。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def buildProfile(first, last, **userInfo):</span><br><span class="line">    profile = &#123;&#125;</span><br><span class="line">    profile[&#x27;firstName&#x27;] = first</span><br><span class="line">    profile[&#x27;lastName&#x27;] = last</span><br><span class="line">    for key, value in userInfo.items():</span><br><span class="line">        profile[key] = value</span><br><span class="line">    return profile</span><br><span class="line"></span><br><span class="line">userProfile = buildProfile(&#x27;albert&#x27;, &#x27;einstein&#x27;, location = &#x27;princeton&#x27;, field = &#x27;physics&#x27;)</span><br><span class="line">print(userProfile)</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day9/" data-id="cl52aaspg000kdkvx1qt50e7o" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/21/py_day11/" data-id="cl57luz360007y4vxh6hhd5nd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -604,6 +604,14 @@
       <ul>
         
           <li>
+            <a href="/2022/07/04/py_day20/">linux学习6-实用指令</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/03/py_day19/">linux学习6-用户管理</a>
+          </li>
+        
+          <li>
             <a href="/2022/07/01/py_day18/">linux学习4-vim</a>
           </li>
         
@@ -613,14 +621,6 @@
         
           <li>
             <a href="/2022/06/30/py_day16/">linux学习2-虚拟机的克隆、快照、迁移和删除</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/30/py_day15/">学习14-存储数据</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/23/py_day14/">Python学习14-存储数据</a>
           </li>
         
       </ul>
