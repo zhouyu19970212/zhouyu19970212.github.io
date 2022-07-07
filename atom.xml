@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-07-07T08:32:40.707Z</updated>
+  <updated>2022-07-07T10:34:53.373Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2022/07/06/py_day23/"/>
     <id>http://example.com/2022/07/06/py_day23/</id>
     <published>2022-07-06T06:28:42.412Z</published>
-    <updated>2022-07-07T08:32:40.707Z</updated>
+    <updated>2022-07-07T10:34:53.373Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1、crond任务调度（crond是一个守护进程，crontab是一个指令）"><a href="#1、crond任务调度（crond是一个守护进程，crontab是一个指令）" class="headerlink" title="1、crond任务调度（crond是一个守护进程，crontab是一个指令）"></a>1、crond任务调度（crond是一个守护进程，crontab是一个指令）</h3><p>crontab 进行 定时任务的设置<br><img src="./images/3.png" alt="enter description here"></p><p>概述<br>任务调度：是指系统在某个时间执行的特定的命令或程序。<br>任务调度分类：1.系统工作：有些重要的工作必须周而复始地执行。如病毒扫描等<br>                          2.个别用户工作：个别用户可能希望执行某些程序，如对mysql数据库地备份</p><p>基本语法：<br>crontab [选项]<br>常用选项：<br>-e：编辑crontab定时任务<br>-l：查询crontab任务<br>-r：删除当前用户所有地crontab任务</p><p>用法：<br>1.设置任务调度文件：/etc/crontab<br>2.设置个人任务调度。执行cromtab -e命令<br>3.接着输入任务到调度文件<br>【* /1 * * * * ls -l /etc/ &gt; /tmp/to.txt】每小时的每分钟执行 ls -l /etc/ &gt; tmp/to.txt命令<br>【* /1 * * * * /home/mycal】 每小时的每分钟执行脚本文件</p><p>参数细节说明<br><img src="./images/2_1.png" alt="enter description here"><br>“ */1 ”代表每隔一分钟执行一次。<br>【分时天月星期几】</p><p>特殊符号说明：<br><img src="./images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87%E7%BC%96%E8%BE%91_20220707153011.jpg" alt="enter description here"></p><hr><h3 id="2、at任务调度"><a href="#2、at任务调度" class="headerlink" title="2、at任务调度"></a>2、at任务调度</h3><p>基本介绍：</p><ol><li>at命令是一次性定时计划任务，at的守护进程atd会以后台模式运行，检查作业队列来运行。</li><li>默认情况下，atd守护进程每60秒检查作业队列，有作业时，会检查作业运行时间，如果时间与当前时间匹配，则运行此作业。</li><li>at命令是一次性定时计划任务，执行完一个任务后就不再执行了。</li><li>在使用at命令的时候，一定要保证atd进行的启动，可以使用相关指令来查看【ps -ef】。<br><img src="./images/4.png" alt="enter description here"></li></ol><p> at命令格式：<br> at 【选项】【时间】<br> Ctrl+D 结束at命令输入</p><p> at命令选项：<br> <img src="./images/5.png" alt="enter description here"></p><p> at时间定义：【at指定时间的方法】<br> <img src="./images/6.png" alt="enter description here"></p>]]></content>
     
