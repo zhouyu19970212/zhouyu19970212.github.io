@@ -1,672 +1,199 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://example.com/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/page/2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-07-07 20:17:10'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-<meta name="generator" content="Hexo 5.4.1"></head>
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-py_day13" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/06/23/py_day13/" class="article-date">
-  <time datetime="2022-06-23T08:24:46.507Z" itemprop="datePublished">2022-06-23</time>
-</a>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/23/py_day13/">Python学习13-异常</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、处理异常try-except"><a href="#1、处理异常try-except" class="headerlink" title="1、处理异常try-except"></a>1、处理异常try-except</h3><p>用法：try:<br>        except:<br>        else:</p>
-<p>例子1：try-except模块中代码执行失败则进入except模块</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    print(5/0)</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">    print(&quot;You can&#x27;t divide by zero!&quot;)</span><br></pre></td></tr></table></figure>
-
-<p>例子2：try-except模块中代码成功执行则进入else模块</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">print(&quot;Give me two nums, and I will divide them.&quot;)</span><br><span class="line">print(&quot;Enter &#x27;q&#x27; to quit.&quot;)</span><br><span class="line"></span><br><span class="line">while True:</span><br><span class="line">    firstNumber = input(&quot;\nFirst num: &quot;)</span><br><span class="line">    if firstNumber == &#x27;q&#x27;:</span><br><span class="line">        break</span><br><span class="line">    elif not str.isdigit(firstNumber):</span><br><span class="line">        print(&quot;Plz re-input&quot;)</span><br><span class="line">        continue</span><br><span class="line">    secondNumber = input(&quot;\nFirst num: &quot;)</span><br><span class="line">    if secondNumber == &#x27;q&#x27;:</span><br><span class="line">        break</span><br><span class="line">    elif not str.isdigit(secondNumber):</span><br><span class="line">        print(&quot;Plz re-input&quot;)</span><br><span class="line">        continue</span><br><span class="line">    try:</span><br><span class="line">        answer = int(firstNumber) / int(secondNumber)</span><br><span class="line">    except ZeroDivisionError:</span><br><span class="line">        print(&quot;You can&#x27;t divide by 0!&quot;)</span><br><span class="line">    else:</span><br><span class="line">        print(answer)</span><br></pre></td></tr></table></figure>
-
-<p>例子3：捕获到异常时什么都不做</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;alice.txt&#x27;</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">    with open(filename) as fObj:</span><br><span class="line">        contents = fObj.read()</span><br><span class="line">except FileNotFoundError:</span><br><span class="line">    pass</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/23/py_day13/" data-id="cl5ay6bqq0008e8vx4yqn99u8" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day12" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/06/22/py_day12/" class="article-date">
-  <time datetime="2022-06-22T02:37:47.100Z" itemprop="datePublished">2022-06-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/22/py_day12/">Python学习12-文件的读写</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、读文件"><a href="#1、读文件" class="headerlink" title="1、读文件"></a>1、读文件</h3><h4 id="1-1、读文件"><a href="#1-1、读文件" class="headerlink" title="1.1、读文件"></a>1.1、读文件</h4><p>用法：with open(‘文件名’) as 别名<br>变量 = 别名.read()<br>print(变量)</p>
-<p>步骤：<br>–&gt; 打开文件，open()。Python在当前执行的文件所在的目录中查找指定的文件。函数open()返回一个表示文件的对象。<br>–&gt; 关闭文件，with()自动关闭文件。<br>–&gt; 读取文件，read()，返回一个字符串存储在变量中。</p>
-<h4 id="1-2、文件路径"><a href="#1-2、文件路径" class="headerlink" title="1.2、文件路径"></a>1.2、文件路径</h4><p>相对路径：<br>linux/OS X：with open(‘text_files/filename.txt’) as file_object: （斜杠）<br>Windows：with open(‘text_files\filename.txt’) as file_object: （反斜杠）<br>绝对路径：<br>linux/OS X：file_path = ‘/home/ehmatthes/other_files/text_files/filename.txt’<br>with open(file_path) as file_object:<br>Windows：file_path = ‘C:\Users\ehmatthes\other_files\text_files\filename.txt’<br>with open(file_path) as file_object:</p>
-<h4 id="1-3、逐行读取"><a href="#1-3、逐行读取" class="headerlink" title="1.3、逐行读取"></a>1.3、逐行读取</h4><p>使用for循环</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;pi_digits.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename) as fileObject:</span><br><span class="line">    for line in fileObject:</span><br><span class="line">        print(line.rstrip())</span><br></pre></td></tr></table></figure>
-<h4 id="1-4、使用列表保存文件内容"><a href="#1-4、使用列表保存文件内容" class="headerlink" title="1.4、使用列表保存文件内容"></a>1.4、使用列表保存文件内容</h4><blockquote>
-<p>使用关键字with时， open()返回的文件对象只在with代码块内可用。如果要在with代码块外访问文件的内容，可在with代码块内将文件的各行存储在一个列表中，并在with代码块外使用该列表：你可以立即处理文件的各个部分，也可推迟到程序后面再处理。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;pi_digits.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename) as fileObject:</span><br><span class="line">    lines = fileObject.readlines()</span><br><span class="line"></span><br><span class="line">for line in lines:</span><br><span class="line">    print(line.rstrip())</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>readlines()方法返回一个列表，文件各行存储在这这个列表中</strong></p>
-<h4 id="1-5、使用文件的内容"><a href="#1-5、使用文件的内容" class="headerlink" title="1.5、使用文件的内容"></a>1.5、使用文件的内容</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;pi_digits.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename) as fileObject:</span><br><span class="line">    lines = fileObject.readlines()</span><br><span class="line"></span><br><span class="line">piStr = &#x27;&#x27;</span><br><span class="line">for line in lines:</span><br><span class="line">    piStr += line.strip()</span><br><span class="line"></span><br><span class="line">print(piStr)</span><br><span class="line">print(len(piStr))</span><br></pre></td></tr></table></figure>
-
-<p><em><strong>读取文本文件时， Python将其中的所有文本都解读为字符串。如果你读取的是数字，并要将其作为数值使用，就必须使用函数int()将其转换为整数，或使用函数float()将其转换为浮点数。</strong></em></p>
-<h3 id="2、写文件"><a href="#2、写文件" class="headerlink" title="2、写文件"></a>2、写文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;programming.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename, &#x27;w&#x27;) as fileObject:</span><br><span class="line">    fileObject.write(&quot;I love programming&quot;)</span><br></pre></td></tr></table></figure>
-<p>open()中第一个参数指要打开文件的名称，第二个参数指以写入的方式打开文件。<br>可指定模式有的：w（写入）、r（读取）、a（附加）、r+（读写）。py默认读取模式打开文件。</p>
-<p><em><strong>Python只能将字符串写入文本文件。要将数值数据存储到文本文件中，必须先使用函数str()将其转换为字符串格式。</strong></em></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/22/py_day12/" data-id="cl5ay6bqq0007e8vxgs1f2u6h" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day11" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/06/21/py_day11/" class="article-date">
-  <time datetime="2022-06-21T09:12:50.958Z" itemprop="datePublished">2022-06-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/21/py_day11/">Python学习11-继承</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、子类构造器"><a href="#1、子类构造器" class="headerlink" title="1、子类构造器"></a>1、子类构造器</h3><blockquote>
-<p>创建子类的实例时， Python首先需要完成的任务是给父类的所有属性赋值。为此，子类的方法__init__()需要父类施以援手。</p>
-</blockquote>
-<p>**py的属性是放在构造器里的</p>
-<p>a、创建子类时，父类位于子类前面<br>b、定义子类时，必须在括号内指定父类的名称<br>c、super()引用父类的构造器</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">class Car():</span><br><span class="line"></span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        self.make = make</span><br><span class="line">        self.model = model</span><br><span class="line">        self.year = year</span><br><span class="line">        self.odometerReading = 0</span><br><span class="line"></span><br><span class="line">    def getDescriptiveName(self):</span><br><span class="line">        longName = str(self.year) + &#x27; &#x27; + self.make + &#x27; &#x27; + self.model</span><br><span class="line">        return longName.title()</span><br><span class="line"></span><br><span class="line">    def readOdometer(self):</span><br><span class="line">        print(&quot;This car has &quot; + str(self.odometerReading) + &quot; miles on it.&quot;)</span><br><span class="line"></span><br><span class="line">    def updateOdometer(self, mileage):</span><br><span class="line">        if mileage &gt;= self.odometerReading:</span><br><span class="line">            self.odometerReading = mileage</span><br><span class="line">        else:</span><br><span class="line">            print(&quot;You can&#x27;t roll back an odometer!&quot;)</span><br><span class="line"></span><br><span class="line">    def incrementOdometer(self, miles):</span><br><span class="line">        self.odometerReading += miles</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class ElectricCar(Car):</span><br><span class="line">    </span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        super().__init__(make, model, year)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">myTesla = ElectricCar(&#x27;tesla&#x27;, &#x27;model s&#x27;, 2016)</span><br><span class="line">print(myTesla.getDescriptiveName())</span><br></pre></td></tr></table></figure>
-<h3 id="2、给子类定义属性和方法"><a href="#2、给子类定义属性和方法" class="headerlink" title="2、给子类定义属性和方法"></a>2、给子类定义属性和方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class ElectricCar(Car):</span><br><span class="line"></span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        super().__init__(make, model, year)</span><br><span class="line">        self.batterySize = 70</span><br><span class="line"></span><br><span class="line">    def describeBattery(self):</span><br><span class="line">        print(&quot;This car has a &quot; + str(self.batterySize) + &quot;-kWh battery.&quot;)</span><br><span class="line"></span><br><span class="line">myTesla = ElectricCar(&#x27;tesla&#x27;, &#x27;model s&#x27;, 2016)</span><br><span class="line">print(myTesla.getDescriptiveName())</span><br><span class="line">myTesla.describeBattery()</span><br></pre></td></tr></table></figure>
-
-<h3 id="3、重写"><a href="#3、重写" class="headerlink" title="3、重写"></a>3、重写</h3><blockquote>
-<p>对于父类的方法，只要它不符合子类模拟的实物的行为，都可对其进行重写。为此，可在子类中定义一个这样的方法，即它与要重写的父类方法同名。这样， Python将不会考虑这个父类方法，而只关注你在子类中定义的相应方法。</p>
-</blockquote>
-<h3 id="4、将实例用作属性"><a href="#4、将实例用作属性" class="headerlink" title="4、将实例用作属性"></a>4、将实例用作属性</h3><blockquote>
-<p>不断给ElectricCar类添加细节时，我们可能会发现其中包含很多专门针对汽车电瓶的属性和方法。在这种情况下，我们可将这些属性和方法提取出来，放到另一个名为Battery的类中，并将一个Battery实例用作ElectricCar类的一个属性。</p>
-</blockquote>
-<p>***这行代码让Python在实例my_tesla中查找属性battery，并对存储在该属性中的Battery实例调用方法describe_battery()。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">class Battery():</span><br><span class="line"></span><br><span class="line">    def __init__(self, batterySzie =70):</span><br><span class="line">        self.batterySize = batterySzie</span><br><span class="line"></span><br><span class="line">    def describeBattery(self):</span><br><span class="line">        print(&quot;This car has a &quot; + str(self.batterySize) + &quot;-kWh battery.&quot;)</span><br><span class="line"></span><br><span class="line">    def getRange(self):</span><br><span class="line">        if self.batterySize == 70:</span><br><span class="line">            range = 240</span><br><span class="line">        elif self.batterySize == 85:</span><br><span class="line">            range = 270</span><br><span class="line"></span><br><span class="line">        message = &quot;This car can go approximately &quot; + str(range)</span><br><span class="line">        message += &quot; miles on a full charge.&quot;</span><br><span class="line">        print(message)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class ElectricCar(Car):</span><br><span class="line"></span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        super().__init__(make, model, year)</span><br><span class="line">        self.battery = Battery()</span><br><span class="line"></span><br><span class="line">    def describeBattery(self):</span><br><span class="line">        print(&quot;This car has a &quot; + str(self.batterySize) + &quot;-kWh battery.&quot;)</span><br><span class="line"></span><br><span class="line">myTesla = ElectricCar(&#x27;tesla&#x27;, &#x27;model s&#x27;, 2016)</span><br><span class="line">print(myTesla.getDescriptiveName())</span><br><span class="line">myTesla.battery.describeBattery()</span><br><span class="line">myTesla.battery.getRange()</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/21/py_day11/" data-id="cl5ay6bqo0005e8vxcaoi0rg3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day10" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/06/19/py_day10/" class="article-date">
-  <time datetime="2022-06-19T02:05:05.962Z" itemprop="datePublished">2022-06-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/19/py_day10/">Python学习10-类</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、创建和使用类"><a href="#1、创建和使用类" class="headerlink" title="1、创建和使用类"></a>1、创建和使用类</h3><h4 id="1-1、创建类"><a href="#1-1、创建类" class="headerlink" title="1.1、创建类"></a>1.1、创建类</h4><blockquote>
-<p>根据约定，在Python中，首字母大写的名称指的是类。这个类定义中的括号是空的，因为我们要从空白创建这个类。</p>
-</blockquote>
-<p>用法：class Name(object):<br>            def  _<em>init_</em>(self):</p>
-<p>1、_<em>init_</em>(self)<br>这是一个特殊的方法，类似java中的构造器，每当创建新实例的时候，py就会自动运行这个方法。方法中self形参必不可少，且必须位于最前面。self是一个指向实例本身的引用，相当于java中的this。<br>在类的代码中，需要访问当前实例中的变量和函数，即访问实例中的：<br>    a、对应的变量（属性）：Instance.ProperyNam，实现读写<br>    b、调用对应函数：Instance.function()，执行对应的动作<br>需要访问实例变量和调用实例函数，当然需要对应的实例对象本身。而在py中就规定好了，函数的第一个参数，就必须是实例对象本身，并且规定为self。</p>
-<p>**类在初始化实例时通过self拿到实例引用，然后给实例进行初始化</p>
-<h4 id="1-2、创建实例"><a href="#1-2、创建实例" class="headerlink" title="1.2、创建实例"></a>1.2、创建实例</h4><p>用法： instance = class();<br>py通过class的init方法创建一个实例，然后将其引用返回给instance。</p>
-<h3 id="2、使用类和实例"><a href="#2、使用类和实例" class="headerlink" title="2、使用类和实例"></a>2、使用类和实例</h3><h4 id="2-1、修改属性的值"><a href="#2-1、修改属性的值" class="headerlink" title="2.1、修改属性的值"></a>2.1、修改属性的值</h4><p>a、直接修改<br>instance.propery = x<br>b、通过方法修改<br>def updatePropery(self, num):<br>    self.propery = num</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/19/py_day10/" data-id="cl5ay6bqm0003e8vx2n0i67pv" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day9" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/06/10/py_day9/" class="article-date">
-  <time datetime="2022-06-10T07:29:05.111Z" itemprop="datePublished">2022-06-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/10/py_day9/">Python学习9-函数</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、定义函数"><a href="#1、定义函数" class="headerlink" title="1、定义函数"></a>1、定义函数</h3><p>用法：def 函数名(完成任务需要的信息):<br>        （缩进）函数体</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def greet_user(username):</span><br><span class="line">    print(&quot;Hello, &quot; + username.title() + &quot;!&quot;)</span><br><span class="line"></span><br><span class="line">greet_user(&#x27;zhouyu&#x27;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、传递实参"><a href="#2、传递实参" class="headerlink" title="2、传递实参"></a>2、传递实参</h3><h4 id="2-1、位置实参"><a href="#2-1、位置实参" class="headerlink" title="2.1、位置实参"></a>2.1、位置实参</h4><blockquote>
-<p>关联方式是基于实参的顺序。这种关联方式被称为位置实参。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def describe_pet(animal_type, pet_name):</span><br><span class="line">    print(&quot;\nI have a &quot; + animal_type + &quot;.&quot;)</span><br><span class="line">    print(&quot;My &quot; + animal_type + &quot; &#x27;s name is &quot; + pet_name + &quot;.&quot;)</span><br><span class="line"></span><br><span class="line">describe_pet(&#x27;dog&#x27;, &#x27;wangwang&#x27;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-2、关键字实参"><a href="#2-2、关键字实参" class="headerlink" title="2.2、关键字实参"></a>2.2、关键字实参</h4><blockquote>
-<p>关键字实参是传递给函数的名称—值对。关键字实参让你无需考虑函数调用中的实参顺序，还清楚地指出了函数调用中各个值的用途。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def describe_pet(animal_type, pet_name):</span><br><span class="line">    print(&quot;\nI have a &quot; + animal_type + &quot;.&quot;)</span><br><span class="line">    print(&quot;My &quot; + animal_type + &quot; &#x27;s name is &quot; + pet_name + &quot;.&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">describe_pet(animal_type=&#x27;dog&#x27;, pet_name=&#x27;wangwang&#x27;)</span><br></pre></td></tr></table></figure>
-<p>***关键字实参的顺序无关紧要，因为Python知道各个值该存储到哪个形参中。</p>
-<h4 id="2-3、默认值"><a href="#2-3、默认值" class="headerlink" title="2.3、默认值"></a>2.3、默认值</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def describe_pet(pet_name, animal_type=&#x27;dog&#x27;):</span><br><span class="line">    print(&quot;\nI have a &quot; + animal_type + &quot;.&quot;)</span><br><span class="line">    print(&quot;My &quot; + animal_type + &quot; &#x27;s name is &quot; + pet_name + &quot;.&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">describe_pet(&#x27;wangwang&#x27;)</span><br></pre></td></tr></table></figure>
-<p>***使用默认值时，在形参列表中必须先列出没有默认值的形参，再列出有默认值的实参。<br>这让Python依然能够正确地解读位置实参</p>
-<h3 id="3、返回值"><a href="#3、返回值" class="headerlink" title="3、返回值"></a>3、返回值</h3><blockquote>
-<p>在函数中，可使用return语句将值返回到调用函数的代码行。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def getFotmattedName(firstName, lastName):</span><br><span class="line">    fullName = firstName + &quot; &quot; + lastName</span><br><span class="line">    return fullName</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">message = getFotmattedName(&#x27;zhou&#x27;, &#x27;yu&#x27;)</span><br><span class="line">print(message)</span><br></pre></td></tr></table></figure>
-<p>***Python将非空字符串解读为True</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def buildPerson(firstName, lastName):</span><br><span class="line">    person = &#123;&#x27;first&#x27;: firstName, &#x27;last&#x27;: lastName&#125;</span><br><span class="line">    return person</span><br><span class="line"></span><br><span class="line">message = buildPerson(&#x27;zhou&#x27;, &#x27;yu&#x27;)</span><br><span class="line">print(message)</span><br></pre></td></tr></table></figure>
-
-<h3 id="4、传递列表"><a href="#4、传递列表" class="headerlink" title="4、传递列表"></a>4、传递列表</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def greatUsers(names):</span><br><span class="line">    for name in names:</span><br><span class="line">        msg = &quot;Hello! &quot; + name.title() + &quot;!&quot;</span><br><span class="line">        print(msg)</span><br><span class="line"></span><br><span class="line">userNames = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]</span><br><span class="line">greatUsers(userNames)</span><br></pre></td></tr></table></figure>
-<h4 id="4-1、在函数中修改列表"><a href="#4-1、在函数中修改列表" class="headerlink" title="4.1、在函数中修改列表"></a>4.1、在函数中修改列表</h4><p>修改的是原始列表而不是它的副本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def printModels(unprintedDesigns, completedModels):</span><br><span class="line">    while unprintedDesigns:</span><br><span class="line">        currentDesign = unprintedDesigns.pop()</span><br><span class="line">        print(&quot;Printing model: &quot; + currentDesign)</span><br><span class="line">        completedModels.append(currentDesign)</span><br><span class="line"></span><br><span class="line">def showCompletedModels(completedModels):</span><br><span class="line">    print(&quot;\nThe following models have been printed:&quot;)</span><br><span class="line">    for completedModel in completedModels:</span><br><span class="line">        print(completedModel)</span><br><span class="line"></span><br><span class="line">printModels(unprintedDesigns, completedModels)</span><br><span class="line">showCompletedModels(completedModels)</span><br></pre></td></tr></table></figure>
-<h4 id="4-2、在函数中修改列表"><a href="#4-2、在函数中修改列表" class="headerlink" title="4.2、在函数中修改列表"></a>4.2、在函数中修改列表</h4><blockquote>
-<p>可向函数传递列表的副本而不是原件；这样函数所做的任何修改都只影响副本，而丝毫不影响原件。</p>
-</blockquote>
-<p>用法：function_name(list_name[:])</p>
-<blockquote>
-<p>切片表示法[:]创建列表的副本。</p>
-</blockquote>
-<h3 id="5、任意数量实参（可变形参）"><a href="#5、任意数量实参（可变形参）" class="headerlink" title="5、任意数量实参（可变形参）"></a>5、任意数量实参（可变形参）</h3><p>用法：*形参名</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def makePizza(*toppings):</span><br><span class="line">    print(toppings)</span><br><span class="line"></span><br><span class="line">makePizza(&#x27;a&#x27;, &#x27;b&#x27;)</span><br><span class="line">makePizza(&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>形参名*toppings中的星号让Python创建一个名为toppings的空元组，并将收到的所有值都封装到这个元组中。</p>
-</blockquote>
-<h4 id="4-1、结合使用位置实参和任意数量实参"><a href="#4-1、结合使用位置实参和任意数量实参" class="headerlink" title="4.1、结合使用位置实参和任意数量实参"></a>4.1、结合使用位置实参和任意数量实参</h4><blockquote>
-<p>如果要让函数接受不同类型的实参，必须在函数定义中将接纳任意数量实参的形参放在最后。<br>Python先匹配位置实参和关键字实参，再将余下的实参都收集到最后一个形参中。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def makePizza(size, *toppings):</span><br><span class="line">    print(&quot;\nMaking a &quot; + str(size)</span><br><span class="line">          + &quot;-inch pizza with the following toppings:&quot;)</span><br><span class="line">    for topping in toppings:</span><br><span class="line">        print(&quot;- &quot; + topping)</span><br><span class="line">makePizza(16, &#x27;pepperoni&#x27;)</span><br><span class="line">makePizza(12, &#x27;mushrooms&#x27;, &#x27;green peppers&#x27;, &#x27;extra cheese&#x27;)</span><br></pre></td></tr></table></figure>
-<h4 id="4-2、使用任意数量的关键字实参"><a href="#4-2、使用任意数量的关键字实参" class="headerlink" title="4.2、使用任意数量的关键字实参"></a>4.2、使用任意数量的关键字实参</h4><blockquote>
-<p>形参**userInfo中的两个星号让Python创建一个名为userInfo的空字典，并将收到的所有名称—值对都封装到这个字典中。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def buildProfile(first, last, **userInfo):</span><br><span class="line">    profile = &#123;&#125;</span><br><span class="line">    profile[&#x27;firstName&#x27;] = first</span><br><span class="line">    profile[&#x27;lastName&#x27;] = last</span><br><span class="line">    for key, value in userInfo.items():</span><br><span class="line">        profile[key] = value</span><br><span class="line">    return profile</span><br><span class="line"></span><br><span class="line">userProfile = buildProfile(&#x27;albert&#x27;, &#x27;einstein&#x27;, location = &#x27;princeton&#x27;, field = &#x27;physics&#x27;)</span><br><span class="line">print(userProfile)</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day9/" data-id="cl5ay6bqz000oe8vxf56b3d6r" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day7" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/06/10/py_day7/" class="article-date">
-  <time datetime="2022-06-10T07:17:33.024Z" itemprop="datePublished">2022-06-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/10/py_day7/">Python学习7-字典</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、使用字典"><a href="#1、使用字典" class="headerlink" title="1、使用字典"></a>1、使用字典</h3><p>1.1、字典是一系列的k-v对。<br>1.2、用法：student = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}<br>空字典： student = {}<br>1.3、增：<br>student[‘weight’] = 65<br>student[‘nation’] = ‘china’</p>
-<p>1.4、删：<br>del student[‘weight’]</p>
-<p>1.5、改：<br>student[‘weight’] = student[‘weight’] + 10<br>student[‘name’] = ‘zhangyifei’</p>
-<h3 id="2、遍历字典"><a href="#2、遍历字典" class="headerlink" title="2、遍历字典"></a>2、遍历字典</h3><p>2.1、遍历k-v对：<br>for k, v in student.items():<br>print(k)<br>print(v)</p>
-<p>2.2、遍历key：<br>for k in student.keys():<br>print(k)</p>
-<p>for k in student:<br>print(k)</p>
-<p>2.3、按顺序遍历key：<br>for k in sorted(student.keys()):<br>print(k)</p>
-<p>2.4、遍历value：<br>for v in student.values():<br>print(v)</p>
-<p>2.5、用集合set剔除重复：<br>for v in set(student.values()):<br>print(v)</p>
-<h3 id="3、嵌套"><a href="#3、嵌套" class="headerlink" title="3、嵌套"></a>3、嵌套</h3><p>3.1、列表中嵌套字典：<br>student1 = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}<br>student2 = {‘name’: ‘zhangyifei’, ‘age’: 26, ‘sex’: ‘man’}<br>student3 = {‘name’: ‘wanghaozun’, ‘age’: 24, ‘sex’: ‘man’}</p>
-<p>students = [student1, student2, student3]</p>
-<p>for stu in students:<br>print(stu)</p>
-<p>3.2、字典中嵌套列表（一个key对多个value）：<br>students = {<br>‘zhouyu’: [25, ‘man’],<br>‘zhangyifei’: [26, ‘man’],<br>‘wanghaozun’: [24, ‘man’]<br>}<br>for name, ageAndSex in students.items():<br>print(name)<br>print(ageAndSex)</p>
-<p>3.3、字典中嵌套字典<br>school = {<br>‘students’: {<br>‘zhouyu’: [25, ‘man’],<br>‘zhangyifei’: [26, ‘man’],<br>‘wanghaozun’: [24, ‘man’]<br>},<br>‘teachers’: {<br>‘lishumao’: [45, ‘man’],<br>‘liujing’: [30, ‘woman’],<br>‘wangyingchun’: [65, ‘man’]<br>}<br>}<br>for stu, teacher in school.items():<br>print(stu)<br>print(teacher)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl5ay6br0000qe8vx391y6300" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day8" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/06/10/py_day8/" class="article-date">
-  <time datetime="2022-06-10T07:15:40.656Z" itemprop="datePublished">2022-06-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/10/py_day8/">Python学习8-input和while</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、input"><a href="#1、input" class="headerlink" title="1、input()"></a>1、input()</h3><p>用法：var = input()<br>input()函数将键入的信息存储到一个变量中；<br>每次使用input()时，都应该指定浅显易懂的提示，告诉用户需要提供什么样的信息。</p>
-<h3 id="2、while"><a href="#2、while" class="headerlink" title="2、while"></a>2、while</h3><p>用法：while 判断条件:</p>
-<p>break退出循环；<br>continue：跳至下一轮循环</p>
-<h3 id="3、使用while循环处理列表和字典"><a href="#3、使用while循环处理列表和字典" class="headerlink" title="3、使用while循环处理列表和字典"></a>3、使用while循环处理列表和字典</h3><blockquote>
-<p>在for循环中不应修改列表，否则将导致Python难以跟踪其中的元素。要在遍历列表的同时对其进行修改，可使用while循环。</p>
-</blockquote>
-<h4 id="3-1、-在列表之间移动元素"><a href="#3-1、-在列表之间移动元素" class="headerlink" title="3.1、 在列表之间移动元素"></a>3.1、 在列表之间移动元素</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">unconfirmed_users = [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;]</span><br><span class="line">confirmed_users = []</span><br><span class="line"></span><br><span class="line">while unconfirmed_users:</span><br><span class="line">    current_user = unconfirmed_users.pop()</span><br><span class="line">    print(&quot;Verifying users: &quot; + current_user)</span><br><span class="line">    confirmed_users.append(current_user)</span><br><span class="line"></span><br><span class="line">print(&quot;\n The following users have been confirmed: &quot;)</span><br><span class="line">for confirmed_user in confirmed_users:</span><br><span class="line">    print(confirmed_user.title())</span><br></pre></td></tr></table></figure>
-<h4 id="3-2、-删除包含特定值的所有列表元素"><a href="#3-2、-删除包含特定值的所有列表元素" class="headerlink" title="3.2、 删除包含特定值的所有列表元素"></a>3.2、 删除包含特定值的所有列表元素</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pets = [&#x27;dog&#x27;, &#x27;cat&#x27;, &#x27;dog&#x27;, &#x27;goldfish&#x27;, &#x27;cat&#x27;, &#x27;rabbit&#x27;, &#x27;cat&#x27;]</span><br><span class="line">print(pets)</span><br><span class="line"></span><br><span class="line">while &#x27;cat&#x27; in pets:</span><br><span class="line">    pets.remove(&#x27;cat&#x27;)</span><br><span class="line"></span><br><span class="line">print(pets)</span><br></pre></td></tr></table></figure>
-<h4 id="3-3、使用用户输入来填充字典"><a href="#3-3、使用用户输入来填充字典" class="headerlink" title="3.3、使用用户输入来填充字典"></a>3.3、使用用户输入来填充字典</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">responds = &#123;&#125;</span><br><span class="line"></span><br><span class="line">polling_active = True</span><br><span class="line"></span><br><span class="line">while polling_active:</span><br><span class="line">    name = input(&quot;\nWhat&#x27;s ur name? &quot;)</span><br><span class="line">    response = input(&quot;Witch mountain would u like to climb someday? &quot;)</span><br><span class="line"></span><br><span class="line">    responds[name] = response</span><br><span class="line"></span><br><span class="line">    repeat = input(&quot;Would u like to let another person respond? (yes/no) &quot;)</span><br><span class="line">    if repeat == &#x27;no&#x27;:</span><br><span class="line">        polling_active = False</span><br><span class="line"></span><br><span class="line">print(&quot;\n--- Poll Result ---&quot;)</span><br><span class="line">for name, response in responds.items():</span><br><span class="line">    print(name + &quot;would like to climb&quot; + response + &quot;.&quot;)</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day8/" data-id="cl5ay6br0000pe8vx5h1l70i6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day6" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/05/19/py_day6/" class="article-date">
-  <time datetime="2022-05-19T12:20:30.848Z" itemprop="datePublished">2022-05-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/19/py_day6/">Python学习6-if语句</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、条件测试"><a href="#1、条件测试" class="headerlink" title="1、条件测试"></a>1、条件测试</h3><p>检查列表中某个特定值：in/not in<br>names = [‘zhouyu’, ‘zhangyifei’, ‘wanghaozun’]<br>print(‘zhouyu’ in names) ==&gt; True<br>print(‘zhouy’ not in names) ==&gt; True</p>
-<h3 id="2、if语句"><a href="#2、if语句" class="headerlink" title="2、if语句"></a>2、if语句</h3><p>与java不同，不用加括号；与matlab不同，不用加end作为结束；py的if-else要加冒号，并且靠缩进来判断if里面的语句。<br>此外，java中if-elseif是可以多次判断的。而py中if为true则跳过elseif<br>if: condition<br>    do sth</p>
-<p>if:<br>    do sth1<br>else:<br>    do sth2</p>
-<p>if:<br>    do sth1<br>elseif:<br>    do sth2<br>else:<br>    do sth3</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/19/py_day6/" data-id="cl5ay6bqz000ne8vxeojzdtki" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day5" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/05/12/py_day5/" class="article-date">
-  <time datetime="2022-05-12T08:28:05.542Z" itemprop="datePublished">2022-05-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/12/py_day5/">Python学习5-操作列表</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、for循环遍历"><a href="#1、for循环遍历" class="headerlink" title="1、for循环遍历"></a>1、for循环遍历</h3><p>结构：for 临时变量 in 列表: （缩进）语句1（缩进）语句2 ……</p>
-<h3 id="2、range-函数"><a href="#2、range-函数" class="headerlink" title="2、range()函数"></a>2、range()函数</h3><p>用法1，遍历数字：for num in range(number1, number2): ……<br>用法2，创建连续数字集合：nums = list(range(1, 6))<br>用法3，创建偶数集合：even_nums = list(range(2, 11, 2))<br>range的范围是number1到number2 - 1，左闭右开</p>
-<p>注意：range(0, 0)、range(2, 0)均是空集合</p>
-<h3 id="3、统计数字列表：min、max、sum"><a href="#3、统计数字列表：min、max、sum" class="headerlink" title="3、统计数字列表：min、max、sum"></a>3、统计数字列表：min、max、sum</h3><p>用法：min(列表)、max(列表)、sum(列表)</p>
-<h3 id="4、列表解析"><a href="#4、列表解析" class="headerlink" title="4、列表解析"></a>4、列表解析</h3><p>列表解析将for循环和创建新元素合并成一行代码，并自动附加新元素。</p>
-<p>用法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">squares = [value**<span class="number">2</span> <span class="keyword">for</span> value <span class="keyword">in</span> <span class="title function_">range</span>(<span class="number">1</span>, <span class="number">11</span>)]</span><br><span class="line"># 列表名 = [表达式 <span class="keyword">for</span>循环]</span><br><span class="line"># 表达式用于生成存储值，<span class="keyword">for</span>循环用于给表达式提供值</span><br></pre></td></tr></table></figure>
-
-<h3 id="5、切片"><a href="#5、切片" class="headerlink" title="5、切片"></a>5、切片</h3><p>用法1：列表[索引1: 索引2]<br>用法2：列表[: 索引] 不指定首个索引，则自动从表头开始<br>用法3：列表[索引: ]<br>用法4：列表[负数索引: ]  负数索引切表尾</p>
-<h3 id="6、复制列表"><a href="#6、复制列表" class="headerlink" title="6、复制列表"></a>6、复制列表</h3><p>用法：列表副本 = 列表[:]</p>
-<h3 id="7、元组（不可变的列表）"><a href="#7、元组（不可变的列表）" class="headerlink" title="7、元组（不可变的列表）"></a>7、元组（不可变的列表）</h3><p>用法：元组 = (元素1, 元素2, ……)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl5ay6bqz000me8vxb12oc145" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day4" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/04/08/py_day4/" class="article-date">
-  <time datetime="2022-04-08T08:07:10.412Z" itemprop="datePublished">2022-04-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/08/py_day4/">Python学习4-组织列表</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、sort-和sorted-：永久排序和临时排序"><a href="#1、sort-和sorted-：永久排序和临时排序" class="headerlink" title="1、sort()和sorted()：永久排序和临时排序"></a>1、sort()和sorted()：永久排序和临时排序</h3><p>list.sort()              ：对已存在的列表进行排序，可以带参数 reverse = True<br>sorted(iterable)    ：对一切可迭代对象排序，对对象的副本进行排序，并返回这个副本，可以带参数 reverse = True</p>
-<h3 id="2、reverse-：反转列表"><a href="#2、reverse-：反转列表" class="headerlink" title="2、reverse()：反转列表"></a>2、reverse()：反转列表</h3><p>list.reverse()        ：</p>
-<h3 id="3、len-：返回列表长度"><a href="#3、len-：返回列表长度" class="headerlink" title="3、len()：返回列表长度"></a>3、len()：返回列表长度</h3><p>len(list)                ：</p>
-<h3 id="加餐：sort-内部实现原理"><a href="#加餐：sort-内部实现原理" class="headerlink" title="加餐：sort()内部实现原理"></a>加餐：sort()内部实现原理</h3><p>py中的sort()采用的是 Timsort 算法<br>最坏时间复杂度 O(nlogn)<br>空间复杂度 O(n)<br>相比快排，Timsort是稳定的</p>
-<blockquote>
-<p>Timsort是结合了合并排序（merge sort）和插入排序（insertion sort）而得出的排序算法，它在现实中有很好的效率。Tim Peters在2002年设计了该算法并在Python中使用（TimSort 是 Python 中 list.sort 的默认实现）。该算法找到数据中已经排好序的块-分区，每一个分区叫一个run，然后按规则合并这些run。Pyhton自从2.3版以来一直采用Timsort算法排序，现在Java SE7和Android也采用Timsort算法对数组排序。</p>
-</blockquote>
-<h4 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h4><p>针对现实中需要排序的数据分析，大多数的数据通常都是部分排序好的数据块，Timsort就是利用了这一个特点。<br>Timsort将已经排序好的数据块称为 run，在排序时，Timsort将数据元素放到不同的run里面，并将run按规则进行归并，最后只剩一个run，这个run就是最后的结果。</p>
-<p>Timsort会有一个minrun属性，如果初始的run小于这个minrun，则用插入排序将未排序的数据插入进来，直到达到条件，之后使用归并排序合并多个run。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl5ay6bqy000le8vx3hv83ae8" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/07/06/py_day23/">linux学习9-任务调度</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/06/py_day22/">linux学习8-rwx权限</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/06/py_day21/">linux学习7-权限管理</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/04/py_day20/">linux学习6-实用指令</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/03/py_day19/">linux学习6-用户管理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2022 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Hexo</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/06/23/py_day13/" title="Python学习13-异常"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python学习13-异常"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/06/23/py_day13/" title="Python学习13-异常">Python学习13-异常</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-06-23T08:24:46.507Z" title="Created 2022-06-23 16:24:46">2022-06-23</time></span></div><div class="content">1、处理异常try-except用法：try:        except:        else:
+例子1：try-except模块中代码执行失败则进入except模块
+1234try:    print(5/0)except ZeroDivisionError:    print(&quot;You can&#x27;t divide by zero!&quot;)
+
+例子2：try-except模块中代码成功执行则进入else模块
+12345678910111213141516171819202122print(&quot;Give me two nums, and I will divide them.&quot;)print(&quot;Enter &#x27;q&#x27; to quit.&quot;)while True:    firstNumber = input(&quot;\nFirst num: &quot;)    if firstNumber == &#x27;q&#x27;:        break    elif not str.isdigit(f ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/06/22/py_day12/" title="Python学习12-文件的读写"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python学习12-文件的读写"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/06/22/py_day12/" title="Python学习12-文件的读写">Python学习12-文件的读写</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-06-22T02:37:47.100Z" title="Created 2022-06-22 10:37:47">2022-06-22</time></span></div><div class="content">1、读文件1.1、读文件用法：with open(‘文件名’) as 别名变量 = 别名.read()print(变量)
+步骤：–&gt; 打开文件，open()。Python在当前执行的文件所在的目录中查找指定的文件。函数open()返回一个表示文件的对象。–&gt; 关闭文件，with()自动关闭文件。–&gt; 读取文件，read()，返回一个字符串存储在变量中。
+1.2、文件路径相对路径：linux/OS X：with open(‘text_files/filename.txt’) as file_object: （斜杠）Windows：with open(‘text_files\filename.txt’) as file_object: （反斜杠）绝对路径：linux/OS X：file_path = ‘/home/ehmatthes/other_files/text_files/filename.txt’with open(file_path) as file_object:Windows：file_path = ‘C:\Users\ehmatthes\other_fil ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/06/21/py_day11/" title="Python学习11-继承"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python学习11-继承"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/06/21/py_day11/" title="Python学习11-继承">Python学习11-继承</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-06-21T09:12:50.958Z" title="Created 2022-06-21 17:12:50">2022-06-21</time></span></div><div class="content">1、子类构造器
+创建子类的实例时， Python首先需要完成的任务是给父类的所有属性赋值。为此，子类的方法__init__()需要父类施以援手。
+
+**py的属性是放在构造器里的
+a、创建子类时，父类位于子类前面b、定义子类时，必须在括号内指定父类的名称c、super()引用父类的构造器
+123456789101112131415161718192021222324252627282930313233class Car():    def __init__(self, make, model, year):        self.make = make        self.model = model        self.year = year        self.odometerReading = 0    def getDescriptiveName(self):        longName = str(self.year) + &#x27; &#x27; + self.make + &#x27; &#x27; + self.model        return  ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/06/19/py_day10/" title="Python学习10-类"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python学习10-类"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/06/19/py_day10/" title="Python学习10-类">Python学习10-类</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-06-19T02:05:05.962Z" title="Created 2022-06-19 10:05:05">2022-06-19</time></span></div><div class="content">1、创建和使用类1.1、创建类
+根据约定，在Python中，首字母大写的名称指的是类。这个类定义中的括号是空的，因为我们要从空白创建这个类。
+
+用法：class Name(object):            def  _init_(self):
+1、_init_(self)这是一个特殊的方法，类似java中的构造器，每当创建新实例的时候，py就会自动运行这个方法。方法中self形参必不可少，且必须位于最前面。self是一个指向实例本身的引用，相当于java中的this。在类的代码中，需要访问当前实例中的变量和函数，即访问实例中的：    a、对应的变量（属性）：Instance.ProperyNam，实现读写    b、调用对应函数：Instance.function()，执行对应的动作需要访问实例变量和调用实例函数，当然需要对应的实例对象本身。而在py中就规定好了，函数的第一个参数，就必须是实例对象本身，并且规定为self。
+**类在初始化实例时通过self拿到实例引用，然后给实例进行初始化
+1.2、创建实例用法： instance = class();py通过class的ini ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/06/10/py_day9/" title="Python学习9-函数"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python学习9-函数"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/06/10/py_day9/" title="Python学习9-函数">Python学习9-函数</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-06-10T07:29:05.111Z" title="Created 2022-06-10 15:29:05">2022-06-10</time></span></div><div class="content">1、定义函数用法：def 函数名(完成任务需要的信息):        （缩进）函数体
+1234def greet_user(username):    print(&quot;Hello, &quot; + username.title() + &quot;!&quot;)greet_user(&#x27;zhouyu&#x27;)
+
+2、传递实参2.1、位置实参
+关联方式是基于实参的顺序。这种关联方式被称为位置实参。
+
+12345def describe_pet(animal_type, pet_name):    print(&quot;\nI have a &quot; + animal_type + &quot;.&quot;)    print(&quot;My &quot; + animal_type + &quot; &#x27;s name is &quot; + pet_name + &quot;.&quot;)describe_pet(&#x27;dog&#x27;, &#x27;wangwang&#x27;)
+
+2.2、关键字实参
+关键字实参是传递给函数的名称— ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/06/10/py_day7/" title="Python学习7-字典"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python学习7-字典"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/06/10/py_day7/" title="Python学习7-字典">Python学习7-字典</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-06-10T07:17:33.024Z" title="Created 2022-06-10 15:17:33">2022-06-10</time></span></div><div class="content">1、使用字典1.1、字典是一系列的k-v对。1.2、用法：student = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}空字典： student = {}1.3、增：student[‘weight’] = 65student[‘nation’] = ‘china’
+1.4、删：del student[‘weight’]
+1.5、改：student[‘weight’] = student[‘weight’] + 10student[‘name’] = ‘zhangyifei’
+2、遍历字典2.1、遍历k-v对：for k, v in student.items():print(k)print(v)
+2.2、遍历key：for k in student.keys():print(k)
+for k in student:print(k)
+2.3、按顺序遍历key：for k in sorted(student.keys()):print(k)
+2.4、遍历value：for v in student.values():print(v)
+2.5、用集 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/06/10/py_day8/" title="Python学习8-input和while"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python学习8-input和while"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/06/10/py_day8/" title="Python学习8-input和while">Python学习8-input和while</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-06-10T07:15:40.656Z" title="Created 2022-06-10 15:15:40">2022-06-10</time></span></div><div class="content">1、input()用法：var = input()input()函数将键入的信息存储到一个变量中；每次使用input()时，都应该指定浅显易懂的提示，告诉用户需要提供什么样的信息。
+2、while用法：while 判断条件:
+break退出循环；continue：跳至下一轮循环
+3、使用while循环处理列表和字典
+在for循环中不应修改列表，否则将导致Python难以跟踪其中的元素。要在遍历列表的同时对其进行修改，可使用while循环。
+
+3.1、 在列表之间移动元素1234567891011unconfirmed_users = [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;]confirmed_users = []while unconfirmed_users:    current_user = unconfirmed_users.pop()    print(&quot;Verifying users: &quot; + current_user)    confirmed_users.append(cu ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/05/19/py_day6/" title="Python学习6-if语句"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python学习6-if语句"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/05/19/py_day6/" title="Python学习6-if语句">Python学习6-if语句</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-05-19T12:20:30.848Z" title="Created 2022-05-19 20:20:30">2022-05-19</time></span></div><div class="content">1、条件测试检查列表中某个特定值：in/not innames = [‘zhouyu’, ‘zhangyifei’, ‘wanghaozun’]print(‘zhouyu’ in names) ==&gt; Trueprint(‘zhouy’ not in names) ==&gt; True
+2、if语句与java不同，不用加括号；与matlab不同，不用加end作为结束；py的if-else要加冒号，并且靠缩进来判断if里面的语句。此外，java中if-elseif是可以多次判断的。而py中if为true则跳过elseifif: condition    do sth
+if:    do sth1else:    do sth2
+if:    do sth1elseif:    do sth2else:    do sth3
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/05/12/py_day5/" title="Python学习5-操作列表"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python学习5-操作列表"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/05/12/py_day5/" title="Python学习5-操作列表">Python学习5-操作列表</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-05-12T08:28:05.542Z" title="Created 2022-05-12 16:28:05">2022-05-12</time></span></div><div class="content">1、for循环遍历结构：for 临时变量 in 列表: （缩进）语句1（缩进）语句2 ……
+2、range()函数用法1，遍历数字：for num in range(number1, number2): ……用法2，创建连续数字集合：nums = list(range(1, 6))用法3，创建偶数集合：even_nums = list(range(2, 11, 2))range的范围是number1到number2 - 1，左闭右开
+注意：range(0, 0)、range(2, 0)均是空集合
+3、统计数字列表：min、max、sum用法：min(列表)、max(列表)、sum(列表)
+4、列表解析列表解析将for循环和创建新元素合并成一行代码，并自动附加新元素。
+用法：
+123squares = [value**2 for value in range(1, 11)]# 列表名 = [表达式 for循环]# 表达式用于生成存储值，for循环用于给表达式提供值
+
+5、切片用法1：列表[索引1: 索引2]用法2：列表[: 索引] 不指定首个索引，则自动从表头开始用法3：列表[索引: ] ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/04/08/py_day4/" title="Python学习4-组织列表"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python学习4-组织列表"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/04/08/py_day4/" title="Python学习4-组织列表">Python学习4-组织列表</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-04-08T08:07:10.412Z" title="Created 2022-04-08 16:07:10">2022-04-08</time></span></div><div class="content">1、sort()和sorted()：永久排序和临时排序list.sort()              ：对已存在的列表进行排序，可以带参数 reverse = Truesorted(iterable)    ：对一切可迭代对象排序，对对象的副本进行排序，并返回这个副本，可以带参数 reverse = True
+2、reverse()：反转列表list.reverse()        ：
+3、len()：返回列表长度len(list)                ：
+加餐：sort()内部实现原理py中的sort()采用的是 Timsort 算法最坏时间复杂度 O(nlogn)空间复杂度 O(n)相比快排，Timsort是稳定的
+
+Timsort是结合了合并排序（merge sort）和插入排序（insertion sort）而得出的排序算法，它在现实中有很好的效率。Tim Peters在2002年设计了该算法并在Python中使用（TimSort 是 Python 中 list.sort 的默认实现）。该算法找到数据中已经排好序的块-分区，每一个分区叫一个run，然后按规则合并这 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/07/06/py_day23/" title="linux学习9-任务调度"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="linux学习9-任务调度"/></a><div class="content"><a class="title" href="/2022/07/06/py_day23/" title="linux学习9-任务调度">linux学习9-任务调度</a><time datetime="2022-07-06T06:28:42.412Z" title="Created 2022-07-06 14:28:42">2022-07-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/06/py_day22/" title="linux学习8-rwx权限"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="linux学习8-rwx权限"/></a><div class="content"><a class="title" href="/2022/07/06/py_day22/" title="linux学习8-rwx权限">linux学习8-rwx权限</a><time datetime="2022-07-06T02:33:50.559Z" title="Created 2022-07-06 10:33:50">2022-07-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/06/py_day21/" title="linux学习7-权限管理"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="linux学习7-权限管理"/></a><div class="content"><a class="title" href="/2022/07/06/py_day21/" title="linux学习7-权限管理">linux学习7-权限管理</a><time datetime="2022-07-06T01:45:42.450Z" title="Created 2022-07-06 09:45:42">2022-07-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/04/py_day20/" title="linux学习6-实用指令"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="linux学习6-实用指令"/></a><div class="content"><a class="title" href="/2022/07/04/py_day20/" title="linux学习6-实用指令">linux学习6-实用指令</a><time datetime="2022-07-04T02:11:46.153Z" title="Created 2022-07-04 10:11:46">2022-07-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/03/py_day19/" title="linux学习6-用户管理"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="linux学习6-用户管理"/></a><div class="content"><a class="title" href="/2022/07/03/py_day19/" title="linux学习6-用户管理">linux学习6-用户管理</a><time datetime="2022-07-03T03:50:12.833Z" title="Created 2022-07-03 11:50:12">2022-07-03</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">July 2022</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">June 2022</span><span class="card-archive-list-count">11</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">May 2022</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">April 2022</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/03/"><span class="card-archive-list-date">March 2022</span><span class="card-archive-list-count">2</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">23</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-07-07T12:17:10.476Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
