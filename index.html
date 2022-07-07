@@ -64,6 +64,173 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-py_day23" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/06/py_day23/" class="article-date">
+  <time datetime="2022-07-06T06:28:42.412Z" itemprop="datePublished">2022-07-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/06/py_day23/">linux学习9-任务调度</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、crond任务调度（crond是一个守护进程，crontab是一个指令）"><a href="#1、crond任务调度（crond是一个守护进程，crontab是一个指令）" class="headerlink" title="1、crond任务调度（crond是一个守护进程，crontab是一个指令）"></a>1、crond任务调度（crond是一个守护进程，crontab是一个指令）</h3><p>crontab 进行 定时任务的设置<br><img src="./images/3.png" alt="enter description here"></p>
+<p>概述<br>任务调度：是指系统在某个时间执行的特定的命令或程序。<br>任务调度分类：1.系统工作：有些重要的工作必须周而复始地执行。如病毒扫描等<br>                          2.个别用户工作：个别用户可能希望执行某些程序，如对mysql数据库地备份</p>
+<p>基本语法：<br>crontab [选项]<br>常用选项：<br>-e：编辑crontab定时任务<br>-l：查询crontab任务<br>-r：删除当前用户所有地crontab任务</p>
+<p>用法：<br>1.设置任务调度文件：/etc/crontab<br>2.设置个人任务调度。执行cromtab -e命令<br>3.接着输入任务到调度文件<br>【* /1 * * * * ls -l /etc/ &gt; /tmp/to.txt】每小时的每分钟执行 ls -l /etc/ &gt; tmp/to.txt命令<br>【* /1 * * * * /home/mycal】 每小时的每分钟执行脚本文件</p>
+<p>参数细节说明<br><img src="./images/2_1.png" alt="enter description here"><br>“ */1 ”代表每隔一分钟执行一次。<br>【分时天月星期几】</p>
+<p>特殊符号说明：<br><img src="./images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87%E7%BC%96%E8%BE%91_20220707153011.jpg" alt="enter description here"></p>
+<hr>
+<h3 id="2、at任务调度"><a href="#2、at任务调度" class="headerlink" title="2、at任务调度"></a>2、at任务调度</h3><p>基本介绍：</p>
+<ol>
+<li>at命令是一次性定时计划任务，at的守护进程atd会以后台模式运行，检查作业队列来运行。</li>
+<li>默认情况下，atd守护进程每60秒检查作业队列，有作业时，会检查作业运行时间，如果时间与当前时间匹配，则运行此作业。</li>
+<li>at命令是一次性定时计划任务，执行完一个任务后就不再执行了。</li>
+<li>在使用at命令的时候，一定要保证atd进行的启动，可以使用相关指令来查看【ps -ef】。<br><img src="./images/4.png" alt="enter description here"></li>
+</ol>
+<p> at命令格式：<br> at 【选项】【时间】<br> Ctrl+D 结束at命令输入</p>
+<p> at命令选项：<br> <img src="./images/5.png" alt="enter description here"></p>
+<p> at时间定义：【at指定时间的方法】<br> <img src="./images/6.png" alt="enter description here"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/06/py_day23/" data-id="cl5arus58000jk0vxepj06qeo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-py_day22" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/06/py_day22/" class="article-date">
+  <time datetime="2022-07-06T02:33:50.559Z" itemprop="datePublished">2022-07-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/06/py_day22/">linux学习8-rwx权限</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、权限的基本介绍"><a href="#1、权限的基本介绍" class="headerlink" title="1、权限的基本介绍"></a>1、权限的基本介绍</h3><p>ls -l中显示的内容中有这么一行：<br>-rwxrw-r– 1 root root 1213 Feb 2 09:39 abc</p>
+<p>0-9位说明</p>
+<ol>
+<li>第0位确定文件类型（d，-，l，c，b）<pre><code>l是链接，相当于windows的快捷方式
+d是目录，相当于windows的文件夹
+c是字符设备文件，鼠标，键盘
+b是块设备，比如硬盘
+</code></pre>
+</li>
+<li>第1-3位确定所有者（该文件的所有者）拥有该文件的权限。 —User</li>
+<li>第4-6位确定所属组（同用户组的）拥有该文件的权限。 —Group</li>
+<li>第7-9位确定其他用户拥有该文件的权限。 —Other</li>
+</ol>
+<hr>
+<h3 id="2、rwx作用到文件"><a href="#2、rwx作用到文件" class="headerlink" title="2、rwx作用到文件"></a>2、rwx作用到文件</h3><p>[ r ] 代表可读read<br>[ w ] 代表可写write<br>[ x ] 代表可执行execute</p>
+<p>实际案例：<br>-rwxrw-r– 1 root root 1213 Feb 2 09:39 abc<br>10个字符确定不同用户能对文件干什么<br>第一个字符代表文件类型为普通文件<br>其余字符三个一组（rwx）<br>第一组rwx：文件拥有者的权限是读、写和执行<br>第二组rw-：与文件拥有者同一组的用户的权限是读、写但不能执行<br>第三组r–：其他不同组的用户权限是只读</p>
+<p>其他说明：<br>1 文件：硬连接数  或 目录：子目录数<br>第一个root 用户<br>第二个root 组<br>1213 文件大小(字节)，如果是文件夹，显示4096字节<br>Feb 2 09:39 最后修改日期<br>abc 文件名</p>
+<hr>
+<h3 id="3、修改文件-目录权限"><a href="#3、修改文件-目录权限" class="headerlink" title="3、修改文件/目录权限"></a>3、修改文件/目录权限</h3><p>通过chmod指令，可以修改文件或者目录的权限。</p>
+<p>第一种方式：+、-、=变更权限<br>u：所有者<br>g：所有组<br>o：其他人<br>a：所有人（u、g、o的总和）<br>1）chmod u=rwx,g=rx,o=x 文件名/目录名<br>2) chmod o+w 文件/目录名<br>3)  chmod a-x 文件名/目录名</p>
+<p>第二种方式：通过数字变更权限<br>r=4<br>w=2<br>x=1<br>rwx=4+2+1=7<br>chmod u=rwx,g=rx,o=x 文件目录名 ==&gt; 相当于  chmod 751 文件目录名</p>
+<hr>
+<h3 id="4、修改文件所有者"><a href="#4、修改文件所有者" class="headerlink" title="4、修改文件所有者"></a>4、修改文件所有者</h3><p>chown newowner 文件/目录 改变所有者<br>chown newowner:newgroup 文件/目录 改变所有者和所在组<br>-R 如果是目录 则使其下所有子文件或目录递归生效</p>
+<hr>
+<h3 id="5、修改文件-目录所在组"><a href="#5、修改文件-目录所在组" class="headerlink" title="5、修改文件/目录所在组"></a>5、修改文件/目录所在组</h3><p>chgrp newgroup 文件/目录  【改变所在组】</p>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/06/py_day22/" data-id="cl5arus57000ik0vx9hvzfv4z" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-py_day21" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/06/py_day21/" class="article-date">
+  <time datetime="2022-07-06T01:45:42.450Z" itemprop="datePublished">2022-07-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/06/py_day21/">linux学习7-权限管理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、组"><a href="#1、组" class="headerlink" title="1、组"></a>1、组</h3><p>在linux中的每一个用户必须属于一个组，不能独立于组外。<br>在linux中每个文件有所有者、所在组、其他组。</p>
+<hr>
+<h3 id="2、文件-目录-所有者"><a href="#2、文件-目录-所有者" class="headerlink" title="2、文件/目录 所有者"></a>2、文件/目录 所有者</h3><p>一般为文件的创建者，谁创建了文件，就自然成为该文件的所有者。</p>
+<p>查看文件的所有者<br>指令：ls -ahl</p>
+<p>修改文件所有者<br>指令：chown 用户名 文件名</p>
+<hr>
+<h3 id="3、组的创建"><a href="#3、组的创建" class="headerlink" title="3、组的创建"></a>3、组的创建</h3><p>基本指令：groupadd 组名</p>
+<hr>
+<h3 id="4、所在组"><a href="#4、所在组" class="headerlink" title="4、所在组"></a>4、所在组</h3><p>当某个用户创建了一个文件后，这个文件的所在组就是该用户所在的组。</p>
+<p>查看文件/目录所在组<br>基本指令：ls -ahl</p>
+<p>修改文件所在组<br>基本指令：chgrp 组名 文件名</p>
+<hr>
+<h3 id="5、其他组"><a href="#5、其他组" class="headerlink" title="5、其他组"></a>5、其他组</h3><p>除文件的所有者和所在组的用户外，系统的其他用户都是文件的其他组。</p>
+<hr>
+<h3 id="6、改变用户所在组"><a href="#6、改变用户所在组" class="headerlink" title="6、改变用户所在组"></a>6、改变用户所在组</h3><p>在添加用户时，可以指定将该用户添加到哪个组中，同样的用root的管理权限可以改变某个用户所在组。</p>
+<p>改变用户所在组<br>usermod -g 新组名 用户名<br>usermod -d 目录名 用户名 改变该用户登录的初始目录 【用户需要有进入到新目录的权限】</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/06/py_day21/" data-id="cl5arus56000fk0vx7nmo317c" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-py_day20" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/07/04/py_day20/" class="article-date">
@@ -126,7 +293,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/07/04/py_day20/" data-id="cl57luz3f000hy4vx16b30xvg" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/07/04/py_day20/" data-id="cl5arus57000hk0vx20bodfx2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -178,7 +345,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/07/03/py_day19/" data-id="cl57luz3d000ey4vx1kmte0nd" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/07/03/py_day19/" data-id="cl5arus55000ek0vxb3rpbv08" class="article-share-link">Share</a>
       
       
     </footer>
@@ -224,7 +391,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/07/01/py_day18/" data-id="cl57luz3c000cy4vx7wps8a2k" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/07/01/py_day18/" data-id="cl5arus55000dk0vx9mccbgfi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -283,7 +450,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/30/py_day17/" data-id="cl57luz3d000dy4vx738zfbxk" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/30/py_day17/" data-id="cl5arus54000bk0vx7mjg8tmo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -326,7 +493,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/30/py_day16/" data-id="cl57luz3a000ay4vx13te191l" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/30/py_day16/" data-id="cl5arus54000ck0vx85shbj87" class="article-share-link">Share</a>
       
       
     </footer>
@@ -366,7 +533,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/30/py_day15/" data-id="cl57luz370008y4vx1gnt6nxn" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/30/py_day15/" data-id="cl5arus53000ak0vx5wjl3p1n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -406,159 +573,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/23/py_day14/" data-id="cl57luz3c000by4vxc93tejas" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day13" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/06/23/py_day13/" class="article-date">
-  <time datetime="2022-06-23T08:24:46.507Z" itemprop="datePublished">2022-06-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/23/py_day13/">Python学习13-异常</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、处理异常try-except"><a href="#1、处理异常try-except" class="headerlink" title="1、处理异常try-except"></a>1、处理异常try-except</h3><p>用法：try:<br>        except:<br>        else:</p>
-<p>例子1：try-except模块中代码执行失败则进入except模块</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    print(5/0)</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">    print(&quot;You can&#x27;t divide by zero!&quot;)</span><br></pre></td></tr></table></figure>
-
-<p>例子2：try-except模块中代码成功执行则进入else模块</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">print(&quot;Give me two nums, and I will divide them.&quot;)</span><br><span class="line">print(&quot;Enter &#x27;q&#x27; to quit.&quot;)</span><br><span class="line"></span><br><span class="line">while True:</span><br><span class="line">    firstNumber = input(&quot;\nFirst num: &quot;)</span><br><span class="line">    if firstNumber == &#x27;q&#x27;:</span><br><span class="line">        break</span><br><span class="line">    elif not str.isdigit(firstNumber):</span><br><span class="line">        print(&quot;Plz re-input&quot;)</span><br><span class="line">        continue</span><br><span class="line">    secondNumber = input(&quot;\nFirst num: &quot;)</span><br><span class="line">    if secondNumber == &#x27;q&#x27;:</span><br><span class="line">        break</span><br><span class="line">    elif not str.isdigit(secondNumber):</span><br><span class="line">        print(&quot;Plz re-input&quot;)</span><br><span class="line">        continue</span><br><span class="line">    try:</span><br><span class="line">        answer = int(firstNumber) / int(secondNumber)</span><br><span class="line">    except ZeroDivisionError:</span><br><span class="line">        print(&quot;You can&#x27;t divide by 0!&quot;)</span><br><span class="line">    else:</span><br><span class="line">        print(answer)</span><br></pre></td></tr></table></figure>
-
-<p>例子3：捕获到异常时什么都不做</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;alice.txt&#x27;</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">    with open(filename) as fObj:</span><br><span class="line">        contents = fObj.read()</span><br><span class="line">except FileNotFoundError:</span><br><span class="line">    pass</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/23/py_day13/" data-id="cl57luz350005y4vx50nf3uc5" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day12" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/06/22/py_day12/" class="article-date">
-  <time datetime="2022-06-22T02:37:47.100Z" itemprop="datePublished">2022-06-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/22/py_day12/">Python学习12-文件的读写</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、读文件"><a href="#1、读文件" class="headerlink" title="1、读文件"></a>1、读文件</h3><h4 id="1-1、读文件"><a href="#1-1、读文件" class="headerlink" title="1.1、读文件"></a>1.1、读文件</h4><p>用法：with open(‘文件名’) as 别名<br>变量 = 别名.read()<br>print(变量)</p>
-<p>步骤：<br>–&gt; 打开文件，open()。Python在当前执行的文件所在的目录中查找指定的文件。函数open()返回一个表示文件的对象。<br>–&gt; 关闭文件，with()自动关闭文件。<br>–&gt; 读取文件，read()，返回一个字符串存储在变量中。</p>
-<h4 id="1-2、文件路径"><a href="#1-2、文件路径" class="headerlink" title="1.2、文件路径"></a>1.2、文件路径</h4><p>相对路径：<br>linux/OS X：with open(‘text_files/filename.txt’) as file_object: （斜杠）<br>Windows：with open(‘text_files\filename.txt’) as file_object: （反斜杠）<br>绝对路径：<br>linux/OS X：file_path = ‘/home/ehmatthes/other_files/text_files/filename.txt’<br>with open(file_path) as file_object:<br>Windows：file_path = ‘C:\Users\ehmatthes\other_files\text_files\filename.txt’<br>with open(file_path) as file_object:</p>
-<h4 id="1-3、逐行读取"><a href="#1-3、逐行读取" class="headerlink" title="1.3、逐行读取"></a>1.3、逐行读取</h4><p>使用for循环</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;pi_digits.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename) as fileObject:</span><br><span class="line">    for line in fileObject:</span><br><span class="line">        print(line.rstrip())</span><br></pre></td></tr></table></figure>
-<h4 id="1-4、使用列表保存文件内容"><a href="#1-4、使用列表保存文件内容" class="headerlink" title="1.4、使用列表保存文件内容"></a>1.4、使用列表保存文件内容</h4><blockquote>
-<p>使用关键字with时， open()返回的文件对象只在with代码块内可用。如果要在with代码块外访问文件的内容，可在with代码块内将文件的各行存储在一个列表中，并在with代码块外使用该列表：你可以立即处理文件的各个部分，也可推迟到程序后面再处理。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;pi_digits.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename) as fileObject:</span><br><span class="line">    lines = fileObject.readlines()</span><br><span class="line"></span><br><span class="line">for line in lines:</span><br><span class="line">    print(line.rstrip())</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>readlines()方法返回一个列表，文件各行存储在这这个列表中</strong></p>
-<h4 id="1-5、使用文件的内容"><a href="#1-5、使用文件的内容" class="headerlink" title="1.5、使用文件的内容"></a>1.5、使用文件的内容</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;pi_digits.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename) as fileObject:</span><br><span class="line">    lines = fileObject.readlines()</span><br><span class="line"></span><br><span class="line">piStr = &#x27;&#x27;</span><br><span class="line">for line in lines:</span><br><span class="line">    piStr += line.strip()</span><br><span class="line"></span><br><span class="line">print(piStr)</span><br><span class="line">print(len(piStr))</span><br></pre></td></tr></table></figure>
-
-<p><em><strong>读取文本文件时， Python将其中的所有文本都解读为字符串。如果你读取的是数字，并要将其作为数值使用，就必须使用函数int()将其转换为整数，或使用函数float()将其转换为浮点数。</strong></em></p>
-<h3 id="2、写文件"><a href="#2、写文件" class="headerlink" title="2、写文件"></a>2、写文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;programming.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename, &#x27;w&#x27;) as fileObject:</span><br><span class="line">    fileObject.write(&quot;I love programming&quot;)</span><br></pre></td></tr></table></figure>
-<p>open()中第一个参数指要打开文件的名称，第二个参数指以写入的方式打开文件。<br>可指定模式有的：w（写入）、r（读取）、a（附加）、r+（读写）。py默认读取模式打开文件。</p>
-<p><em><strong>Python只能将字符串写入文本文件。要将数值数据存储到文本文件中，必须先使用函数str()将其转换为字符串格式。</strong></em></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/22/py_day12/" data-id="cl57luz380009y4vxfyd483ip" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day11" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/06/21/py_day11/" class="article-date">
-  <time datetime="2022-06-21T09:12:50.958Z" itemprop="datePublished">2022-06-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/21/py_day11/">Python学习11-继承</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、子类构造器"><a href="#1、子类构造器" class="headerlink" title="1、子类构造器"></a>1、子类构造器</h3><blockquote>
-<p>创建子类的实例时， Python首先需要完成的任务是给父类的所有属性赋值。为此，子类的方法__init__()需要父类施以援手。</p>
-</blockquote>
-<p>**py的属性是放在构造器里的</p>
-<p>a、创建子类时，父类位于子类前面<br>b、定义子类时，必须在括号内指定父类的名称<br>c、super()引用父类的构造器</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">class Car():</span><br><span class="line"></span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        self.make = make</span><br><span class="line">        self.model = model</span><br><span class="line">        self.year = year</span><br><span class="line">        self.odometerReading = 0</span><br><span class="line"></span><br><span class="line">    def getDescriptiveName(self):</span><br><span class="line">        longName = str(self.year) + &#x27; &#x27; + self.make + &#x27; &#x27; + self.model</span><br><span class="line">        return longName.title()</span><br><span class="line"></span><br><span class="line">    def readOdometer(self):</span><br><span class="line">        print(&quot;This car has &quot; + str(self.odometerReading) + &quot; miles on it.&quot;)</span><br><span class="line"></span><br><span class="line">    def updateOdometer(self, mileage):</span><br><span class="line">        if mileage &gt;= self.odometerReading:</span><br><span class="line">            self.odometerReading = mileage</span><br><span class="line">        else:</span><br><span class="line">            print(&quot;You can&#x27;t roll back an odometer!&quot;)</span><br><span class="line"></span><br><span class="line">    def incrementOdometer(self, miles):</span><br><span class="line">        self.odometerReading += miles</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class ElectricCar(Car):</span><br><span class="line">    </span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        super().__init__(make, model, year)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">myTesla = ElectricCar(&#x27;tesla&#x27;, &#x27;model s&#x27;, 2016)</span><br><span class="line">print(myTesla.getDescriptiveName())</span><br></pre></td></tr></table></figure>
-<h3 id="2、给子类定义属性和方法"><a href="#2、给子类定义属性和方法" class="headerlink" title="2、给子类定义属性和方法"></a>2、给子类定义属性和方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class ElectricCar(Car):</span><br><span class="line"></span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        super().__init__(make, model, year)</span><br><span class="line">        self.batterySize = 70</span><br><span class="line"></span><br><span class="line">    def describeBattery(self):</span><br><span class="line">        print(&quot;This car has a &quot; + str(self.batterySize) + &quot;-kWh battery.&quot;)</span><br><span class="line"></span><br><span class="line">myTesla = ElectricCar(&#x27;tesla&#x27;, &#x27;model s&#x27;, 2016)</span><br><span class="line">print(myTesla.getDescriptiveName())</span><br><span class="line">myTesla.describeBattery()</span><br></pre></td></tr></table></figure>
-
-<h3 id="3、重写"><a href="#3、重写" class="headerlink" title="3、重写"></a>3、重写</h3><blockquote>
-<p>对于父类的方法，只要它不符合子类模拟的实物的行为，都可对其进行重写。为此，可在子类中定义一个这样的方法，即它与要重写的父类方法同名。这样， Python将不会考虑这个父类方法，而只关注你在子类中定义的相应方法。</p>
-</blockquote>
-<h3 id="4、将实例用作属性"><a href="#4、将实例用作属性" class="headerlink" title="4、将实例用作属性"></a>4、将实例用作属性</h3><blockquote>
-<p>不断给ElectricCar类添加细节时，我们可能会发现其中包含很多专门针对汽车电瓶的属性和方法。在这种情况下，我们可将这些属性和方法提取出来，放到另一个名为Battery的类中，并将一个Battery实例用作ElectricCar类的一个属性。</p>
-</blockquote>
-<p>***这行代码让Python在实例my_tesla中查找属性battery，并对存储在该属性中的Battery实例调用方法describe_battery()。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">class Battery():</span><br><span class="line"></span><br><span class="line">    def __init__(self, batterySzie =70):</span><br><span class="line">        self.batterySize = batterySzie</span><br><span class="line"></span><br><span class="line">    def describeBattery(self):</span><br><span class="line">        print(&quot;This car has a &quot; + str(self.batterySize) + &quot;-kWh battery.&quot;)</span><br><span class="line"></span><br><span class="line">    def getRange(self):</span><br><span class="line">        if self.batterySize == 70:</span><br><span class="line">            range = 240</span><br><span class="line">        elif self.batterySize == 85:</span><br><span class="line">            range = 270</span><br><span class="line"></span><br><span class="line">        message = &quot;This car can go approximately &quot; + str(range)</span><br><span class="line">        message += &quot; miles on a full charge.&quot;</span><br><span class="line">        print(message)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class ElectricCar(Car):</span><br><span class="line"></span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        super().__init__(make, model, year)</span><br><span class="line">        self.battery = Battery()</span><br><span class="line"></span><br><span class="line">    def describeBattery(self):</span><br><span class="line">        print(&quot;This car has a &quot; + str(self.batterySize) + &quot;-kWh battery.&quot;)</span><br><span class="line"></span><br><span class="line">myTesla = ElectricCar(&#x27;tesla&#x27;, &#x27;model s&#x27;, 2016)</span><br><span class="line">print(myTesla.getDescriptiveName())</span><br><span class="line">myTesla.battery.describeBattery()</span><br><span class="line">myTesla.battery.getRange()</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/21/py_day11/" data-id="cl57luz360007y4vxh6hhd5nd" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/23/py_day14/" data-id="cl5arus520009k0vx6y4hhwgj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -572,7 +587,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -604,23 +619,23 @@
       <ul>
         
           <li>
+            <a href="/2022/07/06/py_day23/">linux学习9-任务调度</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/06/py_day22/">linux学习8-rwx权限</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/06/py_day21/">linux学习7-权限管理</a>
+          </li>
+        
+          <li>
             <a href="/2022/07/04/py_day20/">linux学习6-实用指令</a>
           </li>
         
           <li>
             <a href="/2022/07/03/py_day19/">linux学习6-用户管理</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/01/py_day18/">linux学习4-vim</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/30/py_day17/">linux学习3-目录结构</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/30/py_day16/">linux学习2-虚拟机的克隆、快照、迁移和删除</a>
           </li>
         
       </ul>

@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-07-05T03:21:43.630Z</updated>
+  <updated>2022-07-07T08:32:40.707Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,67 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux学习9-任务调度</title>
+    <link href="http://example.com/2022/07/06/py_day23/"/>
+    <id>http://example.com/2022/07/06/py_day23/</id>
+    <published>2022-07-06T06:28:42.412Z</published>
+    <updated>2022-07-07T08:32:40.707Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、crond任务调度（crond是一个守护进程，crontab是一个指令）"><a href="#1、crond任务调度（crond是一个守护进程，crontab是一个指令）" class="headerlink" title="1、crond任务调度（crond是一个守护进程，crontab是一个指令）"></a>1、crond任务调度（crond是一个守护进程，crontab是一个指令）</h3><p>crontab 进行 定时任务的设置<br><img src="./images/3.png" alt="enter description here"></p><p>概述<br>任务调度：是指系统在某个时间执行的特定的命令或程序。<br>任务调度分类：1.系统工作：有些重要的工作必须周而复始地执行。如病毒扫描等<br>                          2.个别用户工作：个别用户可能希望执行某些程序，如对mysql数据库地备份</p><p>基本语法：<br>crontab [选项]<br>常用选项：<br>-e：编辑crontab定时任务<br>-l：查询crontab任务<br>-r：删除当前用户所有地crontab任务</p><p>用法：<br>1.设置任务调度文件：/etc/crontab<br>2.设置个人任务调度。执行cromtab -e命令<br>3.接着输入任务到调度文件<br>【* /1 * * * * ls -l /etc/ &gt; /tmp/to.txt】每小时的每分钟执行 ls -l /etc/ &gt; tmp/to.txt命令<br>【* /1 * * * * /home/mycal】 每小时的每分钟执行脚本文件</p><p>参数细节说明<br><img src="./images/2_1.png" alt="enter description here"><br>“ */1 ”代表每隔一分钟执行一次。<br>【分时天月星期几】</p><p>特殊符号说明：<br><img src="./images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87%E7%BC%96%E8%BE%91_20220707153011.jpg" alt="enter description here"></p><hr><h3 id="2、at任务调度"><a href="#2、at任务调度" class="headerlink" title="2、at任务调度"></a>2、at任务调度</h3><p>基本介绍：</p><ol><li>at命令是一次性定时计划任务，at的守护进程atd会以后台模式运行，检查作业队列来运行。</li><li>默认情况下，atd守护进程每60秒检查作业队列，有作业时，会检查作业运行时间，如果时间与当前时间匹配，则运行此作业。</li><li>at命令是一次性定时计划任务，执行完一个任务后就不再执行了。</li><li>在使用at命令的时候，一定要保证atd进行的启动，可以使用相关指令来查看【ps -ef】。<br><img src="./images/4.png" alt="enter description here"></li></ol><p> at命令格式：<br> at 【选项】【时间】<br> Ctrl+D 结束at命令输入</p><p> at命令选项：<br> <img src="./images/5.png" alt="enter description here"></p><p> at时间定义：【at指定时间的方法】<br> <img src="./images/6.png" alt="enter description here"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1、crond任务调度（crond是一个守护进程，crontab是一个指令）&quot;&gt;&lt;a href=&quot;#1、crond任务调度（crond是一个守护进程，crontab是一个指令）&quot; class=&quot;headerlink&quot; title=&quot;1、crond任务调度（cron</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>linux学习8-rwx权限</title>
+    <link href="http://example.com/2022/07/06/py_day22/"/>
+    <id>http://example.com/2022/07/06/py_day22/</id>
+    <published>2022-07-06T02:33:50.559Z</published>
+    <updated>2022-07-07T07:24:53.452Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、权限的基本介绍"><a href="#1、权限的基本介绍" class="headerlink" title="1、权限的基本介绍"></a>1、权限的基本介绍</h3><p>ls -l中显示的内容中有这么一行：<br>-rwxrw-r– 1 root root 1213 Feb 2 09:39 abc</p><p>0-9位说明</p><ol><li>第0位确定文件类型（d，-，l，c，b）<pre><code>l是链接，相当于windows的快捷方式d是目录，相当于windows的文件夹c是字符设备文件，鼠标，键盘b是块设备，比如硬盘</code></pre></li><li>第1-3位确定所有者（该文件的所有者）拥有该文件的权限。 —User</li><li>第4-6位确定所属组（同用户组的）拥有该文件的权限。 —Group</li><li>第7-9位确定其他用户拥有该文件的权限。 —Other</li></ol><hr><h3 id="2、rwx作用到文件"><a href="#2、rwx作用到文件" class="headerlink" title="2、rwx作用到文件"></a>2、rwx作用到文件</h3><p>[ r ] 代表可读read<br>[ w ] 代表可写write<br>[ x ] 代表可执行execute</p><p>实际案例：<br>-rwxrw-r– 1 root root 1213 Feb 2 09:39 abc<br>10个字符确定不同用户能对文件干什么<br>第一个字符代表文件类型为普通文件<br>其余字符三个一组（rwx）<br>第一组rwx：文件拥有者的权限是读、写和执行<br>第二组rw-：与文件拥有者同一组的用户的权限是读、写但不能执行<br>第三组r–：其他不同组的用户权限是只读</p><p>其他说明：<br>1 文件：硬连接数  或 目录：子目录数<br>第一个root 用户<br>第二个root 组<br>1213 文件大小(字节)，如果是文件夹，显示4096字节<br>Feb 2 09:39 最后修改日期<br>abc 文件名</p><hr><h3 id="3、修改文件-目录权限"><a href="#3、修改文件-目录权限" class="headerlink" title="3、修改文件/目录权限"></a>3、修改文件/目录权限</h3><p>通过chmod指令，可以修改文件或者目录的权限。</p><p>第一种方式：+、-、=变更权限<br>u：所有者<br>g：所有组<br>o：其他人<br>a：所有人（u、g、o的总和）<br>1）chmod u=rwx,g=rx,o=x 文件名/目录名<br>2) chmod o+w 文件/目录名<br>3)  chmod a-x 文件名/目录名</p><p>第二种方式：通过数字变更权限<br>r=4<br>w=2<br>x=1<br>rwx=4+2+1=7<br>chmod u=rwx,g=rx,o=x 文件目录名 ==&gt; 相当于  chmod 751 文件目录名</p><hr><h3 id="4、修改文件所有者"><a href="#4、修改文件所有者" class="headerlink" title="4、修改文件所有者"></a>4、修改文件所有者</h3><p>chown newowner 文件/目录 改变所有者<br>chown newowner:newgroup 文件/目录 改变所有者和所在组<br>-R 如果是目录 则使其下所有子文件或目录递归生效</p><hr><h3 id="5、修改文件-目录所在组"><a href="#5、修改文件-目录所在组" class="headerlink" title="5、修改文件/目录所在组"></a>5、修改文件/目录所在组</h3><p>chgrp newgroup 文件/目录  【改变所在组】</p><hr>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1、权限的基本介绍&quot;&gt;&lt;a href=&quot;#1、权限的基本介绍&quot; class=&quot;headerlink&quot; title=&quot;1、权限的基本介绍&quot;&gt;&lt;/a&gt;1、权限的基本介绍&lt;/h3&gt;&lt;p&gt;ls -l中显示的内容中有这么一行：&lt;br&gt;-rwxrw-r– 1 root roo</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>linux学习7-权限管理</title>
+    <link href="http://example.com/2022/07/06/py_day21/"/>
+    <id>http://example.com/2022/07/06/py_day21/</id>
+    <published>2022-07-06T01:45:42.450Z</published>
+    <updated>2022-07-06T02:28:33.215Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、组"><a href="#1、组" class="headerlink" title="1、组"></a>1、组</h3><p>在linux中的每一个用户必须属于一个组，不能独立于组外。<br>在linux中每个文件有所有者、所在组、其他组。</p><hr><h3 id="2、文件-目录-所有者"><a href="#2、文件-目录-所有者" class="headerlink" title="2、文件/目录 所有者"></a>2、文件/目录 所有者</h3><p>一般为文件的创建者，谁创建了文件，就自然成为该文件的所有者。</p><p>查看文件的所有者<br>指令：ls -ahl</p><p>修改文件所有者<br>指令：chown 用户名 文件名</p><hr><h3 id="3、组的创建"><a href="#3、组的创建" class="headerlink" title="3、组的创建"></a>3、组的创建</h3><p>基本指令：groupadd 组名</p><hr><h3 id="4、所在组"><a href="#4、所在组" class="headerlink" title="4、所在组"></a>4、所在组</h3><p>当某个用户创建了一个文件后，这个文件的所在组就是该用户所在的组。</p><p>查看文件/目录所在组<br>基本指令：ls -ahl</p><p>修改文件所在组<br>基本指令：chgrp 组名 文件名</p><hr><h3 id="5、其他组"><a href="#5、其他组" class="headerlink" title="5、其他组"></a>5、其他组</h3><p>除文件的所有者和所在组的用户外，系统的其他用户都是文件的其他组。</p><hr><h3 id="6、改变用户所在组"><a href="#6、改变用户所在组" class="headerlink" title="6、改变用户所在组"></a>6、改变用户所在组</h3><p>在添加用户时，可以指定将该用户添加到哪个组中，同样的用root的管理权限可以改变某个用户所在组。</p><p>改变用户所在组<br>usermod -g 新组名 用户名<br>usermod -d 目录名 用户名 改变该用户登录的初始目录 【用户需要有进入到新目录的权限】</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1、组&quot;&gt;&lt;a href=&quot;#1、组&quot; class=&quot;headerlink&quot; title=&quot;1、组&quot;&gt;&lt;/a&gt;1、组&lt;/h3&gt;&lt;p&gt;在linux中的每一个用户必须属于一个组，不能独立于组外。&lt;br&gt;在linux中每个文件有所有者、所在组、其他组。&lt;/p&gt;
+&lt;hr&gt;</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>linux学习6-实用指令</title>
@@ -352,69 +413,6 @@
       
       
     <summary type="html">&lt;h3 id=&quot;1、sort-和sorted-：永久排序和临时排序&quot;&gt;&lt;a href=&quot;#1、sort-和sorted-：永久排序和临时排序&quot; class=&quot;headerlink&quot; title=&quot;1、sort()和sorted()：永久排序和临时排序&quot;&gt;&lt;/a&gt;1、sort()和</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习3-列表的增删改查</title>
-    <link href="http://example.com/2022/04/01/py_day3/"/>
-    <id>http://example.com/2022/04/01/py_day3/</id>
-    <published>2022-04-01T03:38:56.757Z</published>
-    <updated>2022-04-01T03:38:56.859Z</updated>
-    
-    <content type="html"><![CDATA[<p>事真的好多，老师发了200块让帮忙审稿，从研一到现在不记得审了多少篇IEEE了，（关键我都看不懂别人写的文章，啥领域的都让我审）。<br>大论文第三章被老师否了，说不够新意，让我重新增加内容，加大难度，难顶<br>小论文还没改好latex，啥时候能投出去呢？</p><blockquote><p>列表是元素的集合，栈结构</p></blockquote><h3 id="创建一个列表并打印"><a href="#创建一个列表并打印" class="headerlink" title="创建一个列表并打印"></a>创建一个列表并打印</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">names = [&#x27;zhouyu&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure><p>输出结果</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhouyu&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure><h3 id="查"><a href="#查" class="headerlink" title="查"></a>查</h3><p>通过索引访问<br>names[index]<br>表头索引是0，-1索引表示表尾，-2表示尾巴第二个数，以此类推</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(names[0])</span><br><span class="line">print(names[-1])</span><br></pre></td></tr></table></figure><p>输出结果</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zhouyu</span><br><span class="line">zhangyifei</span><br></pre></td></tr></table></figure><p><em><strong>注意：索引不能超过列表长度</strong></em></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(names[100])</span><br></pre></td></tr></table></figure><p>输出结果</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IndexError: list index out of range</span><br></pre></td></tr></table></figure><h3 id="改"><a href="#改" class="headerlink" title="改"></a>改</h3><p> 对元素进行修改<br> names[index] = ‘xxx’</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names[0] = &#x27;zhourui&#x27;</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure><p>输出结果</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhouyu&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure><h3 id="增"><a href="#增" class="headerlink" title="增"></a>增</h3><p>1、appen()方法：在末尾添加元素<br>names.append(‘xxx’)</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names.append(&#x27;zhouqingxiang&#x27;)</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure><p>输出结果</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;, &#x27;zhouqingxiang&#x27;]</span><br></pre></td></tr></table></figure><p>2、insert()方法：在中间插入元素<br>names.insert(index, ‘xxx’)</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names.insert(0, &#x27;zhouqingxiang&#x27;)</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure><p>输出结果</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhouqingxiang&#x27;, &#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure><p><em><strong>注意1：如果在 -1 处插入，则是插入在倒数第二个，在 0 插入则插入至表头</strong></em></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names.insert(-1, &#x27;zhouqingxiang&#x27;)</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure><p>输出结果</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhouqingxiang&#x27;, &#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure><p><em><strong>注意2：如果插入的索引超过列表长度，不会报错，会在表尾插入</strong></em></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names.insert(100, &#x27;zhouqingxiang&#x27;)</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure><p>输出结果</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;, &#x27;zhouqingxiang&#x27;]</span><br></pre></td></tr></table></figure><h3 id="删"><a href="#删" class="headerlink" title="删"></a>删</h3><p>1、del语句：指定位置删除元素<br>del names[index]</p><p>2、pop()方法：弹出元素<br>names.pop()：末尾弹出<br>names.pop(index)：索引位置弹出</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print(&quot;names中的元素: %s&quot; % names)</span><br><span class="line">names2 = []</span><br><span class="line">names2.append(names.pop())</span><br><span class="line">print(&quot;弹出末尾元素后，names中的元素: %s&quot; % names)</span><br><span class="line">print(&quot;names2中的元素: %s&quot; % names2)</span><br></pre></td></tr></table></figure><p>输出结果</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">names中的元素: [&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">弹出末尾元素后，names中的元素: [&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;]</span><br><span class="line">names2中的元素: [&#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure><p><em><strong>注意3：如果pop()不指定index，则是弹出末尾元素。如果pop(index)，则是弹出索引处元素。如果pop(-1)，与pop()相当。</strong></em><br><em><strong>注意4：如果pop(index)中索引超过列表长度，会报错</strong></em></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IndexError: pop index out of range</span><br></pre></td></tr></table></figure><p>3、remove()方法：根据键值删除元素，remove()也可以使用删除的值<br>names.remove(‘xxx’)</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;事真的好多，老师发了200块让帮忙审稿，从研一到现在不记得审了多少篇IEEE了，（关键我都看不懂别人写的文章，啥领域的都让我审）。&lt;br&gt;大论文第三章被老师否了，说不够新意，让我重新增加内容，加大难度，难顶&lt;br&gt;小论文还没改好latex，啥时候能投出去呢？&lt;/p&gt;
-&lt;bl</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习2-字符串和数字</title>
-    <link href="http://example.com/2022/03/27/py_day2/"/>
-    <id>http://example.com/2022/03/27/py_day2/</id>
-    <published>2022-03-27T11:55:42.974Z</published>
-    <updated>2022-03-27T11:59:58.737Z</updated>
-    
-    <content type="html"><![CDATA[<p>用了小书匠来写文本，客户端上预览的效果格式正确，怎么一上传到github上格式就不对了捏？<br>还没整明白，慢慢来吧。<br>初次学py，发现py和matlab的语法相似啊</p><blockquote><p>py的数据类型有六个：数字、字符串、列表、元组、集合、字典<br>其中：数字、字符串、元组是不可变的；列表、字典、集合是可变的</p></blockquote><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p><em><strong>java中的字符串是类，py里面变成了数据类型。</strong></em></p><p>语法差不多，双引号””和单引号’’都能用，拼接是是用加号+，目的应该就是为了灵活输出 “ 以及 ‘ 吧。<br>书上给了几个字符串方法：<br>    title()：首字母大写显示单词<br>    lower()：全部变小写<br>    upper()：全部变大写<br>    restrip()：删除末尾空白，调用这个语句看上去好像只是删除了副本，要想彻底删除得用下面这个语句</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str = str.restrip()</span><br></pre></td></tr></table></figure><p>lstrip()：删除左边空白<br>rstrip()：删除右边空白</p><h3 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h3><h4 id="1、整数"><a href="#1、整数" class="headerlink" title="1、整数"></a>1、整数</h4><p>py中可以用操作数直接表示次方：**<br>例如：3 ** 2<br>&gt;&gt;&gt; 9</p><h4 id="2、浮点数"><a href="#2、浮点数" class="headerlink" title="2、浮点数"></a>2、浮点数</h4><p>py中的浮点数直接表示，但也会存在精度问题</p><p><em><strong>数字运算基本和java类似</strong></em></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;用了小书匠来写文本，客户端上预览的效果格式正确，怎么一上传到github上格式就不对了捏？&lt;br&gt;还没整明白，慢慢来吧。&lt;br&gt;初次学py，发现py和matlab的语法相似啊&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;py的数据类型有六个：数字、字符串、列表、元组、集合、字典</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习1-变量</title>
-    <link href="http://example.com/2022/03/26/py_day1/"/>
-    <id>http://example.com/2022/03/26/py_day1/</id>
-    <published>2022-03-26T02:32:23.308Z</published>
-    <updated>2022-03-26T02:41:19.522Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h4 id="对比1：py变量不用声明"><a href="#对比1：py变量不用声明" class="headerlink" title="对比1：py变量不用声明"></a>对比1：py变量不用声明</h4><p> <strong>java ：</strong><br>1、变量就是申请内存来存储值。也就是说，当创建变量的时候，需要在内存中申请空间。<br>2、内存管理系统根据变量的类型为变量分配存储空间，分配的空间只能用来储存该类型数据。因此，通过定义不同类型的变量，可以在内存中储存整数、小数或者字符。</p><p><strong>与java不同，py的变量不需要预先定义类型。</strong><br><strong>py：</strong><br>Python 中的变量不需要声明。每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。</p><p><strong>py的变量没有自动初始化，因此在使用之前必须先赋好值。</strong></p><h4 id="对比2：py变量没有变量（对象）类型"><a href="#对比2：py变量没有变量（对象）类型" class="headerlink" title="对比2：py变量没有变量（对象）类型"></a>对比2：py变量没有变量（对象）类型</h4><p> <strong>java ：</strong><br>支持的变量类型有：类变量、实例变量、局部变量</p><p><strong>py：</strong><br>变量就是变量，它没有类型，我们所说的”类型”是变量所指的内存中对象的类型。</p><p>java：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String message;</span><br><span class="line">message = &quot;This is a string&quot;;</span><br></pre></td></tr></table></figure><p>python:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">message = &quot;This is a string&quot;</span><br></pre></td></tr></table></figure><p><em><strong>注意：py语句末尾不用加分号，以换行表示语句结束</strong></em></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;变量&quot;&gt;&lt;a href=&quot;#变量&quot; class=&quot;headerlink&quot; title=&quot;变量&quot;&gt;&lt;/a&gt;变量&lt;/h3&gt;&lt;h4 id=&quot;对比1：py变量不用声明&quot;&gt;&lt;a href=&quot;#对比1：py变量不用声明&quot; class=&quot;headerlink&quot; title=&quot;对</summary>
       
     
     

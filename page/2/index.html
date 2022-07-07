@@ -64,6 +64,158 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-py_day13" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/23/py_day13/" class="article-date">
+  <time datetime="2022-06-23T08:24:46.507Z" itemprop="datePublished">2022-06-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/23/py_day13/">Python学习13-异常</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、处理异常try-except"><a href="#1、处理异常try-except" class="headerlink" title="1、处理异常try-except"></a>1、处理异常try-except</h3><p>用法：try:<br>        except:<br>        else:</p>
+<p>例子1：try-except模块中代码执行失败则进入except模块</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    print(5/0)</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">    print(&quot;You can&#x27;t divide by zero!&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>例子2：try-except模块中代码成功执行则进入else模块</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">print(&quot;Give me two nums, and I will divide them.&quot;)</span><br><span class="line">print(&quot;Enter &#x27;q&#x27; to quit.&quot;)</span><br><span class="line"></span><br><span class="line">while True:</span><br><span class="line">    firstNumber = input(&quot;\nFirst num: &quot;)</span><br><span class="line">    if firstNumber == &#x27;q&#x27;:</span><br><span class="line">        break</span><br><span class="line">    elif not str.isdigit(firstNumber):</span><br><span class="line">        print(&quot;Plz re-input&quot;)</span><br><span class="line">        continue</span><br><span class="line">    secondNumber = input(&quot;\nFirst num: &quot;)</span><br><span class="line">    if secondNumber == &#x27;q&#x27;:</span><br><span class="line">        break</span><br><span class="line">    elif not str.isdigit(secondNumber):</span><br><span class="line">        print(&quot;Plz re-input&quot;)</span><br><span class="line">        continue</span><br><span class="line">    try:</span><br><span class="line">        answer = int(firstNumber) / int(secondNumber)</span><br><span class="line">    except ZeroDivisionError:</span><br><span class="line">        print(&quot;You can&#x27;t divide by 0!&quot;)</span><br><span class="line">    else:</span><br><span class="line">        print(answer)</span><br></pre></td></tr></table></figure>
+
+<p>例子3：捕获到异常时什么都不做</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;alice.txt&#x27;</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">    with open(filename) as fObj:</span><br><span class="line">        contents = fObj.read()</span><br><span class="line">except FileNotFoundError:</span><br><span class="line">    pass</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/23/py_day13/" data-id="cl5arus520008k0vx4pycgokk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-py_day12" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/22/py_day12/" class="article-date">
+  <time datetime="2022-06-22T02:37:47.100Z" itemprop="datePublished">2022-06-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/22/py_day12/">Python学习12-文件的读写</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、读文件"><a href="#1、读文件" class="headerlink" title="1、读文件"></a>1、读文件</h3><h4 id="1-1、读文件"><a href="#1-1、读文件" class="headerlink" title="1.1、读文件"></a>1.1、读文件</h4><p>用法：with open(‘文件名’) as 别名<br>变量 = 别名.read()<br>print(变量)</p>
+<p>步骤：<br>–&gt; 打开文件，open()。Python在当前执行的文件所在的目录中查找指定的文件。函数open()返回一个表示文件的对象。<br>–&gt; 关闭文件，with()自动关闭文件。<br>–&gt; 读取文件，read()，返回一个字符串存储在变量中。</p>
+<h4 id="1-2、文件路径"><a href="#1-2、文件路径" class="headerlink" title="1.2、文件路径"></a>1.2、文件路径</h4><p>相对路径：<br>linux/OS X：with open(‘text_files/filename.txt’) as file_object: （斜杠）<br>Windows：with open(‘text_files\filename.txt’) as file_object: （反斜杠）<br>绝对路径：<br>linux/OS X：file_path = ‘/home/ehmatthes/other_files/text_files/filename.txt’<br>with open(file_path) as file_object:<br>Windows：file_path = ‘C:\Users\ehmatthes\other_files\text_files\filename.txt’<br>with open(file_path) as file_object:</p>
+<h4 id="1-3、逐行读取"><a href="#1-3、逐行读取" class="headerlink" title="1.3、逐行读取"></a>1.3、逐行读取</h4><p>使用for循环</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;pi_digits.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename) as fileObject:</span><br><span class="line">    for line in fileObject:</span><br><span class="line">        print(line.rstrip())</span><br></pre></td></tr></table></figure>
+<h4 id="1-4、使用列表保存文件内容"><a href="#1-4、使用列表保存文件内容" class="headerlink" title="1.4、使用列表保存文件内容"></a>1.4、使用列表保存文件内容</h4><blockquote>
+<p>使用关键字with时， open()返回的文件对象只在with代码块内可用。如果要在with代码块外访问文件的内容，可在with代码块内将文件的各行存储在一个列表中，并在with代码块外使用该列表：你可以立即处理文件的各个部分，也可推迟到程序后面再处理。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;pi_digits.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename) as fileObject:</span><br><span class="line">    lines = fileObject.readlines()</span><br><span class="line"></span><br><span class="line">for line in lines:</span><br><span class="line">    print(line.rstrip())</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>readlines()方法返回一个列表，文件各行存储在这这个列表中</strong></p>
+<h4 id="1-5、使用文件的内容"><a href="#1-5、使用文件的内容" class="headerlink" title="1.5、使用文件的内容"></a>1.5、使用文件的内容</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;pi_digits.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename) as fileObject:</span><br><span class="line">    lines = fileObject.readlines()</span><br><span class="line"></span><br><span class="line">piStr = &#x27;&#x27;</span><br><span class="line">for line in lines:</span><br><span class="line">    piStr += line.strip()</span><br><span class="line"></span><br><span class="line">print(piStr)</span><br><span class="line">print(len(piStr))</span><br></pre></td></tr></table></figure>
+
+<p><em><strong>读取文本文件时， Python将其中的所有文本都解读为字符串。如果你读取的是数字，并要将其作为数值使用，就必须使用函数int()将其转换为整数，或使用函数float()将其转换为浮点数。</strong></em></p>
+<h3 id="2、写文件"><a href="#2、写文件" class="headerlink" title="2、写文件"></a>2、写文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">filename = &#x27;programming.txt&#x27;</span><br><span class="line"></span><br><span class="line">with open(filename, &#x27;w&#x27;) as fileObject:</span><br><span class="line">    fileObject.write(&quot;I love programming&quot;)</span><br></pre></td></tr></table></figure>
+<p>open()中第一个参数指要打开文件的名称，第二个参数指以写入的方式打开文件。<br>可指定模式有的：w（写入）、r（读取）、a（附加）、r+（读写）。py默认读取模式打开文件。</p>
+<p><em><strong>Python只能将字符串写入文本文件。要将数值数据存储到文本文件中，必须先使用函数str()将其转换为字符串格式。</strong></em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/22/py_day12/" data-id="cl5arus510007k0vxczy3hw5s" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-py_day11" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/21/py_day11/" class="article-date">
+  <time datetime="2022-06-21T09:12:50.958Z" itemprop="datePublished">2022-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/21/py_day11/">Python学习11-继承</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、子类构造器"><a href="#1、子类构造器" class="headerlink" title="1、子类构造器"></a>1、子类构造器</h3><blockquote>
+<p>创建子类的实例时， Python首先需要完成的任务是给父类的所有属性赋值。为此，子类的方法__init__()需要父类施以援手。</p>
+</blockquote>
+<p>**py的属性是放在构造器里的</p>
+<p>a、创建子类时，父类位于子类前面<br>b、定义子类时，必须在括号内指定父类的名称<br>c、super()引用父类的构造器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">class Car():</span><br><span class="line"></span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        self.make = make</span><br><span class="line">        self.model = model</span><br><span class="line">        self.year = year</span><br><span class="line">        self.odometerReading = 0</span><br><span class="line"></span><br><span class="line">    def getDescriptiveName(self):</span><br><span class="line">        longName = str(self.year) + &#x27; &#x27; + self.make + &#x27; &#x27; + self.model</span><br><span class="line">        return longName.title()</span><br><span class="line"></span><br><span class="line">    def readOdometer(self):</span><br><span class="line">        print(&quot;This car has &quot; + str(self.odometerReading) + &quot; miles on it.&quot;)</span><br><span class="line"></span><br><span class="line">    def updateOdometer(self, mileage):</span><br><span class="line">        if mileage &gt;= self.odometerReading:</span><br><span class="line">            self.odometerReading = mileage</span><br><span class="line">        else:</span><br><span class="line">            print(&quot;You can&#x27;t roll back an odometer!&quot;)</span><br><span class="line"></span><br><span class="line">    def incrementOdometer(self, miles):</span><br><span class="line">        self.odometerReading += miles</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class ElectricCar(Car):</span><br><span class="line">    </span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        super().__init__(make, model, year)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">myTesla = ElectricCar(&#x27;tesla&#x27;, &#x27;model s&#x27;, 2016)</span><br><span class="line">print(myTesla.getDescriptiveName())</span><br></pre></td></tr></table></figure>
+<h3 id="2、给子类定义属性和方法"><a href="#2、给子类定义属性和方法" class="headerlink" title="2、给子类定义属性和方法"></a>2、给子类定义属性和方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class ElectricCar(Car):</span><br><span class="line"></span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        super().__init__(make, model, year)</span><br><span class="line">        self.batterySize = 70</span><br><span class="line"></span><br><span class="line">    def describeBattery(self):</span><br><span class="line">        print(&quot;This car has a &quot; + str(self.batterySize) + &quot;-kWh battery.&quot;)</span><br><span class="line"></span><br><span class="line">myTesla = ElectricCar(&#x27;tesla&#x27;, &#x27;model s&#x27;, 2016)</span><br><span class="line">print(myTesla.getDescriptiveName())</span><br><span class="line">myTesla.describeBattery()</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、重写"><a href="#3、重写" class="headerlink" title="3、重写"></a>3、重写</h3><blockquote>
+<p>对于父类的方法，只要它不符合子类模拟的实物的行为，都可对其进行重写。为此，可在子类中定义一个这样的方法，即它与要重写的父类方法同名。这样， Python将不会考虑这个父类方法，而只关注你在子类中定义的相应方法。</p>
+</blockquote>
+<h3 id="4、将实例用作属性"><a href="#4、将实例用作属性" class="headerlink" title="4、将实例用作属性"></a>4、将实例用作属性</h3><blockquote>
+<p>不断给ElectricCar类添加细节时，我们可能会发现其中包含很多专门针对汽车电瓶的属性和方法。在这种情况下，我们可将这些属性和方法提取出来，放到另一个名为Battery的类中，并将一个Battery实例用作ElectricCar类的一个属性。</p>
+</blockquote>
+<p>***这行代码让Python在实例my_tesla中查找属性battery，并对存储在该属性中的Battery实例调用方法describe_battery()。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">class Battery():</span><br><span class="line"></span><br><span class="line">    def __init__(self, batterySzie =70):</span><br><span class="line">        self.batterySize = batterySzie</span><br><span class="line"></span><br><span class="line">    def describeBattery(self):</span><br><span class="line">        print(&quot;This car has a &quot; + str(self.batterySize) + &quot;-kWh battery.&quot;)</span><br><span class="line"></span><br><span class="line">    def getRange(self):</span><br><span class="line">        if self.batterySize == 70:</span><br><span class="line">            range = 240</span><br><span class="line">        elif self.batterySize == 85:</span><br><span class="line">            range = 270</span><br><span class="line"></span><br><span class="line">        message = &quot;This car can go approximately &quot; + str(range)</span><br><span class="line">        message += &quot; miles on a full charge.&quot;</span><br><span class="line">        print(message)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class ElectricCar(Car):</span><br><span class="line"></span><br><span class="line">    def __init__(self, make, model, year):</span><br><span class="line">        super().__init__(make, model, year)</span><br><span class="line">        self.battery = Battery()</span><br><span class="line"></span><br><span class="line">    def describeBattery(self):</span><br><span class="line">        print(&quot;This car has a &quot; + str(self.batterySize) + &quot;-kWh battery.&quot;)</span><br><span class="line"></span><br><span class="line">myTesla = ElectricCar(&#x27;tesla&#x27;, &#x27;model s&#x27;, 2016)</span><br><span class="line">print(myTesla.getDescriptiveName())</span><br><span class="line">myTesla.battery.describeBattery()</span><br><span class="line">myTesla.battery.getRange()</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/21/py_day11/" data-id="cl5arus4z0005k0vx82931mgb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-py_day10" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/06/19/py_day10/" class="article-date">
@@ -98,7 +250,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/19/py_day10/" data-id="cl57luz330003y4vxav246kpi" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/19/py_day10/" data-id="cl5arus4x0003k0vx65en3zgz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -179,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day9/" data-id="cl57luz3k000ny4vxgdcf0a1a" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day9/" data-id="cl5arus5a000qk0vx252r77zb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -229,7 +381,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl57luz3i000jy4vx3arq8r1j" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day7/" data-id="cl5arus59000ok0vx4q0o8a8b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -274,7 +426,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/py_day8/" data-id="cl57luz3j000my4vxgo229z2o" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/10/py_day8/" data-id="cl5arus5a000pk0vxgobdepj8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -314,7 +466,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/19/py_day6/" data-id="cl57luz3j000ly4vxetc4dztb" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/05/19/py_day6/" data-id="cl5arus59000mk0vx5mo18bmz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -361,7 +513,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl57luz3h000iy4vxadak3qb0" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/05/12/py_day5/" data-id="cl5arus59000nk0vxf7ep4r0u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -406,182 +558,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl57luz3e000fy4vx2ejkg7e0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/04/01/py_day3/" class="article-date">
-  <time datetime="2022-04-01T03:38:56.757Z" itemprop="datePublished">2022-04-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/01/py_day3/">Python学习3-列表的增删改查</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>事真的好多，老师发了200块让帮忙审稿，从研一到现在不记得审了多少篇IEEE了，（关键我都看不懂别人写的文章，啥领域的都让我审）。<br>大论文第三章被老师否了，说不够新意，让我重新增加内容，加大难度，难顶<br>小论文还没改好latex，啥时候能投出去呢？</p>
-<blockquote>
-<p>列表是元素的集合，栈结构</p>
-</blockquote>
-<h3 id="创建一个列表并打印"><a href="#创建一个列表并打印" class="headerlink" title="创建一个列表并打印"></a>创建一个列表并打印</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">names = [&#x27;zhouyu&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure>
-<p>输出结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhouyu&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure>
-<h3 id="查"><a href="#查" class="headerlink" title="查"></a>查</h3><p>通过索引访问<br>names[index]<br>表头索引是0，-1索引表示表尾，-2表示尾巴第二个数，以此类推</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(names[0])</span><br><span class="line">print(names[-1])</span><br></pre></td></tr></table></figure>
-<p>输出结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zhouyu</span><br><span class="line">zhangyifei</span><br></pre></td></tr></table></figure>
-<p><em><strong>注意：索引不能超过列表长度</strong></em></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(names[100])</span><br></pre></td></tr></table></figure>
-<p>输出结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IndexError: list index out of range</span><br></pre></td></tr></table></figure>
-
-<h3 id="改"><a href="#改" class="headerlink" title="改"></a>改</h3><p> 对元素进行修改<br> names[index] = ‘xxx’</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names[0] = &#x27;zhourui&#x27;</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure>
-<p>输出结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhouyu&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure>
-
-<h3 id="增"><a href="#增" class="headerlink" title="增"></a>增</h3><p>1、appen()方法：在末尾添加元素<br>names.append(‘xxx’)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names.append(&#x27;zhouqingxiang&#x27;)</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure>
-<p>输出结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;, &#x27;zhouqingxiang&#x27;]</span><br></pre></td></tr></table></figure>
-<p>2、insert()方法：在中间插入元素<br>names.insert(index, ‘xxx’)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names.insert(0, &#x27;zhouqingxiang&#x27;)</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure>
-<p>输出结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhouqingxiang&#x27;, &#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure>
-<p><em><strong>注意1：如果在 -1 处插入，则是插入在倒数第二个，在 0 插入则插入至表头</strong></em></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names.insert(-1, &#x27;zhouqingxiang&#x27;)</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure>
-<p>输出结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhouqingxiang&#x27;, &#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure>
-<p><em><strong>注意2：如果插入的索引超过列表长度，不会报错，会在表尾插入</strong></em></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(names)</span><br><span class="line">names.insert(100, &#x27;zhouqingxiang&#x27;)</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure>
-<p>输出结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">[&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;, &#x27;zhouqingxiang&#x27;]</span><br></pre></td></tr></table></figure>
-
-<h3 id="删"><a href="#删" class="headerlink" title="删"></a>删</h3><p>1、del语句：指定位置删除元素<br>del names[index]</p>
-<p>2、pop()方法：弹出元素<br>names.pop()：末尾弹出<br>names.pop(index)：索引位置弹出</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print(&quot;names中的元素: %s&quot; % names)</span><br><span class="line">names2 = []</span><br><span class="line">names2.append(names.pop())</span><br><span class="line">print(&quot;弹出末尾元素后，names中的元素: %s&quot; % names)</span><br><span class="line">print(&quot;names2中的元素: %s&quot; % names2)</span><br></pre></td></tr></table></figure>
-<p>输出结果</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">names中的元素: [&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;, &#x27;zhangyifei&#x27;]</span><br><span class="line">弹出末尾元素后，names中的元素: [&#x27;zhourui&#x27;, &#x27;wanghaozun&#x27;]</span><br><span class="line">names2中的元素: [&#x27;zhangyifei&#x27;]</span><br></pre></td></tr></table></figure>
-<p><em><strong>注意3：如果pop()不指定index，则是弹出末尾元素。如果pop(index)，则是弹出索引处元素。如果pop(-1)，与pop()相当。</strong></em><br><em><strong>注意4：如果pop(index)中索引超过列表长度，会报错</strong></em></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IndexError: pop index out of range</span><br></pre></td></tr></table></figure>
-<p>3、remove()方法：根据键值删除元素，remove()也可以使用删除的值<br>names.remove(‘xxx’)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/01/py_day3/" data-id="cl57luz3i000ky4vx2koh0o2f" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/03/27/py_day2/" class="article-date">
-  <time datetime="2022-03-27T11:55:42.974Z" itemprop="datePublished">2022-03-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/27/py_day2/">Python学习2-字符串和数字</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>用了小书匠来写文本，客户端上预览的效果格式正确，怎么一上传到github上格式就不对了捏？<br>还没整明白，慢慢来吧。<br>初次学py，发现py和matlab的语法相似啊</p>
-<blockquote>
-<p>py的数据类型有六个：数字、字符串、列表、元组、集合、字典<br>其中：数字、字符串、元组是不可变的；列表、字典、集合是可变的</p>
-</blockquote>
-<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p><em><strong>java中的字符串是类，py里面变成了数据类型。</strong></em></p>
-<p>语法差不多，双引号””和单引号’’都能用，拼接是是用加号+，目的应该就是为了灵活输出 “ 以及 ‘ 吧。<br>书上给了几个字符串方法：<br>    title()：首字母大写显示单词<br>    lower()：全部变小写<br>    upper()：全部变大写<br>    restrip()：删除末尾空白，调用这个语句看上去好像只是删除了副本，要想彻底删除得用下面这个语句</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str = str.restrip()</span><br></pre></td></tr></table></figure>
-<p>lstrip()：删除左边空白<br>rstrip()：删除右边空白</p>
-<h3 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h3><h4 id="1、整数"><a href="#1、整数" class="headerlink" title="1、整数"></a>1、整数</h4><p>py中可以用操作数直接表示次方：**<br>例如：3 ** 2<br>&gt;&gt;&gt; 9</p>
-<h4 id="2、浮点数"><a href="#2、浮点数" class="headerlink" title="2、浮点数"></a>2、浮点数</h4><p>py中的浮点数直接表示，但也会存在精度问题</p>
-<p><em><strong>数字运算基本和java类似</strong></em></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/27/py_day2/" data-id="cl57luz3e000gy4vxbj0j3kau" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-py_day1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/03/26/py_day1/" class="article-date">
-  <time datetime="2022-03-26T02:32:23.308Z" itemprop="datePublished">2022-03-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/26/py_day1/">Python学习1-变量</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h4 id="对比1：py变量不用声明"><a href="#对比1：py变量不用声明" class="headerlink" title="对比1：py变量不用声明"></a>对比1：py变量不用声明</h4><p> <strong>java ：</strong><br>1、变量就是申请内存来存储值。也就是说，当创建变量的时候，需要在内存中申请空间。<br>2、内存管理系统根据变量的类型为变量分配存储空间，分配的空间只能用来储存该类型数据。因此，通过定义不同类型的变量，可以在内存中储存整数、小数或者字符。</p>
-<p><strong>与java不同，py的变量不需要预先定义类型。</strong><br><strong>py：</strong><br>Python 中的变量不需要声明。每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。</p>
-<p><strong>py的变量没有自动初始化，因此在使用之前必须先赋好值。</strong></p>
-<h4 id="对比2：py变量没有变量（对象）类型"><a href="#对比2：py变量没有变量（对象）类型" class="headerlink" title="对比2：py变量没有变量（对象）类型"></a>对比2：py变量没有变量（对象）类型</h4><p> <strong>java ：</strong><br>支持的变量类型有：类变量、实例变量、局部变量</p>
-<p><strong>py：</strong><br>变量就是变量，它没有类型，我们所说的”类型”是变量所指的内存中对象的类型。</p>
-<p>java：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String message;</span><br><span class="line">message = &quot;This is a string&quot;;</span><br></pre></td></tr></table></figure>
-<p>python:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">message = &quot;This is a string&quot;</span><br></pre></td></tr></table></figure>
-<p><em><strong>注意：py语句末尾不用加分号，以换行表示语句结束</strong></em></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/26/py_day1/" data-id="cl57luz300001y4vx6zsh0vvk" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/08/py_day4/" data-id="cl5arus58000lk0vx8czg2pwp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -595,7 +572,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -627,23 +604,23 @@
       <ul>
         
           <li>
+            <a href="/2022/07/06/py_day23/">linux学习9-任务调度</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/06/py_day22/">linux学习8-rwx权限</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/06/py_day21/">linux学习7-权限管理</a>
+          </li>
+        
+          <li>
             <a href="/2022/07/04/py_day20/">linux学习6-实用指令</a>
           </li>
         
           <li>
             <a href="/2022/07/03/py_day19/">linux学习6-用户管理</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/01/py_day18/">linux学习4-vim</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/30/py_day17/">linux学习3-目录结构</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/30/py_day16/">linux学习2-虚拟机的克隆、快照、迁移和删除</a>
           </li>
         
       </ul>

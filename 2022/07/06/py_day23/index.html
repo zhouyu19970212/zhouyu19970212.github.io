@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>linux学习9-任务调度 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、crond任务调度（crond是一个守护进程，crontab是一个指令）crontab 进行 定时任务的设置 概述任务调度：是指系统在某个时间执行的特定的命令或程序。任务调度分类：1.系统工作：有些重要的工作必须周而复始地执行。如病毒扫描等                          2.个别用户工作：个别用户可能希望执行某些程序，如对mysql数据库地备份 基本语法：crontab [">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux学习9-任务调度">
+<meta property="og:url" content="http://example.com/2022/07/06/py_day23/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、crond任务调度（crond是一个守护进程，crontab是一个指令）crontab 进行 定时任务的设置 概述任务调度：是指系统在某个时间执行的特定的命令或程序。任务调度分类：1.系统工作：有些重要的工作必须周而复始地执行。如病毒扫描等                          2.个别用户工作：个别用户可能希望执行某些程序，如对mysql数据库地备份 基本语法：crontab [">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2022/07/06/py_day23/images/3.png">
+<meta property="og:image" content="http://example.com/2022/07/06/py_day23/images/2_1.png">
+<meta property="og:image" content="http://example.com/2022/07/06/py_day23/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87%E7%BC%96%E8%BE%91_20220707153011.jpg">
+<meta property="og:image" content="http://example.com/2022/07/06/py_day23/images/4.png">
+<meta property="og:image" content="http://example.com/2022/07/06/py_day23/images/5.png">
+<meta property="og:image" content="http://example.com/2022/07/06/py_day23/images/6.png">
+<meta property="article:published_time" content="2022-07-06T06:28:42.412Z">
+<meta property="article:modified_time" content="2022-07-07T08:32:40.707Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/07/06/py_day23/images/3.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-py_day23" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/06/py_day23/" class="article-date">
+  <time datetime="2022-07-06T06:28:42.412Z" itemprop="datePublished">2022-07-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux学习9-任务调度
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、crond任务调度（crond是一个守护进程，crontab是一个指令）"><a href="#1、crond任务调度（crond是一个守护进程，crontab是一个指令）" class="headerlink" title="1、crond任务调度（crond是一个守护进程，crontab是一个指令）"></a>1、crond任务调度（crond是一个守护进程，crontab是一个指令）</h3><p>crontab 进行 定时任务的设置<br><img src="./images/3.png" alt="enter description here"></p>
+<p>概述<br>任务调度：是指系统在某个时间执行的特定的命令或程序。<br>任务调度分类：1.系统工作：有些重要的工作必须周而复始地执行。如病毒扫描等<br>                          2.个别用户工作：个别用户可能希望执行某些程序，如对mysql数据库地备份</p>
+<p>基本语法：<br>crontab [选项]<br>常用选项：<br>-e：编辑crontab定时任务<br>-l：查询crontab任务<br>-r：删除当前用户所有地crontab任务</p>
+<p>用法：<br>1.设置任务调度文件：/etc/crontab<br>2.设置个人任务调度。执行cromtab -e命令<br>3.接着输入任务到调度文件<br>【* /1 * * * * ls -l /etc/ &gt; /tmp/to.txt】每小时的每分钟执行 ls -l /etc/ &gt; tmp/to.txt命令<br>【* /1 * * * * /home/mycal】 每小时的每分钟执行脚本文件</p>
+<p>参数细节说明<br><img src="./images/2_1.png" alt="enter description here"><br>“ */1 ”代表每隔一分钟执行一次。<br>【分时天月星期几】</p>
+<p>特殊符号说明：<br><img src="./images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87%E7%BC%96%E8%BE%91_20220707153011.jpg" alt="enter description here"></p>
+<hr>
+<h3 id="2、at任务调度"><a href="#2、at任务调度" class="headerlink" title="2、at任务调度"></a>2、at任务调度</h3><p>基本介绍：</p>
+<ol>
+<li>at命令是一次性定时计划任务，at的守护进程atd会以后台模式运行，检查作业队列来运行。</li>
+<li>默认情况下，atd守护进程每60秒检查作业队列，有作业时，会检查作业运行时间，如果时间与当前时间匹配，则运行此作业。</li>
+<li>at命令是一次性定时计划任务，执行完一个任务后就不再执行了。</li>
+<li>在使用at命令的时候，一定要保证atd进行的启动，可以使用相关指令来查看【ps -ef】。<br><img src="./images/4.png" alt="enter description here"></li>
+</ol>
+<p> at命令格式：<br> at 【选项】【时间】<br> Ctrl+D 结束at命令输入</p>
+<p> at命令选项：<br> <img src="./images/5.png" alt="enter description here"></p>
+<p> at时间定义：【at指定时间的方法】<br> <img src="./images/6.png" alt="enter description here"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/06/py_day23/" data-id="cl5arus58000jk0vxepj06qeo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/07/06/py_day22/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">linux学习8-rwx权限</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/07/06/py_day23/">linux学习9-任务调度</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/06/py_day22/">linux学习8-rwx权限</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/06/py_day21/">linux学习7-权限管理</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/04/py_day20/">linux学习6-实用指令</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/03/py_day19/">linux学习6-用户管理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

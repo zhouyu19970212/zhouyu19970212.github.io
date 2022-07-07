@@ -5,17 +5,17 @@
   
 
   
-  <title>Python学习2-字符串和数字 | Hexo</title>
+  <title>linux学习7-权限管理 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="用了小书匠来写文本，客户端上预览的效果格式正确，怎么一上传到github上格式就不对了捏？还没整明白，慢慢来吧。初次学py，发现py和matlab的语法相似啊  py的数据类型有六个：数字、字符串、列表、元组、集合、字典其中：数字、字符串、元组是不可变的；列表、字典、集合是可变的  字符串java中的字符串是类，py里面变成了数据类型。 语法差不多，双引号””和单引号’’都能用，拼接是是用加号+，">
+  <meta name="description" content="1、组在linux中的每一个用户必须属于一个组，不能独立于组外。在linux中每个文件有所有者、所在组、其他组。  2、文件&#x2F;目录 所有者一般为文件的创建者，谁创建了文件，就自然成为该文件的所有者。 查看文件的所有者指令：ls -ahl 修改文件所有者指令：chown 用户名 文件名  3、组的创建基本指令：groupadd 组名  4、所在组当某个用户创建了一个文件后，这个文件的所在组就是该用户">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python学习2-字符串和数字">
-<meta property="og:url" content="http://example.com/2022/03/27/py_day2/index.html">
+<meta property="og:title" content="linux学习7-权限管理">
+<meta property="og:url" content="http://example.com/2022/07/06/py_day21/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="用了小书匠来写文本，客户端上预览的效果格式正确，怎么一上传到github上格式就不对了捏？还没整明白，慢慢来吧。初次学py，发现py和matlab的语法相似啊  py的数据类型有六个：数字、字符串、列表、元组、集合、字典其中：数字、字符串、元组是不可变的；列表、字典、集合是可变的  字符串java中的字符串是类，py里面变成了数据类型。 语法差不多，双引号””和单引号’’都能用，拼接是是用加号+，">
+<meta property="og:description" content="1、组在linux中的每一个用户必须属于一个组，不能独立于组外。在linux中每个文件有所有者、所在组、其他组。  2、文件&#x2F;目录 所有者一般为文件的创建者，谁创建了文件，就自然成为该文件的所有者。 查看文件的所有者指令：ls -ahl 修改文件所有者指令：chown 用户名 文件名  3、组的创建基本指令：groupadd 组名  4、所在组当某个用户创建了一个文件后，这个文件的所在组就是该用户">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-03-27T11:55:42.974Z">
-<meta property="article:modified_time" content="2022-03-27T11:59:58.737Z">
+<meta property="article:published_time" content="2022-07-06T01:45:42.450Z">
+<meta property="article:modified_time" content="2022-07-06T02:28:33.215Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -66,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-py_day2" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-py_day21" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/03/27/py_day2/" class="article-date">
-  <time datetime="2022-03-27T11:55:42.974Z" itemprop="datePublished">2022-03-27</time>
+    <a href="/2022/07/06/py_day21/" class="article-date">
+  <time datetime="2022-07-06T01:45:42.450Z" itemprop="datePublished">2022-07-06</time>
 </a>
     
   </div>
@@ -80,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Python学习2-字符串和数字
+      linux学习7-权限管理
     </h1>
   
 
@@ -88,22 +88,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>用了小书匠来写文本，客户端上预览的效果格式正确，怎么一上传到github上格式就不对了捏？<br>还没整明白，慢慢来吧。<br>初次学py，发现py和matlab的语法相似啊</p>
-<blockquote>
-<p>py的数据类型有六个：数字、字符串、列表、元组、集合、字典<br>其中：数字、字符串、元组是不可变的；列表、字典、集合是可变的</p>
-</blockquote>
-<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p><em><strong>java中的字符串是类，py里面变成了数据类型。</strong></em></p>
-<p>语法差不多，双引号””和单引号’’都能用，拼接是是用加号+，目的应该就是为了灵活输出 “ 以及 ‘ 吧。<br>书上给了几个字符串方法：<br>    title()：首字母大写显示单词<br>    lower()：全部变小写<br>    upper()：全部变大写<br>    restrip()：删除末尾空白，调用这个语句看上去好像只是删除了副本，要想彻底删除得用下面这个语句</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str = str.restrip()</span><br></pre></td></tr></table></figure>
-<p>lstrip()：删除左边空白<br>rstrip()：删除右边空白</p>
-<h3 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h3><h4 id="1、整数"><a href="#1、整数" class="headerlink" title="1、整数"></a>1、整数</h4><p>py中可以用操作数直接表示次方：**<br>例如：3 ** 2<br>&gt;&gt;&gt; 9</p>
-<h4 id="2、浮点数"><a href="#2、浮点数" class="headerlink" title="2、浮点数"></a>2、浮点数</h4><p>py中的浮点数直接表示，但也会存在精度问题</p>
-<p><em><strong>数字运算基本和java类似</strong></em></p>
+        <h3 id="1、组"><a href="#1、组" class="headerlink" title="1、组"></a>1、组</h3><p>在linux中的每一个用户必须属于一个组，不能独立于组外。<br>在linux中每个文件有所有者、所在组、其他组。</p>
+<hr>
+<h3 id="2、文件-目录-所有者"><a href="#2、文件-目录-所有者" class="headerlink" title="2、文件/目录 所有者"></a>2、文件/目录 所有者</h3><p>一般为文件的创建者，谁创建了文件，就自然成为该文件的所有者。</p>
+<p>查看文件的所有者<br>指令：ls -ahl</p>
+<p>修改文件所有者<br>指令：chown 用户名 文件名</p>
+<hr>
+<h3 id="3、组的创建"><a href="#3、组的创建" class="headerlink" title="3、组的创建"></a>3、组的创建</h3><p>基本指令：groupadd 组名</p>
+<hr>
+<h3 id="4、所在组"><a href="#4、所在组" class="headerlink" title="4、所在组"></a>4、所在组</h3><p>当某个用户创建了一个文件后，这个文件的所在组就是该用户所在的组。</p>
+<p>查看文件/目录所在组<br>基本指令：ls -ahl</p>
+<p>修改文件所在组<br>基本指令：chgrp 组名 文件名</p>
+<hr>
+<h3 id="5、其他组"><a href="#5、其他组" class="headerlink" title="5、其他组"></a>5、其他组</h3><p>除文件的所有者和所在组的用户外，系统的其他用户都是文件的其他组。</p>
+<hr>
+<h3 id="6、改变用户所在组"><a href="#6、改变用户所在组" class="headerlink" title="6、改变用户所在组"></a>6、改变用户所在组</h3><p>在添加用户时，可以指定将该用户添加到哪个组中，同样的用root的管理权限可以改变某个用户所在组。</p>
+<p>改变用户所在组<br>usermod -g 新组名 用户名<br>usermod -d 目录名 用户名 改变该用户登录的初始目录 【用户需要有进入到新目录的权限】</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/27/py_day2/" data-id="cl5arus56000gk0vx8h5e52kw" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/07/06/py_day21/" data-id="cl5arus56000fk0vx7nmo317c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -112,19 +117,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/04/01/py_day3/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/07/06/py_day22/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Python学习3-列表的增删改查
+          linux学习8-rwx权限
         
       </div>
     </a>
   
   
-    <a href="/2022/03/26/py_day1/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/07/04/py_day20/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Python学习1-变量</div>
+      <div class="article-nav-title">linux学习6-实用指令</div>
     </a>
   
 </nav>
