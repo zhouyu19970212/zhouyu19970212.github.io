@@ -1,32 +1,241 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
 
-block content
-  #post
-    if top_img === false
-      include includes/header/post-info.pug
+  
+  <title>linux学习3-目录结构 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、基本介绍linux的文件系统采用的是层级式的树状目录结构，在此结构中的最上层式根目录 “&#x2F;”，然后在此目录下再创建其他的目录。在linux世界里，一切皆文件。  2、具体的目录结构&#x2F;bin 【常用】 （&#x2F;usr&#x2F;bin、&#x2F;usr&#x2F;local&#x2F;bin）是Binary的缩写，这个目录存放着最经常使用的命令。 &#x2F;sbin （&#x2F;usr&#x2F;sbin、&#x2F;usr&#x2F;local&#x2F;sbin）s就是super use">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux学习3-目录结构">
+<meta property="og:url" content="http://example.com/2022/06/30/py_day17/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、基本介绍linux的文件系统采用的是层级式的树状目录结构，在此结构中的最上层式根目录 “&#x2F;”，然后在此目录下再创建其他的目录。在linux世界里，一切皆文件。  2、具体的目录结构&#x2F;bin 【常用】 （&#x2F;usr&#x2F;bin、&#x2F;usr&#x2F;local&#x2F;bin）是Binary的缩写，这个目录存放着最经常使用的命令。 &#x2F;sbin （&#x2F;usr&#x2F;sbin、&#x2F;usr&#x2F;local&#x2F;sbin）s就是super use">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-06-30T09:30:30.219Z">
+<meta property="article:modified_time" content="2022-07-01T01:53:25.205Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-    article#article-container.post-content!=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
-        
-    if theme.reward.enable && theme.reward.QR_code
-      !=partial('includes/post/reward', {}, {cache: true})
+<meta name="generator" content="Hexo 5.4.1"></head>
 
-    //- ad
-    if theme.ad && theme.ad.post
-      .ads-wrap!=theme.ad.post
-
-    if theme.post_pagination
-      include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
-
-    if page.comments !== false && theme.comments && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache: true})
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
       
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-py_day17" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/30/py_day17/" class="article-date">
+  <time datetime="2022-06-30T09:30:30.219Z" itemprop="datePublished">2022-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux学习3-目录结构
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、基本介绍"><a href="#1、基本介绍" class="headerlink" title="1、基本介绍"></a>1、基本介绍</h3><p>linux的文件系统采用的是层级式的树状目录结构，在此结构中的最上层式根目录 “/”，然后在此目录下再创建其他的目录。<strong>在linux世界里，一切皆文件。</strong></p>
+<hr>
+<h3 id="2、具体的目录结构"><a href="#2、具体的目录结构" class="headerlink" title="2、具体的目录结构"></a>2、具体的目录结构</h3><p>/bin 【常用】 （/usr/bin、/usr/local/bin）<br>是Binary的缩写，这个目录存放着最经常使用的命令。</p>
+<p>/sbin （/usr/sbin、/usr/local/sbin）<br>s就是super user的意思，这里存放的是系统管理员使用的系统管理程序。</p>
+<p>/home 【常用】<br>存放普通用户的主目录，在linux中每个用户都有一个自己的目录，一般该目录名是以用户的账号命名。</p>
+<p>/root 【常用】<br>该目录为系统管理员，也称作超级权限者的用户主目录。</p>
+<p>/lib<br>系统开机所需要最基本的动态连接共享库，其作用类似于Windows里的DLL文件。几乎所有的应用程序都需要用到这些共享库。</p>
+<p>/lost+found<br>这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。</p>
+<p>/etc 【常用】<br>所有的系统管理所需要的配置文件和子目录，比如安装mysql数据库 my.conf。</p>
+<p>/usr 【常用】<br>这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似与windows下的program files目录。</p>
+<p>/boot 【常用】<br>存放的是启动linux时使用的一些核心文件，包括一些连接文件以及镜像文件。</p>
+<p>/proc 【不能动】<br>这个目录是一个虚拟的目录，它是系统内存的映射，访问这个目录来获取系统信息。</p>
+<p>/srv 【不能动】<br>service缩写，该目录存放一些服务启动之后需要提取的数据。</p>
+<p>/sys 【不能动】<br>这是linux2.6内核的一个很大的变化，该目录下安装了2.6内核中新出现的一个文件系统sysfs。</p>
+<p>/tmp<br>这个目录是用来存放一些临时文件的。</p>
+<p>/dev<br>类似于Windows的设备管理器，把所有的硬件用文件的形式存储。</p>
+<p>/media 【常用】<br>linux系统会自动识别一些设备，例如U盘、光驱等等，当识别后，linux会把识别的设备挂载到这个目录下。</p>
+<p>/mnt 【常用】<br>系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将外部的存储挂载在 /mnt/ 上，<br>然后进入该目录就可以查看里面的内容了。d:/myshare</p>
+<p>/opt<br>这是给主机额外安装软件所摆放的目录。如安装ORACLE数据库就可以放到该目录下。默认为空。</p>
+<p>/usr/local 【常用】<br>这是另一个给主机额外安装软件所安装的目录。一般是通过编译源码方式安装的程序。</p>
+<p>/var 【常用】<br>这个目录中存放着在不断扩充着的东西，习惯将经常被修改的目录放在这个目录下。包括各种日志文件。</p>
+<p>/selinux [security-enhanced linux]<br>SELinux是一种安全子系统，它能控制程序只能访问特定文件，有三种工作模式，可以自行设置。</p>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/30/py_day17/" data-id="cl5ay4dc1000ca4vxa2qehzn3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/01/py_day18/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          linux学习4-vim
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/06/30/py_day16/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">linux学习2-虚拟机的克隆、快照、迁移和删除</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/07/06/py_day23/">linux学习9-任务调度</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/06/py_day22/">linux学习8-rwx权限</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/06/py_day21/">linux学习7-权限管理</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/04/py_day20/">linux学习6-实用指令</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/03/py_day19/">linux学习6-用户管理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

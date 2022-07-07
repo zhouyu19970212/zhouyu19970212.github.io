@@ -1,32 +1,234 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
 
-block content
-  #post
-    if top_img === false
-      include includes/header/post-info.pug
+  
+  <title>linux学习6-用户管理 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、添加用户&#x2F;删除用户添加用户基本语法：useradd 用户名删除用户基本语法：userdel 用户名  2、指定&#x2F;修改密码基本语法：password 用户名  3、查询用户信息&#x2F;切换用户&#x2F;查看当前用户基本语法：id 用户名 基本语法：su - 用户名从权限高的用户切换到权限低的用户，不需要输入密码，反之需要。当需要返回到原来用户时，使用exit&#x2F;logout指令。 基本语法：whoami  4、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux学习6-用户管理">
+<meta property="og:url" content="http://example.com/2022/07/03/py_day19/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、添加用户&#x2F;删除用户添加用户基本语法：useradd 用户名删除用户基本语法：userdel 用户名  2、指定&#x2F;修改密码基本语法：password 用户名  3、查询用户信息&#x2F;切换用户&#x2F;查看当前用户基本语法：id 用户名 基本语法：su - 用户名从权限高的用户切换到权限低的用户，不需要输入密码，反之需要。当需要返回到原来用户时，使用exit&#x2F;logout指令。 基本语法：whoami  4、">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-03T03:50:12.833Z">
+<meta property="article:modified_time" content="2022-07-04T02:11:34.533Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-    article#article-container.post-content!=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
-        
-    if theme.reward.enable && theme.reward.QR_code
-      !=partial('includes/post/reward', {}, {cache: true})
+<meta name="generator" content="Hexo 5.4.1"></head>
 
-    //- ad
-    if theme.ad && theme.ad.post
-      .ads-wrap!=theme.ad.post
-
-    if theme.post_pagination
-      include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
-
-    if page.comments !== false && theme.comments && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache: true})
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
       
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-py_day19" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/03/py_day19/" class="article-date">
+  <time datetime="2022-07-03T03:50:12.833Z" itemprop="datePublished">2022-07-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux学习6-用户管理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、添加用户-删除用户"><a href="#1、添加用户-删除用户" class="headerlink" title="1、添加用户/删除用户"></a>1、添加用户/删除用户</h3><p>添加用户基本语法：useradd 用户名<br>删除用户基本语法：userdel 用户名</p>
+<hr>
+<h3 id="2、指定-修改密码"><a href="#2、指定-修改密码" class="headerlink" title="2、指定/修改密码"></a>2、指定/修改密码</h3><p>基本语法：<br>password 用户名</p>
+<hr>
+<h3 id="3、查询用户信息-切换用户-查看当前用户"><a href="#3、查询用户信息-切换用户-查看当前用户" class="headerlink" title="3、查询用户信息/切换用户/查看当前用户"></a>3、查询用户信息/切换用户/查看当前用户</h3><p>基本语法：<br>id 用户名</p>
+<p>基本语法：<br>su - 用户名<br>从权限高的用户切换到权限低的用户，不需要输入密码，反之需要。当需要返回到原来用户时，使用exit/logout指令。</p>
+<p>基本语法：<br>whoami</p>
+<hr>
+<h3 id="4、用户组"><a href="#4、用户组" class="headerlink" title="4、用户组"></a>4、用户组</h3><p>添加<br>基本语法：groupadd 组名</p>
+<p>删除<br>基本语法：groupdel 组名</p>
+<p>增加用户时直接上组<br>基本语法：useradd -g 用户组 用户名</p>
+<p>修改用户组<br>基本语法：usermod -g 用户组 用户名</p>
+<hr>
+<h3 id="5、用户和组相关文件"><a href="#5、用户和组相关文件" class="headerlink" title="5、用户和组相关文件"></a>5、用户和组相关文件</h3><p>/etc/passwd 文件<br>用户(user)的配置文件，记录用户的各种信息。<br>每行的含义：用户名:口令:用户标识号:组织标识号:注释性描述:主目录:登录shell</p>
+<p>/etc/shadow 文件<br>口令的配置文件。<br>每行的含义：登录名:加密口令:最后一次修改时间:最小时间间隔:最大时间间隔:警告时间:不活动时间:失效时间:标志</p>
+<p>/etc/group 文件<br>组(group)配置文件，记录linux包括的组信息。<br>每行含义：组名:口令:组标识符:组内用户列表</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/03/py_day19/" data-id="cl5ay4dc2000ea4vxdpt10z61" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/04/py_day20/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          linux学习6-实用指令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/01/py_day18/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">linux学习4-vim</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/07/06/py_day23/">linux学习9-任务调度</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/06/py_day22/">linux学习8-rwx权限</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/06/py_day21/">linux学习7-权限管理</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/04/py_day20/">linux学习6-实用指令</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/03/py_day19/">linux学习6-用户管理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

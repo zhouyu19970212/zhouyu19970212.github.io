@@ -1,32 +1,225 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
 
-block content
-  #post
-    if top_img === false
-      include includes/header/post-info.pug
+  
+  <title>linux学习2-虚拟机的克隆、快照、迁移和删除 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、虚拟机克隆如果已经安装了一台linux操作系统，还想再要更多的，没有必要再重新安装，只需要克隆就可以了。 方式1：直接拷贝一份安装好的虚拟机文件方式2：使用vmware的克隆操作，克隆时，需要先关闭linux系统  2、虚拟机快照如果再使用虚拟机系统的时候（比如linux），想要回到原先的某一个状态，也就是说你担心可能有些误操作造成系统异常，需要回到原先某个正常的运行状态，vmware也提供了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux学习2-虚拟机的克隆、快照、迁移和删除">
+<meta property="og:url" content="http://example.com/2022/06/30/py_day16/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、虚拟机克隆如果已经安装了一台linux操作系统，还想再要更多的，没有必要再重新安装，只需要克隆就可以了。 方式1：直接拷贝一份安装好的虚拟机文件方式2：使用vmware的克隆操作，克隆时，需要先关闭linux系统  2、虚拟机快照如果再使用虚拟机系统的时候（比如linux），想要回到原先的某一个状态，也就是说你担心可能有些误操作造成系统异常，需要回到原先某个正常的运行状态，vmware也提供了">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-06-30T08:09:59.968Z">
+<meta property="article:modified_time" content="2022-06-30T08:57:04.611Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-    article#article-container.post-content!=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
-        
-    if theme.reward.enable && theme.reward.QR_code
-      !=partial('includes/post/reward', {}, {cache: true})
+<meta name="generator" content="Hexo 5.4.1"></head>
 
-    //- ad
-    if theme.ad && theme.ad.post
-      .ads-wrap!=theme.ad.post
-
-    if theme.post_pagination
-      include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
-
-    if page.comments !== false && theme.comments && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache: true})
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
       
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-py_day16" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/06/30/py_day16/" class="article-date">
+  <time datetime="2022-06-30T08:09:59.968Z" itemprop="datePublished">2022-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux学习2-虚拟机的克隆、快照、迁移和删除
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、虚拟机克隆"><a href="#1、虚拟机克隆" class="headerlink" title="1、虚拟机克隆"></a>1、虚拟机克隆</h3><p>如果已经安装了一台linux操作系统，还想再要更多的，没有必要再重新安装，只需要克隆就可以了。</p>
+<p>方式1：直接拷贝一份安装好的虚拟机文件<br>方式2：使用vmware的克隆操作，克隆时，需要先关闭linux系统</p>
+<hr>
+<h3 id="2、虚拟机快照"><a href="#2、虚拟机快照" class="headerlink" title="2、虚拟机快照"></a>2、虚拟机快照</h3><p>如果再使用虚拟机系统的时候（比如linux），想要回到原先的某一个状态，也就是说你担心可能有些误操作造成系统异常，需要回到原先某个正常的运行状态，vmware也提供了这样的功能，就叫快照管理</p>
+<p>应用实例：<br>1、按照好系统以后，先做一个快照A<br>2、进入到系统。创建一个文件夹，再保存一个快照B<br>3、回到系统刚刚按照好的状态，即 快照A</p>
+<hr>
+<h3 id="3、虚拟机迁移和删除"><a href="#3、虚拟机迁移和删除" class="headerlink" title="3、虚拟机迁移和删除"></a>3、虚拟机迁移和删除</h3><p>虚拟系统安装好了，它的本质就是文件。因此虚拟系统的迁移很方便，可以把安装好的虚拟系统这个文件夹整体<strong>拷贝或者剪切</strong>到另外位置使用。删除也很简单，用vmware进行移除，在点击菜单-&gt;从磁盘删除即可，或者直接手动删除虚拟系统对应的文件夹即可。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/30/py_day16/" data-id="cl5ay4dc0000ba4vx5k5fals9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/06/30/py_day17/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          linux学习3-目录结构
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/06/30/py_day15/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">学习14-存储数据</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/07/06/py_day23/">linux学习9-任务调度</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/06/py_day22/">linux学习8-rwx权限</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/06/py_day21/">linux学习7-权限管理</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/04/py_day20/">linux学习6-实用指令</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/03/py_day19/">linux学习6-用户管理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
