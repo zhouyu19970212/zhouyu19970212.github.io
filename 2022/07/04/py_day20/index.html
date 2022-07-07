@@ -1,254 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+extends includes/layout.pug
 
-  
-  <title>linux学习6-实用指令 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、运行级别0：关机1：单用户【找回丢失密码】2：多用户状态没有网络服务3：多用户状态有网络服务4：系统未使用保留给用户5：图形界面6：系统重启 常用运行级别是3和5，也可以指定默认运行级别。 切换运行级别命令：init [0 1 2 3 4 5 6]  2、帮助指令man&#x2F;help  3、文件目录指令pwd指令基本语法：pwd 【功能描述：显示当前工作目录的绝对路径】 ls指令基本语法：ls [">
-<meta property="og:type" content="article">
-<meta property="og:title" content="linux学习6-实用指令">
-<meta property="og:url" content="http://example.com/2022/07/04/py_day20/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1、运行级别0：关机1：单用户【找回丢失密码】2：多用户状态没有网络服务3：多用户状态有网络服务4：系统未使用保留给用户5：图形界面6：系统重启 常用运行级别是3和5，也可以指定默认运行级别。 切换运行级别命令：init [0 1 2 3 4 5 6]  2、帮助指令man&#x2F;help  3、文件目录指令pwd指令基本语法：pwd 【功能描述：显示当前工作目录的绝对路径】 ls指令基本语法：ls [">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-07-04T02:11:46.153Z">
-<meta property="article:modified_time" content="2022-07-05T03:21:43.630Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+block content
+  #post
+    if top_img === false
+      include includes/header/post-info.pug
 
-<meta name="generator" content="Hexo 5.4.1"></head>
+    article#article-container.post-content!=page.content
+    include includes/post/post-copyright.pug
+    .tag_share
+      if (theme.post_meta.post.tags)
+        .post-meta__tag-list
+          each item, index in page.tags.data
+            a(href=url_for(item.path)).post-meta__tags #[=item.name]
+      include includes/third-party/share/index.pug
+        
+    if theme.reward.enable && theme.reward.QR_code
+      !=partial('includes/post/reward', {}, {cache: true})
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+    //- ad
+    if theme.ad && theme.ad.post
+      .ads-wrap!=theme.ad.post
+
+    if theme.post_pagination
+      include includes/pagination.pug
+    if theme.related_post && theme.related_post.enable
+      != related_posts(page,site.posts)
+
+    if page.comments !== false && theme.comments && theme.comments.use
+      - var commentsJsLoad = true
+      !=partial('includes/third-party/comments/index', {}, {cache: true})
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-py_day20" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/07/04/py_day20/" class="article-date">
-  <time datetime="2022-07-04T02:11:46.153Z" itemprop="datePublished">2022-07-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      linux学习6-实用指令
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、运行级别"><a href="#1、运行级别" class="headerlink" title="1、运行级别"></a>1、运行级别</h3><p>0：关机<br>1：单用户【找回丢失密码】<br>2：多用户状态没有网络服务<br>3：多用户状态有网络服务<br>4：系统未使用保留给用户<br>5：图形界面<br>6：系统重启</p>
-<p>常用运行级别是3和5，也可以指定默认运行级别。</p>
-<p>切换运行级别命令：init [0 1 2 3 4 5 6]</p>
-<hr>
-<h3 id="2、帮助指令"><a href="#2、帮助指令" class="headerlink" title="2、帮助指令"></a>2、帮助指令</h3><p>man/help</p>
-<hr>
-<h3 id="3、文件目录指令"><a href="#3、文件目录指令" class="headerlink" title="3、文件目录指令"></a>3、文件目录指令</h3><p>pwd指令<br>基本语法：pwd 【功能描述：显示当前工作目录的绝对路径】</p>
-<p>ls指令<br>基本语法：ls [选项] [目录或是文件]<br>常用选项：<br>-a：显示当前目录所有文件的文件何目录，包括隐藏的。<br>-l：以单列列表的方式显示信息。</p>
-<p>cd指令<br>基本语法：cd [参数] 【功能描述：切换到指定目录】<br>理解：绝对路径何相对路径<br>cd ~或者cd：回到自己的家目录<br>cd ..：回到当前目录的上一级目录</p>
-<p>mkdir指令<br>用于创建目录<br>基本语法：mkdir [选项] 要创建的目录<br>常用选项：<br>-p：创建多级目录</p>
-<p>rmdir指令<br>用于删除目录<br>基本语法：rmdir [选项] 要删除的空目录 【这样做删除的是空目录，如果目录下有内容无法删除】<br>删除非空目录需要使用指令： rm -rf 要删除的目录。比如：rm -rf /home/animal</p>
-<p>touch指令<br>创建一个空文件<br>基本语法：touch 文件名称<br>比如：touch hello.txt</p>
-<p>cp指令<br>拷贝文件到指定目录<br>基本语法：cp [选项] source dest<br>常用选项：<br>-r 【递归复制整个文件夹】【强制覆盖不提示的方法：\cp，\cp -r /home/bbb/opt】</p>
-<p>rm指令<br>移除文件或目录<br>基本语法：rm [选项] 要删除的文件或目录<br>常用选项：<br>-r：递归删除整个文件夹<br>-f：强制删除不提示</p>
-<p>mv指令<br>移动文件与目录/重命名<br>基本语法：<br>mv oldNameFile newNameFile (功能描述：重命名)<br>mv /temp/movefile /targetFolder (功能描述：移动文件)</p>
-<p>cat指令<br>查看文件内容<br>基本语法：cat [选项] 要查看的文件<br>常用选项：-n 【显示行号】<br>【cat只能浏览文件，而不能修改文件，为了浏览方便，一般会带上管道命令 |more [进行交互]】</p>
-<p>more指令<br>这是一个基于VI编辑器的文本过滤器，以全屏幕的方式按页显示文本文件的内容。more指令中内置了若干快捷键。<br>基本语法：more 要查看的文件</p>
-<p>less指令<br>用来分屏查看文件内容，功能与more指令类似，但是比more指令更加强大，支持各种显示终端。less指令再显示文件内容时，并不是一次将整个文件加载之后才显示，而是根据显示需要加载内容，对于显示大型文件具有较高的效率。<br>基本语法：less 要查看的文件</p>
-<p>echo指令<br>输出内容到控制台<br>基本语法：echo [选项] [输出内容]</p>
-<p>head指令<br>用于显示文件的开头部分，默认情况下head指令显示文件的前10行内容。<br>基本语法：head 文件 (功能描述：查看文件头10行内容)<br>                  head -n 5 文件 (功能描述：查看文件头5行内容)</p>
-<p>tail指令<br>用于显示文件的尾部，默认情况下tail指令显示文件的后10行内容。<br>基本语法：tail 文件 (功能描述：查看文件尾10行内容)<br>                  tail -n 5 文件 (功能描述：查看文件尾5行内容)<br>                  tail -f 文件 (功能描述：实时追踪该文档的所有更新)</p>
-<p>/&gt;指令 和 &gt;&gt; 指令<br>/&gt; 输出重定向（覆盖写）<br>/&gt;&gt; 追加<br>基本语法：<br>ls -l &gt; 文件 (功能描述：列表的内容写入文件中（覆盖写）)<br>ls -al &gt;&gt; 文件 (功能描述：列表的内容追加到文件的末尾)<br>cat 文件1 &gt; 文件2 (功能描述：将文件1的内容覆盖到文件2)<br>echo “内容” &gt;&gt; 文件</p>
-<p>ln指令<br>软链接也称为符号链接，类似于windows里的快捷方式，主要存放了链接其他文件的路径<br>基本语法：ln -s [原文件或目录] [软链接名] (功能描述：给原文件创建一个软链接)<br>【删除软链接用 -rm】</p>
-<p>history指令<br>查看已经执行过的历史命令，也可以执行历史指令。<br>基本语法：history (功能描述：查看已经执行过的历史命令)<br>                  history 10 (功能描述：查看最近执行的10个命令)</p>
-<hr>
-<h3 id="4、时间日期类指令"><a href="#4、时间日期类指令" class="headerlink" title="4、时间日期类指令"></a>4、时间日期类指令</h3><p>date指令<br>显示当前日期<br>基本语法：<br>date (功能描述：显示当前时间)<br>date +%Y (功能描述：显示当前年份)<br>date +%m (功能描述：显示当前月份)<br>date +%d (功能描述：显示当前是哪一天)<br>date “+%Y-%m-%d %H:%M:%S” (功能描述：显示年月日时分秒)</p>
-<p>设置日期<br>基本语法：date -s 字符串时间 【比如：date -s “2022-07-05 10:07:35”】</p>
-<p>cal指令<br>查看日历<br>基本语法：cal [选项] (功能描述：不加选项，显示本月日历)</p>
-<hr>
-<h3 id="5、搜素和查找类指令"><a href="#5、搜素和查找类指令" class="headerlink" title="5、搜素和查找类指令"></a>5、搜素和查找类指令</h3><p>find指令<br>从指定目录向下递归地遍历其各个子目录，将满足条件地文件或者目录显示在终端。<br>基本语法：find [搜索范围] [选项]<br>选项说明：<br>-name&lt;查询方式&gt;：按照指定的文件名查找模式查找文件<br>-user&lt;用户名&gt;：查找属于指定用户名所有文件<br>-size&lt;文件大小&gt;：按照指定的文件大小查找文件<br>比如：查找整个linux系统下大于200M的文件（+n大于 -n小于 n等于， 单位有k,M,G）<br>            find / -size +200<br>           按文件名，根据名称查找/home目录下的hello.txt文件<br>           find /home -name hello.txt</p>
-<p>locate指令<br>可以快速定位文件的路径。locate指令利用事先建立的系统中所有文件名称以及路径的locate数据库实现快速定位给定的文件。locate指令无需遍历整个文件系统，查询速度较快。为了保证查询结果的准确度，管理员必须定期更新locate时刻。<br>基本语法：locate 搜索文件<br>【由于locate指令基于数据库进行查询，所以第一次运行前，必须使用updatedb指令创建locate数据库】<br>【没有locate数据库，可以使用指令 yum -y install mlocate 安装】</p>
-<p>grep指令和管道符 |<br>grep过滤查找，管道符 “|” 表示将前一个命令的处理结果输出传递给后面的命令处理。<br>基本语法：grep [选项] 查找内容 源文件<br>常用选项：<br>-n：显示匹配行及行号。<br>-i：忽略字母大小写。<br>比如：在hello.txt文件中，查找“yes”所在行，并显示行号<br>写法1：cat /home/hello.txt | grep -n “yes”<br>写法2：grep -n “yes” /home/hello.txt</p>
-<hr>
-<h3 id="6、压缩和解压类指令"><a href="#6、压缩和解压类指令" class="headerlink" title="6、压缩和解压类指令"></a>6、压缩和解压类指令</h3><p>gzip/gunzip指令<br>gzip用于压缩文件，gunzip用于解压文件。<br>基本语法：<br>gzip 文件 (功能描述：压缩文件，只能将文件压缩为*.gz文件)<br>gunzip 文件 (功能描述：解压缩文件命令)</p>
-<p>zip/unzip指令<br>zip用于压缩文件，unzip用于解压文件，这个在项目打包发布中很有用。<br>基本语法：<br>zip [选项] xxx.zip 将要压缩的内容 (功能描述：压缩文件和目录的命令)<br>unzip [选项] xxx.zip (功能描述：解压缩文件)<br>zip常用选项：<br>-r：递归压缩，即压缩目录<br>比如：将/home下的所有文件/文件夹进行压缩，压缩成myhome.zip<br>zip -r myhome.zip /home/</p>
-<p>tar指令<br>打包。<br>基本语法：tar [选项] xxx.tar.gz 打包的内容 (功能描述：打包目录，压缩后的文件格式.tar.gz)<br>选项说明：<br>-c：新建打包文件<br>-v：显示详细信息<br>-f：指定压缩后的文件名<br>-z：打包同时压缩<br>-x：解包.tar文件<br>一般组合：tar -zcvf</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/07/04/py_day20/" data-id="cl5aw7ivq000giwvxgopq5161" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/07/06/py_day21/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          linux学习7-权限管理
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2022/07/03/py_day19/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">linux学习6-用户管理</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/07/06/py_day23/">linux学习9-任务调度</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/06/py_day22/">linux学习8-rwx权限</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/06/py_day21/">linux学习7-权限管理</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/04/py_day20/">linux学习6-实用指令</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/03/py_day19/">linux学习6-用户管理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2022 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
