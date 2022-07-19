@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-07-08T08:05:29.376Z</updated>
+  <updated>2022-07-19T02:43:43.897Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,13 +17,75 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>linux学习12-进程管理</title>
+    <link href="http://example.com/2022/07/18/py_day26/"/>
+    <id>http://example.com/2022/07/18/py_day26/</id>
+    <published>2022-07-18T08:36:50.265Z</published>
+    <updated>2022-07-19T02:43:43.897Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、基本介绍"><a href="#1、基本介绍" class="headerlink" title="1、基本介绍"></a>1、基本介绍</h3><p>1.1 在linux中，每个执行的程序都称为一个进程。每一个进程都分配一个ID号（pid，进程号）</p><p>1.2 每个进程都可能以两种方式存在，前台与后台，前台进程就是用户目前的屏幕上进行操作的，后台进程则是实际在操作，但由于屏幕上无法看到的进程，通常使用后台方式执行</p><p>1.3 一般系统的服务都是以后台进程的方式存在，而且会常驻在系统中。直到关机才结束</p><hr><h3 id="2、显示系统执行的进程"><a href="#2、显示系统执行的进程" class="headerlink" title="2、显示系统执行的进程"></a>2、显示系统执行的进程</h3><p>基本介绍：ps命令是用来查看目前系统中，有哪些正在执行，以及它们执行的状况。可以不加任何参数</p><p>ps -a：显示当前终端的所有进程信息<br>ps -u：以用户的格式显示进程信息<br>ps -x：显示后台进程运行的参数</p><p>ps详解<br>指令：ps -aux | grep xxx<br>说明：<br>System V展示风格<br>USER：用户名称<br>PID：进程号<br>%CPU：进程占用CPU的百分比<br>%MEM：进程占用物理内存的百分比<br>VSZ：进程占用的虚拟内存大小（单位：KB）<br>RSS：进程占用的物理内存大小（单位：KB）<br>TT：终端名称<br>COMMAND：启动进程所用的命令和参数，如果过长会被截断显示</p><hr><h3 id="3、父子进程"><a href="#3、父子进程" class="headerlink" title="3、父子进程"></a>3、父子进程</h3><p>以全格式显示当前所有的进程，查看进程的父进程：ps -ef<br>-e 显示所有进程<br>-f 全格式</p><hr><h3 id="3、终止进程"><a href="#3、终止进程" class="headerlink" title="3、终止进程"></a>3、终止进程</h3><p>基本语法：kill [选项] 进程号 （功能描述：通过进程号杀死进程）<br>                  killall 进程名称 （功能描述：通过进程名称杀死进程，也支持通配符，这在系统因负载过大而变得很慢时很有用）</p><hr><h3 id="4、服务管理"><a href="#4、服务管理" class="headerlink" title="4、服务管理"></a>4、服务管理</h3><p>介绍：服务（service）本质就是进程，但是是运行在后台的，通常都会监听某个端口，等待其他程序的请求，比如（mysql，sshd，防火墙等），因此我们又称为守护进程。</p><p>service管理指令</p><ol><li>service 服务名 [start| stop | restart | reload | status]</li><li>在centOS7.0后，很多服务不再使用service，而是 systemctl</li><li>service指令管理的服务在 /etc/init.d 查看</li></ol><p> 服务的运行级别（runlevel）：常用级别是3和5<br> 0：系统停机状态，系统默认运行级别不能设为0，否则不能正常启动<br> 1：单用户工作状态，root权限，用于系统维护，禁止远程登录<br> 2：多用户状态（没有NFS），不支持网络<br> 3：完全的的多用户状态（有NFS），登录后进入控制台命令行模式<br> 4：系统未使用，保留<br> 5：X11控制台，登录后进入图形GUI模式<br> 6：系统正常关闭并重启，默认运行级别不能设为6，否则不能正常启动</p><p> chkconfig指令：<br>     介绍：1、通过chkconfig可以给服务的各个运行级别设置  自 启动/关闭<br>                2、chkconfig指令管理的服务在 /etc/init.d 查看<br>               3、centOS7.0后，很多服务使用systemctl管理</p><p>   基本语法：<br>         查看服务 chkconfig –list [ | grep xxx]<br>         chkconfig 服务名 –list<br>         chkconfig –level 5 服务名 on/off</p><p> systemctl指令：<br>    基本语法：systemctl [start | stop | restart | status] 服务名<br>    systemctl指令管理的服务在 /usr/lib/systemd/system 查看</p><hr><h3 id="5、动态监控进程"><a href="#5、动态监控进程" class="headerlink" title="5、动态监控进程"></a>5、动态监控进程</h3><p>介绍：top与ps命令很相似，都是用来显示正在执行的进程。但top在执行一段时间内可以更新正在运行的进程</p><p>基本语法：top [选项]</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1、基本介绍&quot;&gt;&lt;a href=&quot;#1、基本介绍&quot; class=&quot;headerlink&quot; title=&quot;1、基本介绍&quot;&gt;&lt;/a&gt;1、基本介绍&lt;/h3&gt;&lt;p&gt;1.1 在linux中，每个执行的程序都称为一个进程。每一个进程都分配一个ID号（pid，进程号）&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>linux学习11-网络配置</title>
+    <link href="http://example.com/2022/07/18/py_day25/"/>
+    <id>http://example.com/2022/07/18/py_day25/</id>
+    <published>2022-07-18T03:50:22.997Z</published>
+    <updated>2022-07-18T08:13:24.815Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、查看网络ip和网关"><a href="#1、查看网络ip和网关" class="headerlink" title="1、查看网络ip和网关"></a>1、查看网络ip和网关</h3><p>windows下：ipconfig<br>linux下：ifconfig</p><hr><h3 id="2、ping-测试主机之间网络连通性"><a href="#2、ping-测试主机之间网络连通性" class="headerlink" title="2、ping 测试主机之间网络连通性"></a>2、ping 测试主机之间网络连通性</h3><p>基本语法：ping 目的主机（功能描述：测试当前服务器是否可以连接目的主机）</p><hr><h3 id="3、网络环境配置"><a href="#3、网络环境配置" class="headerlink" title="3、网络环境配置"></a>3、网络环境配置</h3><p>第一种方法（自动获取）：<br>说明：登录后，通过界面来设置自动获取ip<br>特点：linux启动后会自动获取ip，优点是能够避免ip冲突，缺点是每次自动获取的ip地址可能不一样</p><p>第二种方法（指定ip）：<br>说明：直接修改配置文件来指定ip，并可以连接到外网（推荐）<br>编辑 vi/etc/sysconfig/network-scripts/ifcfg-ens33<br>要求：将ip地址配置成静态的，比如：ip地址为192.168.200.130</p><p>ifcfg-ens33文件说明<br>DEVICE=eth0            #接口名（设备，网卡）<br>HWADDR=00:0C:2x:6x:0x:xx      #MAC地址<br>TYPE=Ethernet            #网络类型（通常是Ethernet）<br>UUID=926a57ba-92c6-4231-bacb-f27e5e6a9f44            #随机id<br>#系统启动的时候网络接口是否有效（yes/no）<br>ONBOOT=yes<br>#IP的配置方法[none|static|bootp|dhcp] （引导时不使用协议|静态分配IP|BOOTP协议|DHCP协议）<br>BOOTPROTO=static<br>#IP地址<br>IPADDR=192.168.200.130<br>#网关<br>GATEWAY=192.168.200.2<br>#域名解析器<br>DNS1=192.168.200.2</p><p>重启网络服务或者重启系统使配置生效<br>service network restart<br>reboot</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1、查看网络ip和网关&quot;&gt;&lt;a href=&quot;#1、查看网络ip和网关&quot; class=&quot;headerlink&quot; title=&quot;1、查看网络ip和网关&quot;&gt;&lt;/a&gt;1、查看网络ip和网关&lt;/h3&gt;&lt;p&gt;windows下：ipconfig&lt;br&gt;linux下：ifconf</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>linux学习10-磁盘分区、挂载</title>
+    <link href="http://example.com/2022/07/18/py_day24/"/>
+    <id>http://example.com/2022/07/18/py_day24/</id>
+    <published>2022-07-18T02:16:36.413Z</published>
+    <updated>2022-07-18T03:06:03.192Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、linux分区"><a href="#1、linux分区" class="headerlink" title="1、linux分区"></a>1、linux分区</h3><p>原理介绍：</p><p>1.1 对linux来说无论有几个分区，分给哪一个目录使用，它归根结底就只有一个根目录，一个独立且唯一的文件结构，linux中每个分区都是用来组成整个文件系统的一部分</p><p>1.2 linux采用了一种叫“载入”的处理方法，它的整个文件系统中包含了一整套的文件和目录，且将一个分区和一个目录联系起来。这时要载入的一个分区将使它的存储空间在一个目录下获得</p><p>硬盘说明：</p><p>1.3 linux硬盘分为IDE硬盘和SCSI硬盘，目前基本上是SCSI硬盘</p><p>1.4 对于IDE硬盘，驱动器标识符为 “hdx<del>”，其中 “hd” 表明分区所在设备的类型，这里是指IDE硬盘。“x” 为盘号（a为基本盘，b为基本从属盘，c为辅助主盘，d为辅助从属盘），“</del>”代表分区，前四个分区用数字1到4表示，他们是主分区或扩展分区，从5开始是逻辑分区。例，hda3表示为第一个IDE硬盘上的第三个主分区或扩展分区，hdb2表示为第二个IDE硬盘上的第二个主分区或扩展分区。</p><p>1.5 对于SCSI硬盘则标识为 “sdx~”，SCSI硬盘是用 “sd” 来表示分区所在设备的类型的，其余则和IDE硬盘的表示方法一样。</p><p>查看所有设备挂载情况：</p><p>命令：lsblk 或者 lsblk -f</p><p>挂载与自动挂载：</p><p>命令行的挂载行为是临时的，永久挂载要通过修改/etc/fstab实现。</p><hr><h3 id="2、磁盘情况查询"><a href="#2、磁盘情况查询" class="headerlink" title="2、磁盘情况查询"></a>2、磁盘情况查询</h3><p>命令：df -h</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1、linux分区&quot;&gt;&lt;a href=&quot;#1、linux分区&quot; class=&quot;headerlink&quot; title=&quot;1、linux分区&quot;&gt;&lt;/a&gt;1、linux分区&lt;/h3&gt;&lt;p&gt;原理介绍：&lt;/p&gt;
+&lt;p&gt;1.1 对linux来说无论有几个分区，分给哪一个目录使用</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>linux学习9-任务调度</title>
     <link href="http://example.com/2022/07/06/py_day23/"/>
     <id>http://example.com/2022/07/06/py_day23/</id>
     <published>2022-07-06T06:28:42.412Z</published>
-    <updated>2022-07-08T08:05:29.376Z</updated>
+    <updated>2022-07-08T08:09:56.527Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="1、crond任务调度（crond是一个守护进程，crontab是一个指令）"><a href="#1、crond任务调度（crond是一个守护进程，crontab是一个指令）" class="headerlink" title="1、crond任务调度（crond是一个守护进程，crontab是一个指令）"></a>1、crond任务调度（crond是一个守护进程，crontab是一个指令）</h3><p>crontab 进行 定时任务的设置<br><img src="./images/3.png" alt="enter description here"></p><p>概述<br>任务调度：是指系统在某个时间执行的特定的命令或程序。<br>任务调度分类：1.系统工作：有些重要的工作必须周而复始地执行。如病毒扫描等<br>                          2.个别用户工作：个别用户可能希望执行某些程序，如对mysql数据库地备份</p><p>基本语法：<br>crontab [选项]<br>常用选项：<br>-e：编辑crontab定时任务<br>-l：查询crontab任务<br>-r：删除当前用户所有地crontab任务</p><p>用法：<br>1.设置任务调度文件：/etc/crontab<br>2.设置个人任务调度。执行cromtab -e命令<br>3.接着输入任务到调度文件<br>【* /1 * * * * ls -l /etc/ &gt; /tmp/to.txt】每小时的每分钟执行 ls -l /etc/ &gt; tmp/to.txt命令<br>【* /1 * * * * /home/mycal】 每小时的每分钟执行脚本文件</p><p>参数细节说明<br><img src="https://github.com/zhouyu19970212/photo/blob/master/2.png" alt="enter description here"><br>“ */1 ”代表每隔一分钟执行一次。<br>【分时天月星期几】</p><p>特殊符号说明：<br><img src="./images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87%E7%BC%96%E8%BE%91_20220707153011.jpg" alt="enter description here"></p><hr><h3 id="2、at任务调度"><a href="#2、at任务调度" class="headerlink" title="2、at任务调度"></a>2、at任务调度</h3><p>基本介绍：</p><ol><li>at命令是一次性定时计划任务，at的守护进程atd会以后台模式运行，检查作业队列来运行。</li><li>默认情况下，atd守护进程每60秒检查作业队列，有作业时，会检查作业运行时间，如果时间与当前时间匹配，则运行此作业。</li><li>at命令是一次性定时计划任务，执行完一个任务后就不再执行了。</li><li>在使用at命令的时候，一定要保证atd进行的启动，可以使用相关指令来查看【ps -ef】。<br><img src="./images/4.png" alt="enter description here"></li></ol><p> at命令格式：<br> at 【选项】【时间】<br> Ctrl+D 结束at命令输入</p><p> at命令选项：<br> <img src="./images/5.png" alt="enter description here"></p><p> at时间定义：【at指定时间的方法】<br> <img src="./images/6.png" alt="enter description here"></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="1、crond任务调度（crond是一个守护进程，crontab是一个指令）"><a href="#1、crond任务调度（crond是一个守护进程，crontab是一个指令）" class="headerlink" title="1、crond任务调度（crond是一个守护进程，crontab是一个指令）"></a>1、crond任务调度（crond是一个守护进程，crontab是一个指令）</h3><p>crontab 进行 定时任务的设置<br><img src="./images/3.png" alt="enter description here"></p><p>概述<br>任务调度：是指系统在某个时间执行的特定的命令或程序。<br>任务调度分类：1.系统工作：有些重要的工作必须周而复始地执行。如病毒扫描等<br>                          2.个别用户工作：个别用户可能希望执行某些程序，如对mysql数据库地备份</p><p>基本语法：<br>crontab [选项]<br>常用选项：<br>-e：编辑crontab定时任务<br>-l：查询crontab任务<br>-r：删除当前用户所有地crontab任务</p><p>用法：<br>1.设置任务调度文件：/etc/crontab<br>2.设置个人任务调度。执行cromtab -e命令<br>3.接着输入任务到调度文件<br>【* /1 * * * * ls -l /etc/ &gt; /tmp/to.txt】每小时的每分钟执行 ls -l /etc/ &gt; tmp/to.txt命令<br>【* /1 * * * * /home/mycal】 每小时的每分钟执行脚本文件</p><p>参数细节说明<br><img src="https://github.com/zhouyu19970212/photo/blob/master/2.png" alt="imge"><br>“ */1 ”代表每隔一分钟执行一次。<br>【分时天月星期几】</p><p>特殊符号说明：<br><img src="./images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87%E7%BC%96%E8%BE%91_20220707153011.jpg" alt="enter description here"></p><hr><h3 id="2、at任务调度"><a href="#2、at任务调度" class="headerlink" title="2、at任务调度"></a>2、at任务调度</h3><p>基本介绍：</p><ol><li>at命令是一次性定时计划任务，at的守护进程atd会以后台模式运行，检查作业队列来运行。</li><li>默认情况下，atd守护进程每60秒检查作业队列，有作业时，会检查作业运行时间，如果时间与当前时间匹配，则运行此作业。</li><li>at命令是一次性定时计划任务，执行完一个任务后就不再执行了。</li><li>在使用at命令的时候，一定要保证atd进行的启动，可以使用相关指令来查看【ps -ef】。<br><img src="./images/4.png" alt="enter description here"></li></ol><p> at命令格式：<br> at 【选项】【时间】<br> Ctrl+D 结束at命令输入</p><p> at命令选项：<br> <img src="./images/5.png" alt="enter description here"></p><p> at时间定义：【at指定时间的方法】<br> <img src="./images/6.png" alt="enter description here"></p>]]></content>
     
     
       
@@ -352,67 +414,6 @@
       
       
     <summary type="html">&lt;h3 id=&quot;1、input&quot;&gt;&lt;a href=&quot;#1、input&quot; class=&quot;headerlink&quot; title=&quot;1、input()&quot;&gt;&lt;/a&gt;1、input()&lt;/h3&gt;&lt;p&gt;用法：var = input()&lt;br&gt;input()函数将键入的信息存储到一个变量中；&lt;b</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习6-if语句</title>
-    <link href="http://example.com/2022/05/19/py_day6/"/>
-    <id>http://example.com/2022/05/19/py_day6/</id>
-    <published>2022-05-19T12:20:30.848Z</published>
-    <updated>2022-05-19T12:20:30.914Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1、条件测试"><a href="#1、条件测试" class="headerlink" title="1、条件测试"></a>1、条件测试</h3><p>检查列表中某个特定值：in/not in<br>names = [‘zhouyu’, ‘zhangyifei’, ‘wanghaozun’]<br>print(‘zhouyu’ in names) ==&gt; True<br>print(‘zhouy’ not in names) ==&gt; True</p><h3 id="2、if语句"><a href="#2、if语句" class="headerlink" title="2、if语句"></a>2、if语句</h3><p>与java不同，不用加括号；与matlab不同，不用加end作为结束；py的if-else要加冒号，并且靠缩进来判断if里面的语句。<br>此外，java中if-elseif是可以多次判断的。而py中if为true则跳过elseif<br>if: condition<br>    do sth</p><p>if:<br>    do sth1<br>else:<br>    do sth2</p><p>if:<br>    do sth1<br>elseif:<br>    do sth2<br>else:<br>    do sth3</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;1、条件测试&quot;&gt;&lt;a href=&quot;#1、条件测试&quot; class=&quot;headerlink&quot; title=&quot;1、条件测试&quot;&gt;&lt;/a&gt;1、条件测试&lt;/h3&gt;&lt;p&gt;检查列表中某个特定值：in/not in&lt;br&gt;names = [‘zhouyu’, ‘zhangyifei</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习5-操作列表</title>
-    <link href="http://example.com/2022/05/12/py_day5/"/>
-    <id>http://example.com/2022/05/12/py_day5/</id>
-    <published>2022-05-12T08:28:05.542Z</published>
-    <updated>2022-05-12T08:28:05.670Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1、for循环遍历"><a href="#1、for循环遍历" class="headerlink" title="1、for循环遍历"></a>1、for循环遍历</h3><p>结构：for 临时变量 in 列表: （缩进）语句1（缩进）语句2 ……</p><h3 id="2、range-函数"><a href="#2、range-函数" class="headerlink" title="2、range()函数"></a>2、range()函数</h3><p>用法1，遍历数字：for num in range(number1, number2): ……<br>用法2，创建连续数字集合：nums = list(range(1, 6))<br>用法3，创建偶数集合：even_nums = list(range(2, 11, 2))<br>range的范围是number1到number2 - 1，左闭右开</p><p>注意：range(0, 0)、range(2, 0)均是空集合</p><h3 id="3、统计数字列表：min、max、sum"><a href="#3、统计数字列表：min、max、sum" class="headerlink" title="3、统计数字列表：min、max、sum"></a>3、统计数字列表：min、max、sum</h3><p>用法：min(列表)、max(列表)、sum(列表)</p><h3 id="4、列表解析"><a href="#4、列表解析" class="headerlink" title="4、列表解析"></a>4、列表解析</h3><p>列表解析将for循环和创建新元素合并成一行代码，并自动附加新元素。</p><p>用法：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">squares = [value**<span class="number">2</span> <span class="keyword">for</span> value <span class="keyword">in</span> <span class="title function_">range</span>(<span class="number">1</span>, <span class="number">11</span>)]</span><br><span class="line"># 列表名 = [表达式 <span class="keyword">for</span>循环]</span><br><span class="line"># 表达式用于生成存储值，<span class="keyword">for</span>循环用于给表达式提供值</span><br></pre></td></tr></table></figure><h3 id="5、切片"><a href="#5、切片" class="headerlink" title="5、切片"></a>5、切片</h3><p>用法1：列表[索引1: 索引2]<br>用法2：列表[: 索引] 不指定首个索引，则自动从表头开始<br>用法3：列表[索引: ]<br>用法4：列表[负数索引: ]  负数索引切表尾</p><h3 id="6、复制列表"><a href="#6、复制列表" class="headerlink" title="6、复制列表"></a>6、复制列表</h3><p>用法：列表副本 = 列表[:]</p><h3 id="7、元组（不可变的列表）"><a href="#7、元组（不可变的列表）" class="headerlink" title="7、元组（不可变的列表）"></a>7、元组（不可变的列表）</h3><p>用法：元组 = (元素1, 元素2, ……)</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;1、for循环遍历&quot;&gt;&lt;a href=&quot;#1、for循环遍历&quot; class=&quot;headerlink&quot; title=&quot;1、for循环遍历&quot;&gt;&lt;/a&gt;1、for循环遍历&lt;/h3&gt;&lt;p&gt;结构：for 临时变量 in 列表: （缩进）语句1（缩进）语句2 ……&lt;/p&gt;
-&lt;</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习4-组织列表</title>
-    <link href="http://example.com/2022/04/08/py_day4/"/>
-    <id>http://example.com/2022/04/08/py_day4/</id>
-    <published>2022-04-08T08:07:10.412Z</published>
-    <updated>2022-04-08T08:11:19.768Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1、sort-和sorted-：永久排序和临时排序"><a href="#1、sort-和sorted-：永久排序和临时排序" class="headerlink" title="1、sort()和sorted()：永久排序和临时排序"></a>1、sort()和sorted()：永久排序和临时排序</h3><p>list.sort()              ：对已存在的列表进行排序，可以带参数 reverse = True<br>sorted(iterable)    ：对一切可迭代对象排序，对对象的副本进行排序，并返回这个副本，可以带参数 reverse = True</p><h3 id="2、reverse-：反转列表"><a href="#2、reverse-：反转列表" class="headerlink" title="2、reverse()：反转列表"></a>2、reverse()：反转列表</h3><p>list.reverse()        ：</p><h3 id="3、len-：返回列表长度"><a href="#3、len-：返回列表长度" class="headerlink" title="3、len()：返回列表长度"></a>3、len()：返回列表长度</h3><p>len(list)                ：</p><h3 id="加餐：sort-内部实现原理"><a href="#加餐：sort-内部实现原理" class="headerlink" title="加餐：sort()内部实现原理"></a>加餐：sort()内部实现原理</h3><p>py中的sort()采用的是 Timsort 算法<br>最坏时间复杂度 O(nlogn)<br>空间复杂度 O(n)<br>相比快排，Timsort是稳定的</p><blockquote><p>Timsort是结合了合并排序（merge sort）和插入排序（insertion sort）而得出的排序算法，它在现实中有很好的效率。Tim Peters在2002年设计了该算法并在Python中使用（TimSort 是 Python 中 list.sort 的默认实现）。该算法找到数据中已经排好序的块-分区，每一个分区叫一个run，然后按规则合并这些run。Pyhton自从2.3版以来一直采用Timsort算法排序，现在Java SE7和Android也采用Timsort算法对数组排序。</p></blockquote><h4 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h4><p>针对现实中需要排序的数据分析，大多数的数据通常都是部分排序好的数据块，Timsort就是利用了这一个特点。<br>Timsort将已经排序好的数据块称为 run，在排序时，Timsort将数据元素放到不同的run里面，并将run按规则进行归并，最后只剩一个run，这个run就是最后的结果。</p><p>Timsort会有一个minrun属性，如果初始的run小于这个minrun，则用插入排序将未排序的数据插入进来，直到达到条件，之后使用归并排序合并多个run。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;1、sort-和sorted-：永久排序和临时排序&quot;&gt;&lt;a href=&quot;#1、sort-和sorted-：永久排序和临时排序&quot; class=&quot;headerlink&quot; title=&quot;1、sort()和sorted()：永久排序和临时排序&quot;&gt;&lt;/a&gt;1、sort()和</summary>
       
     
     
