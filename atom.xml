@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-07-19T02:43:43.897Z</updated>
+  <updated>2022-07-20T07:57:19.233Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,47 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试学习2-测试用例设计</title>
+    <link href="http://example.com/2022/07/19/py_day28/"/>
+    <id>http://example.com/2022/07/19/py_day28/</id>
+    <published>2022-07-19T09:47:01.862Z</published>
+    <updated>2022-07-20T07:57:19.233Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、白盒测试"><a href="#一、白盒测试" class="headerlink" title="一、白盒测试"></a>一、白盒测试</h2><p>【先使用黑盒测试方法来设计测试用例，然后视情况需要使用白盒测试方法来设计补充的测试用例】</p><h3 id="1、逻辑覆盖测试"><a href="#1、逻辑覆盖测试" class="headerlink" title="1、逻辑覆盖测试"></a>1、逻辑覆盖测试</h3><p>判定覆盖或分支覆盖准则：编写足够的测试用例，使得每一个判断都至少有一个为【真】和【假】的输出结果，并且每条语句都至少被执行一次。</p><p>条件覆盖准则：编写足够的测试用例，确保将一个判断中的每个条件的所有可能的结果至少执行一次。</p><p>判定/条件覆盖准则：将一个判断中的每个条件的所有可能的结果至少执行一次，将每个判断的所有可能的结果至少执行一次，将每个入口点都至少调用一次。</p><p>多重条件覆盖准则：将每个判定中的所有可能的条件结果组合，以及所有入口点都至少执行一次。</p><hr><h2 id="二、黑盒测试"><a href="#二、黑盒测试" class="headerlink" title="二、黑盒测试"></a>二、黑盒测试</h2><h3 id="1、等价划分"><a href="#1、等价划分" class="headerlink" title="1、等价划分"></a>1、等价划分</h3><p>步骤：<br>（1）确定等价类<br>                            有效等价类、无效等价类<br>（2）生成测试用例<br>                            I、为每个等价类设置一个不同的编号。<br>                            II、编写新的测试用例，尽可能多地覆盖那些尚未被覆盖的有效等价类，直到所有的有效等价类都被测试用例所覆盖。<br>                            III、编写新的用例，覆盖一个且仅一个尚未被覆盖的无效等价类，直到所有的无效等价类都被测试用例所覆盖。</p><h3 id="2、边界值分析"><a href="#2、边界值分析" class="headerlink" title="2、边界值分析"></a>2、边界值分析</h3><p>边界值分析考察正处于等价划分边界或在边界附近的状态。</p><h3 id="3、因果图"><a href="#3、因果图" class="headerlink" title="3、因果图"></a>3、因果图</h3><h3 id="4、错误猜测"><a href="#4、错误猜测" class="headerlink" title="4、错误猜测"></a>4、错误猜测</h3><hr><h2 id="三、测试策略"><a href="#三、测试策略" class="headerlink" title="三、测试策略"></a>三、测试策略</h2><p>1、如果规格说明中包含输入条件组合，使用因果图法<br>2、任何情况下都应使用边界值分析法。【对输入、输出边界进行分析】<br>3、应为输入和输出确定有效、无效等价类<br>4、使用错误猜测技术增加更多测试用例<br>5、针对上述测试用例集检查程序的逻辑结构，使判定覆盖、条件覆盖、判定条件覆盖、多重条件覆盖准则</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、白盒测试&quot;&gt;&lt;a href=&quot;#一、白盒测试&quot; class=&quot;headerlink&quot; title=&quot;一、白盒测试&quot;&gt;&lt;/a&gt;一、白盒测试&lt;/h2&gt;&lt;p&gt;【先使用黑盒测试方法来设计测试用例，然后视情况需要使用白盒测试方法来设计补充的测试用例】&lt;/p&gt;
+&lt;h3 i</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>测试学习1</title>
+    <link href="http://example.com/2022/07/19/py_day27/"/>
+    <id>http://example.com/2022/07/19/py_day27/</id>
+    <published>2022-07-19T07:55:06.506Z</published>
+    <updated>2022-07-19T09:46:51.519Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、黑盒测试"><a href="#1、黑盒测试" class="headerlink" title="1、黑盒测试"></a>1、黑盒测试</h3><p>即测试输入/输出数据，忽略系统内部的结构。直接想到的测试方法是穷举测试数据，但这是无法做到的，所以我们需要最大限度地提高发现的问题数并尽量列出所有可能的测试数据。</p><hr><h3 id="2、白盒测试"><a href="#2、白盒测试" class="headerlink" title="2、白盒测试"></a>2、白盒测试</h3><p>检查系统内部的结构。直接想到的测试方法是穷举测试路径，但这同样是无法实现的，并且即使穷举完，系统也可能还是存在错误，因为有些错误是【天生的问题】，比如，本来程序逻辑就是错的。</p><hr><h3 id="3、测试原则"><a href="#3、测试原则" class="headerlink" title="3、测试原则"></a>3、测试原则</h3><ol><li>测试用例必须对预期输出或结果进行定义：对输入数据及期望的正确输出数据进行精确描述。</li><li>应当彻底检查每个测试的执行结果</li><li>检查程序是否【未做其应该做的】以及【做了其不应该做的】</li><li>避免测试用例用完即弃</li><li>错误总是倾向于聚集存在</li></ol><hr><h3 id="4、人工测试方法"><a href="#4、人工测试方法" class="headerlink" title="4、人工测试方法"></a>4、人工测试方法</h3><p>a、代码检查<br>b、代码走查<br>【修改程序后，除了回归测试之外，还要进行人工测试】</p><hr><h3 id="5、代码审查"><a href="#5、代码审查" class="headerlink" title="5、代码审查"></a>5、代码审查</h3><p>一个代码检查小组通常由4人组成，其中一人发挥协调作用。协调人不能是该程序的编码人员。<br>协调人的职责：<br>1、为代码检查分发材料、安排进程。<br>2、在代码检查中起主导作用。<br>3、记录发现的所有错误。<br>4、确保所有错误随后得到改正。</p><p>小组中的第二个成员是该程序的编码人员。<br>小组中的其他成员是其他开发人员以及一名测试专家。</p><p>review主要进行两项活动：<br>1、该代码的开发人员讲述逻辑结构，其他人提问找错。<br>2、对着历来常见的编码错误列表分析程序。</p><hr><h3 id="6、错误列表"><a href="#6、错误列表" class="headerlink" title="6、错误列表"></a>6、错误列表</h3><p>1、数据引用错误：引用变量未赋值或初始化、数组越界问题、数组下标是否整数、内存单元是否分配、继承需求是否都在实现类中得到满足</p><p>2、数据声明错误：所有变量是否均已声明、默认属性是否被正确理解、变量的长度及数据类型</p><p>3、运算错误</p><p>4、比较错误</p><p>5、控制流程错误：循环是否终止、模块或子程序是否终止、是否存在不能穷尽的判断</p><p>6、接口错误：形参数等于实参数、形参与实参的顺序、属性</p><p>7、输入/输出错误</p><p>8、其他检查：是否遗漏了某个功能</p><hr><h3 id="7、代码走查"><a href="#7、代码走查" class="headerlink" title="7、代码走查"></a>7、代码走查</h3><p>代码走查小组由3-5人组成，其中一个人为协调人，一人担任秘书，一人担任测试人员。</p><p>在会议期间，每个测试用例都在人们脑中进行推演。也就是说，把测试数据沿程序的逻辑结构走一遍。程序的状态（如变量的值）记录在纸张或白板上以供监视。</p><p>这些测试用例必须结构简单、数量较少，其作用是提供了启动代码走查和质疑程序员逻辑思路及其设想的手段。</p><hr><h3 id="7、桌面检查"><a href="#7、桌面检查" class="headerlink" title="7、桌面检查"></a>7、桌面检查</h3><p>由单人完成：一人阅读程序，对照错误列表检查程序，对程序推演测试数据。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1、黑盒测试&quot;&gt;&lt;a href=&quot;#1、黑盒测试&quot; class=&quot;headerlink&quot; title=&quot;1、黑盒测试&quot;&gt;&lt;/a&gt;1、黑盒测试&lt;/h3&gt;&lt;p&gt;即测试输入/输出数据，忽略系统内部的结构。直接想到的测试方法是穷举测试数据，但这是无法做到的，所以我们需要最</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>linux学习12-进程管理</title>
@@ -374,46 +415,6 @@
       
     <summary type="html">&lt;h3 id=&quot;1、定义函数&quot;&gt;&lt;a href=&quot;#1、定义函数&quot; class=&quot;headerlink&quot; title=&quot;1、定义函数&quot;&gt;&lt;/a&gt;1、定义函数&lt;/h3&gt;&lt;p&gt;用法：def 函数名(完成任务需要的信息):&lt;br&gt;        （缩进）函数体&lt;/p&gt;
 &lt;figure </summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习7-字典</title>
-    <link href="http://example.com/2022/06/10/py_day7/"/>
-    <id>http://example.com/2022/06/10/py_day7/</id>
-    <published>2022-06-10T07:17:33.024Z</published>
-    <updated>2022-06-10T07:17:33.084Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1、使用字典"><a href="#1、使用字典" class="headerlink" title="1、使用字典"></a>1、使用字典</h3><p>1.1、字典是一系列的k-v对。<br>1.2、用法：student = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}<br>空字典： student = {}<br>1.3、增：<br>student[‘weight’] = 65<br>student[‘nation’] = ‘china’</p><p>1.4、删：<br>del student[‘weight’]</p><p>1.5、改：<br>student[‘weight’] = student[‘weight’] + 10<br>student[‘name’] = ‘zhangyifei’</p><h3 id="2、遍历字典"><a href="#2、遍历字典" class="headerlink" title="2、遍历字典"></a>2、遍历字典</h3><p>2.1、遍历k-v对：<br>for k, v in student.items():<br>print(k)<br>print(v)</p><p>2.2、遍历key：<br>for k in student.keys():<br>print(k)</p><p>for k in student:<br>print(k)</p><p>2.3、按顺序遍历key：<br>for k in sorted(student.keys()):<br>print(k)</p><p>2.4、遍历value：<br>for v in student.values():<br>print(v)</p><p>2.5、用集合set剔除重复：<br>for v in set(student.values()):<br>print(v)</p><h3 id="3、嵌套"><a href="#3、嵌套" class="headerlink" title="3、嵌套"></a>3、嵌套</h3><p>3.1、列表中嵌套字典：<br>student1 = {‘name’: ‘zhouyu’, ‘age’: 25, ‘sex’: ‘man’}<br>student2 = {‘name’: ‘zhangyifei’, ‘age’: 26, ‘sex’: ‘man’}<br>student3 = {‘name’: ‘wanghaozun’, ‘age’: 24, ‘sex’: ‘man’}</p><p>students = [student1, student2, student3]</p><p>for stu in students:<br>print(stu)</p><p>3.2、字典中嵌套列表（一个key对多个value）：<br>students = {<br>‘zhouyu’: [25, ‘man’],<br>‘zhangyifei’: [26, ‘man’],<br>‘wanghaozun’: [24, ‘man’]<br>}<br>for name, ageAndSex in students.items():<br>print(name)<br>print(ageAndSex)</p><p>3.3、字典中嵌套字典<br>school = {<br>‘students’: {<br>‘zhouyu’: [25, ‘man’],<br>‘zhangyifei’: [26, ‘man’],<br>‘wanghaozun’: [24, ‘man’]<br>},<br>‘teachers’: {<br>‘lishumao’: [45, ‘man’],<br>‘liujing’: [30, ‘woman’],<br>‘wangyingchun’: [65, ‘man’]<br>}<br>}<br>for stu, teacher in school.items():<br>print(stu)<br>print(teacher)</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;1、使用字典&quot;&gt;&lt;a href=&quot;#1、使用字典&quot; class=&quot;headerlink&quot; title=&quot;1、使用字典&quot;&gt;&lt;/a&gt;1、使用字典&lt;/h3&gt;&lt;p&gt;1.1、字典是一系列的k-v对。&lt;br&gt;1.2、用法：student = {‘name’: ‘zhouyu’</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习8-input和while</title>
-    <link href="http://example.com/2022/06/10/py_day8/"/>
-    <id>http://example.com/2022/06/10/py_day8/</id>
-    <published>2022-06-10T07:15:40.656Z</published>
-    <updated>2022-06-10T07:26:20.345Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1、input"><a href="#1、input" class="headerlink" title="1、input()"></a>1、input()</h3><p>用法：var = input()<br>input()函数将键入的信息存储到一个变量中；<br>每次使用input()时，都应该指定浅显易懂的提示，告诉用户需要提供什么样的信息。</p><h3 id="2、while"><a href="#2、while" class="headerlink" title="2、while"></a>2、while</h3><p>用法：while 判断条件:</p><p>break退出循环；<br>continue：跳至下一轮循环</p><h3 id="3、使用while循环处理列表和字典"><a href="#3、使用while循环处理列表和字典" class="headerlink" title="3、使用while循环处理列表和字典"></a>3、使用while循环处理列表和字典</h3><blockquote><p>在for循环中不应修改列表，否则将导致Python难以跟踪其中的元素。要在遍历列表的同时对其进行修改，可使用while循环。</p></blockquote><h4 id="3-1、-在列表之间移动元素"><a href="#3-1、-在列表之间移动元素" class="headerlink" title="3.1、 在列表之间移动元素"></a>3.1、 在列表之间移动元素</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">unconfirmed_users = [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;]</span><br><span class="line">confirmed_users = []</span><br><span class="line"></span><br><span class="line">while unconfirmed_users:</span><br><span class="line">    current_user = unconfirmed_users.pop()</span><br><span class="line">    print(&quot;Verifying users: &quot; + current_user)</span><br><span class="line">    confirmed_users.append(current_user)</span><br><span class="line"></span><br><span class="line">print(&quot;\n The following users have been confirmed: &quot;)</span><br><span class="line">for confirmed_user in confirmed_users:</span><br><span class="line">    print(confirmed_user.title())</span><br></pre></td></tr></table></figure><h4 id="3-2、-删除包含特定值的所有列表元素"><a href="#3-2、-删除包含特定值的所有列表元素" class="headerlink" title="3.2、 删除包含特定值的所有列表元素"></a>3.2、 删除包含特定值的所有列表元素</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pets = [&#x27;dog&#x27;, &#x27;cat&#x27;, &#x27;dog&#x27;, &#x27;goldfish&#x27;, &#x27;cat&#x27;, &#x27;rabbit&#x27;, &#x27;cat&#x27;]</span><br><span class="line">print(pets)</span><br><span class="line"></span><br><span class="line">while &#x27;cat&#x27; in pets:</span><br><span class="line">    pets.remove(&#x27;cat&#x27;)</span><br><span class="line"></span><br><span class="line">print(pets)</span><br></pre></td></tr></table></figure><h4 id="3-3、使用用户输入来填充字典"><a href="#3-3、使用用户输入来填充字典" class="headerlink" title="3.3、使用用户输入来填充字典"></a>3.3、使用用户输入来填充字典</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">responds = &#123;&#125;</span><br><span class="line"></span><br><span class="line">polling_active = True</span><br><span class="line"></span><br><span class="line">while polling_active:</span><br><span class="line">    name = input(&quot;\nWhat&#x27;s ur name? &quot;)</span><br><span class="line">    response = input(&quot;Witch mountain would u like to climb someday? &quot;)</span><br><span class="line"></span><br><span class="line">    responds[name] = response</span><br><span class="line"></span><br><span class="line">    repeat = input(&quot;Would u like to let another person respond? (yes/no) &quot;)</span><br><span class="line">    if repeat == &#x27;no&#x27;:</span><br><span class="line">        polling_active = False</span><br><span class="line"></span><br><span class="line">print(&quot;\n--- Poll Result ---&quot;)</span><br><span class="line">for name, response in responds.items():</span><br><span class="line">    print(name + &quot;would like to climb&quot; + response + &quot;.&quot;)</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;1、input&quot;&gt;&lt;a href=&quot;#1、input&quot; class=&quot;headerlink&quot; title=&quot;1、input()&quot;&gt;&lt;/a&gt;1、input()&lt;/h3&gt;&lt;p&gt;用法：var = input()&lt;br&gt;input()函数将键入的信息存储到一个变量中；&lt;b</summary>
       
     
     
