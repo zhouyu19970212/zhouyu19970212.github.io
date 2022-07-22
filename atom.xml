@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-07-20T07:57:19.233Z</updated>
+  <updated>2022-07-22T03:19:32.179Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试学习4-更高级的测试</title>
+    <link href="http://example.com/2022/07/21/py_day30/"/>
+    <id>http://example.com/2022/07/21/py_day30/</id>
+    <published>2022-07-21T08:53:19.520Z</published>
+    <updated>2022-07-22T03:19:32.179Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、软件开发过程"><a href="#一、软件开发过程" class="headerlink" title="一、软件开发过程"></a>一、软件开发过程</h2><p>I、将软件最终用户的要求转换为一系列书面的需求。这些需求就是该软件产品要实现的目标。<br>II、通过评估可行性与成本、消除相抵触的用户需求、建立优先级和平衡关系，将用户需求转换为具体目标。<br>III、将上述目标转换为一个准确的产品规格说明，将产品是为一个黑盒，仅考虑其接口以及与最终用户的交互。该规格说明被称为【外部规格说明】<br>IV、如果该产品是一个系统，如操作系统、飞控系统、数据库管理系统等，而不仅是一个程序（编译器、工资程序、字处理程序），那么下一步骤就是系统设计。该步骤将系统分割为单独的程序、部件或子系统，并定义它们的接口。<br>V、通过定义每个模块的功能、模块的层次接口以及模块间的接口，来设计程序或程序集合的结构。<br>VI、设计一份准确的规格说明，定义每个模块的接口与功能。<br>VII、经过一个或更多的子步骤，将模块接口规格说明转换为每个模块的源代码算法。</p><p>最终用户 ——&gt; 需求 ——&gt; 目标 ——&gt; 外部规格说明 ——&gt; 系统设计 ——&gt; 程序结构设计 ——&gt; 模块结构规格说明 ——&gt; 代码</p><p>对应：<br>                        验收测试——&gt;系统测试——&gt;功能测试——&gt;集成测试——&gt;模块测试</p><hr><h2 id="二、功能测试"><a href="#二、功能测试" class="headerlink" title="二、功能测试"></a>二、功能测试</h2><p>功能测试是一个试图发现程序与其外部规格说明之间存在不一致的过程。</p><p>测试方法：等价类划分、边界值分析、因果图分析、错误猜测等。</p><hr><h2 id="三、系统测试"><a href="#三、系统测试" class="headerlink" title="三、系统测试"></a>三、系统测试</h2><p>系统测试目的：将系统或程序与其初始目标进行比较。</p><p>【通过分析目标文档来设计系统测试，分析用户文档来阐明测试用例】</p><p>测试用例类型：<br>1、能力测试<br>        判断目标文档提及的每一项能力是否都已经实现<br>2、容量测试<br>        使程序经受大容量数据的检验<br>3、强度测试<br>        使程序承受高负载或强度的检验，所谓高强度是指在很短的时间间隔内达到的数据或操作的数量峰值<br>4、易用性测试<br>5、安全性测试<br>6、性能测试<br>        在特定负载和配置环境下程序的响应时间和吞吐率<br>7、存储测试<br>8、配置测试<br>        面向所有操作系统环境（浏览器、IO设备、通信线路等）中对其进行测试<br>9、兼容性测试<br>10、安装测试<br>11、可靠性测试<br>12、可恢复性测试<br>        说明系统如何从程序错误、硬件失效和数据错误中恢复过来<br>13、适用性测试<br>14、文档测试<br>15、过程测试</p><hr><h2 id="四、验收测试"><a href="#四、验收测试" class="headerlink" title="四、验收测试"></a>四、验收测试</h2><p>验收测试是将程序与其最初的需求及最终用户当前的需要进行比较的过程。</p><hr><h2 id="五、安装测试"><a href="#五、安装测试" class="headerlink" title="五、安装测试"></a>五、安装测试</h2><hr><h2 id="六、测试的计划与控制"><a href="#六、测试的计划与控制" class="headerlink" title="六、测试的计划与控制"></a>六、测试的计划与控制</h2><p>一个良好的测试计划应该包括：<br>1、目标<br>2、结束准测<br>3、进度<br>4、责任<br>5、测试用例库及标准<br>6、工具<br>7、计算机时间<br>8、硬件配置<br>9、集成<br>10、跟踪步骤<br>11、调试步骤<br>12、回归测试</p><hr><h2 id="七、测试结束准则"><a href="#七、测试结束准则" class="headerlink" title="七、测试结束准则"></a>七、测试结束准则</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、软件开发过程&quot;&gt;&lt;a href=&quot;#一、软件开发过程&quot; class=&quot;headerlink&quot; title=&quot;一、软件开发过程&quot;&gt;&lt;/a&gt;一、软件开发过程&lt;/h2&gt;&lt;p&gt;I、将软件最终用户的要求转换为一系列书面的需求。这些需求就是该软件产品要实现的目标。&lt;br&gt;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>测试学习3-单元测试</title>
+    <link href="http://example.com/2022/07/20/py_day29/"/>
+    <id>http://example.com/2022/07/20/py_day29/</id>
+    <published>2022-07-20T07:58:34.807Z</published>
+    <updated>2022-07-21T08:52:07.973Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、测试用例设计"><a href="#一、测试用例设计" class="headerlink" title="一、测试用例设计"></a>一、测试用例设计</h2><p>【模块测试的测试用例设计过程如下：使用一中或多种白盒测试方法分析模块的逻辑结构，然后使用黑盒测试方法对照模块的规格说明以补充测试用例】</p><hr><h2 id="二、增量（集成）测试"><a href="#二、增量（集成）测试" class="headerlink" title="二、增量（集成）测试"></a>二、增量（集成）测试</h2><h3 id="1、自顶向下"><a href="#1、自顶向下" class="headerlink" title="1、自顶向下"></a>1、自顶向下</h3><p>自顶向下的测试是从程序的顶部或初始模块开始。唯一的原则是：要称为合乎条件的下一个模块，至少一个该模块的从属模块（调用它的模块）事先经过了测试。</p><p>指南：I、如果程序中存在关键部分，那么在设计模块序列时就应将这些关键模块尽可能早地添加进去。所谓 “关键部分” 可能是某个复杂地模块、某个采用新算法的模块或某个被怀疑容易发生错误的模块。<br>           II、在设计模块序列时，应将I/O模块尽可能早地添加进来。</p><p>带来的问题：在进行到下一个模块前未能穷举测试此模块。</p><h3 id="2、自底向上"><a href="#2、自底向上" class="headerlink" title="2、自底向上"></a>2、自底向上</h3><p>大多数情况下，自底向上的优点是自顶向下的缺点。其缺点又是自顶向下的优点。</p><hr>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、测试用例设计&quot;&gt;&lt;a href=&quot;#一、测试用例设计&quot; class=&quot;headerlink&quot; title=&quot;一、测试用例设计&quot;&gt;&lt;/a&gt;一、测试用例设计&lt;/h2&gt;&lt;p&gt;【模块测试的测试用例设计过程如下：使用一中或多种白盒测试方法分析模块的逻辑结构，然后使用黑盒</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>测试学习2-测试用例设计</title>
@@ -374,47 +414,6 @@
       
     <summary type="html">&lt;h3 id=&quot;1、子类构造器&quot;&gt;&lt;a href=&quot;#1、子类构造器&quot; class=&quot;headerlink&quot; title=&quot;1、子类构造器&quot;&gt;&lt;/a&gt;1、子类构造器&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;创建子类的实例时， Python首先需要完成的任务是给父类的所有属性赋值。</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习10-类</title>
-    <link href="http://example.com/2022/06/19/py_day10/"/>
-    <id>http://example.com/2022/06/19/py_day10/</id>
-    <published>2022-06-19T02:05:05.962Z</published>
-    <updated>2022-06-19T11:22:31.703Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1、创建和使用类"><a href="#1、创建和使用类" class="headerlink" title="1、创建和使用类"></a>1、创建和使用类</h3><h4 id="1-1、创建类"><a href="#1-1、创建类" class="headerlink" title="1.1、创建类"></a>1.1、创建类</h4><blockquote><p>根据约定，在Python中，首字母大写的名称指的是类。这个类定义中的括号是空的，因为我们要从空白创建这个类。</p></blockquote><p>用法：class Name(object):<br>            def  _<em>init_</em>(self):</p><p>1、_<em>init_</em>(self)<br>这是一个特殊的方法，类似java中的构造器，每当创建新实例的时候，py就会自动运行这个方法。方法中self形参必不可少，且必须位于最前面。self是一个指向实例本身的引用，相当于java中的this。<br>在类的代码中，需要访问当前实例中的变量和函数，即访问实例中的：<br>    a、对应的变量（属性）：Instance.ProperyNam，实现读写<br>    b、调用对应函数：Instance.function()，执行对应的动作<br>需要访问实例变量和调用实例函数，当然需要对应的实例对象本身。而在py中就规定好了，函数的第一个参数，就必须是实例对象本身，并且规定为self。</p><p>**类在初始化实例时通过self拿到实例引用，然后给实例进行初始化</p><h4 id="1-2、创建实例"><a href="#1-2、创建实例" class="headerlink" title="1.2、创建实例"></a>1.2、创建实例</h4><p>用法： instance = class();<br>py通过class的init方法创建一个实例，然后将其引用返回给instance。</p><h3 id="2、使用类和实例"><a href="#2、使用类和实例" class="headerlink" title="2、使用类和实例"></a>2、使用类和实例</h3><h4 id="2-1、修改属性的值"><a href="#2-1、修改属性的值" class="headerlink" title="2.1、修改属性的值"></a>2.1、修改属性的值</h4><p>a、直接修改<br>instance.propery = x<br>b、通过方法修改<br>def updatePropery(self, num):<br>    self.propery = num</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;1、创建和使用类&quot;&gt;&lt;a href=&quot;#1、创建和使用类&quot; class=&quot;headerlink&quot; title=&quot;1、创建和使用类&quot;&gt;&lt;/a&gt;1、创建和使用类&lt;/h3&gt;&lt;h4 id=&quot;1-1、创建类&quot;&gt;&lt;a href=&quot;#1-1、创建类&quot; class=&quot;header</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习9-函数</title>
-    <link href="http://example.com/2022/06/10/py_day9/"/>
-    <id>http://example.com/2022/06/10/py_day9/</id>
-    <published>2022-06-10T07:29:05.111Z</published>
-    <updated>2022-06-19T02:00:55.037Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1、定义函数"><a href="#1、定义函数" class="headerlink" title="1、定义函数"></a>1、定义函数</h3><p>用法：def 函数名(完成任务需要的信息):<br>        （缩进）函数体</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def greet_user(username):</span><br><span class="line">    print(&quot;Hello, &quot; + username.title() + &quot;!&quot;)</span><br><span class="line"></span><br><span class="line">greet_user(&#x27;zhouyu&#x27;)</span><br></pre></td></tr></table></figure><h3 id="2、传递实参"><a href="#2、传递实参" class="headerlink" title="2、传递实参"></a>2、传递实参</h3><h4 id="2-1、位置实参"><a href="#2-1、位置实参" class="headerlink" title="2.1、位置实参"></a>2.1、位置实参</h4><blockquote><p>关联方式是基于实参的顺序。这种关联方式被称为位置实参。</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def describe_pet(animal_type, pet_name):</span><br><span class="line">    print(&quot;\nI have a &quot; + animal_type + &quot;.&quot;)</span><br><span class="line">    print(&quot;My &quot; + animal_type + &quot; &#x27;s name is &quot; + pet_name + &quot;.&quot;)</span><br><span class="line"></span><br><span class="line">describe_pet(&#x27;dog&#x27;, &#x27;wangwang&#x27;)</span><br></pre></td></tr></table></figure><h4 id="2-2、关键字实参"><a href="#2-2、关键字实参" class="headerlink" title="2.2、关键字实参"></a>2.2、关键字实参</h4><blockquote><p>关键字实参是传递给函数的名称—值对。关键字实参让你无需考虑函数调用中的实参顺序，还清楚地指出了函数调用中各个值的用途。</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def describe_pet(animal_type, pet_name):</span><br><span class="line">    print(&quot;\nI have a &quot; + animal_type + &quot;.&quot;)</span><br><span class="line">    print(&quot;My &quot; + animal_type + &quot; &#x27;s name is &quot; + pet_name + &quot;.&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">describe_pet(animal_type=&#x27;dog&#x27;, pet_name=&#x27;wangwang&#x27;)</span><br></pre></td></tr></table></figure><p>***关键字实参的顺序无关紧要，因为Python知道各个值该存储到哪个形参中。</p><h4 id="2-3、默认值"><a href="#2-3、默认值" class="headerlink" title="2.3、默认值"></a>2.3、默认值</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def describe_pet(pet_name, animal_type=&#x27;dog&#x27;):</span><br><span class="line">    print(&quot;\nI have a &quot; + animal_type + &quot;.&quot;)</span><br><span class="line">    print(&quot;My &quot; + animal_type + &quot; &#x27;s name is &quot; + pet_name + &quot;.&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">describe_pet(&#x27;wangwang&#x27;)</span><br></pre></td></tr></table></figure><p>***使用默认值时，在形参列表中必须先列出没有默认值的形参，再列出有默认值的实参。<br>这让Python依然能够正确地解读位置实参</p><h3 id="3、返回值"><a href="#3、返回值" class="headerlink" title="3、返回值"></a>3、返回值</h3><blockquote><p>在函数中，可使用return语句将值返回到调用函数的代码行。</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def getFotmattedName(firstName, lastName):</span><br><span class="line">    fullName = firstName + &quot; &quot; + lastName</span><br><span class="line">    return fullName</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">message = getFotmattedName(&#x27;zhou&#x27;, &#x27;yu&#x27;)</span><br><span class="line">print(message)</span><br></pre></td></tr></table></figure><p>***Python将非空字符串解读为True</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def buildPerson(firstName, lastName):</span><br><span class="line">    person = &#123;&#x27;first&#x27;: firstName, &#x27;last&#x27;: lastName&#125;</span><br><span class="line">    return person</span><br><span class="line"></span><br><span class="line">message = buildPerson(&#x27;zhou&#x27;, &#x27;yu&#x27;)</span><br><span class="line">print(message)</span><br></pre></td></tr></table></figure><h3 id="4、传递列表"><a href="#4、传递列表" class="headerlink" title="4、传递列表"></a>4、传递列表</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def greatUsers(names):</span><br><span class="line">    for name in names:</span><br><span class="line">        msg = &quot;Hello! &quot; + name.title() + &quot;!&quot;</span><br><span class="line">        print(msg)</span><br><span class="line"></span><br><span class="line">userNames = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]</span><br><span class="line">greatUsers(userNames)</span><br></pre></td></tr></table></figure><h4 id="4-1、在函数中修改列表"><a href="#4-1、在函数中修改列表" class="headerlink" title="4.1、在函数中修改列表"></a>4.1、在函数中修改列表</h4><p>修改的是原始列表而不是它的副本</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def printModels(unprintedDesigns, completedModels):</span><br><span class="line">    while unprintedDesigns:</span><br><span class="line">        currentDesign = unprintedDesigns.pop()</span><br><span class="line">        print(&quot;Printing model: &quot; + currentDesign)</span><br><span class="line">        completedModels.append(currentDesign)</span><br><span class="line"></span><br><span class="line">def showCompletedModels(completedModels):</span><br><span class="line">    print(&quot;\nThe following models have been printed:&quot;)</span><br><span class="line">    for completedModel in completedModels:</span><br><span class="line">        print(completedModel)</span><br><span class="line"></span><br><span class="line">printModels(unprintedDesigns, completedModels)</span><br><span class="line">showCompletedModels(completedModels)</span><br></pre></td></tr></table></figure><h4 id="4-2、在函数中修改列表"><a href="#4-2、在函数中修改列表" class="headerlink" title="4.2、在函数中修改列表"></a>4.2、在函数中修改列表</h4><blockquote><p>可向函数传递列表的副本而不是原件；这样函数所做的任何修改都只影响副本，而丝毫不影响原件。</p></blockquote><p>用法：function_name(list_name[:])</p><blockquote><p>切片表示法[:]创建列表的副本。</p></blockquote><h3 id="5、任意数量实参（可变形参）"><a href="#5、任意数量实参（可变形参）" class="headerlink" title="5、任意数量实参（可变形参）"></a>5、任意数量实参（可变形参）</h3><p>用法：*形参名</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def makePizza(*toppings):</span><br><span class="line">    print(toppings)</span><br><span class="line"></span><br><span class="line">makePizza(&#x27;a&#x27;, &#x27;b&#x27;)</span><br><span class="line">makePizza(&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;)</span><br></pre></td></tr></table></figure><blockquote><p>形参名*toppings中的星号让Python创建一个名为toppings的空元组，并将收到的所有值都封装到这个元组中。</p></blockquote><h4 id="4-1、结合使用位置实参和任意数量实参"><a href="#4-1、结合使用位置实参和任意数量实参" class="headerlink" title="4.1、结合使用位置实参和任意数量实参"></a>4.1、结合使用位置实参和任意数量实参</h4><blockquote><p>如果要让函数接受不同类型的实参，必须在函数定义中将接纳任意数量实参的形参放在最后。<br>Python先匹配位置实参和关键字实参，再将余下的实参都收集到最后一个形参中。</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def makePizza(size, *toppings):</span><br><span class="line">    print(&quot;\nMaking a &quot; + str(size)</span><br><span class="line">          + &quot;-inch pizza with the following toppings:&quot;)</span><br><span class="line">    for topping in toppings:</span><br><span class="line">        print(&quot;- &quot; + topping)</span><br><span class="line">makePizza(16, &#x27;pepperoni&#x27;)</span><br><span class="line">makePizza(12, &#x27;mushrooms&#x27;, &#x27;green peppers&#x27;, &#x27;extra cheese&#x27;)</span><br></pre></td></tr></table></figure><h4 id="4-2、使用任意数量的关键字实参"><a href="#4-2、使用任意数量的关键字实参" class="headerlink" title="4.2、使用任意数量的关键字实参"></a>4.2、使用任意数量的关键字实参</h4><blockquote><p>形参**userInfo中的两个星号让Python创建一个名为userInfo的空字典，并将收到的所有名称—值对都封装到这个字典中。</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def buildProfile(first, last, **userInfo):</span><br><span class="line">    profile = &#123;&#125;</span><br><span class="line">    profile[&#x27;firstName&#x27;] = first</span><br><span class="line">    profile[&#x27;lastName&#x27;] = last</span><br><span class="line">    for key, value in userInfo.items():</span><br><span class="line">        profile[key] = value</span><br><span class="line">    return profile</span><br><span class="line"></span><br><span class="line">userProfile = buildProfile(&#x27;albert&#x27;, &#x27;einstein&#x27;, location = &#x27;princeton&#x27;, field = &#x27;physics&#x27;)</span><br><span class="line">print(userProfile)</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;1、定义函数&quot;&gt;&lt;a href=&quot;#1、定义函数&quot; class=&quot;headerlink&quot; title=&quot;1、定义函数&quot;&gt;&lt;/a&gt;1、定义函数&lt;/h3&gt;&lt;p&gt;用法：def 函数名(完成任务需要的信息):&lt;br&gt;        （缩进）函数体&lt;/p&gt;
-&lt;figure </summary>
       
     
     
